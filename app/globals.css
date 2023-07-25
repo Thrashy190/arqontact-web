@@ -5,3 +5,27 @@
 .white-gradient {
   background: linear-gradient(transparent, #fff);
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  transition: all .5s;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  width: 10px;
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(209, 213, 219);
+  border-radius: 5px;
+  transition: all .5s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(156 163 175);
+}

@@ -1,9 +1,11 @@
 import LandingIconText from './LandingIconText';
-import RoadmapElement from './RoadmapElement';
+import RoadmapItem from './RoadmapItem';
 import FAQItem from './FAQItem';
+import Button from './Button';
 
 export {
     LandingIconText,
-    RoadmapElement,
-    FAQItem
+    RoadmapItem,
+    FAQItem,
+    Button
 }
