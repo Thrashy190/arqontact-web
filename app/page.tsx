@@ -356,7 +356,7 @@ export default function Home() {
               <div className='transition-all hover:scale-110'><FontAwesomeIcon className="w-10 h-10 text-amber-400" icon={faInstagram}/></div>
             </div>
           </div>
-          <form action="https://formsubmit.co/oz@arqontact.com" method="POST" className="flex w-full lg:w-auto flex-1 grow flex-col space-y-5">
+          <form action="https://formsubmit.co/contact@arqontact.com" method="POST" encType='multipart/form-data' className="flex w-full lg:w-auto flex-1 grow flex-col space-y-5">
             <div className="w-auto flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:space-x-10">
               <div className="flex flex-col w-full space-y-2">
                 <label htmlFor="name" className='text-lg font-medium'>Nombre (s)</label>
