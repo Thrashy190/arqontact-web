@@ -20,13 +20,13 @@ export default function Home() {
             <div className="w-full flex flex-col space-y-6 xs:flex-row xs:space-y-0 justify-between">
               <button className="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex">
                 <div className="relative bg-black bg-opacity-0">
-                  <FontAwesomeIcon className="w-8 h-8 lg:w-11 lg:h-11 text-amber-400" icon={faGooglePlay} />
+                  <FontAwesomeIcon size='2x' className="text-amber-400" icon={faGooglePlay} />
                 </div>
                 <div className="text-amber-400 text-lg lg:text-2xl font-bold">Google Play</div>
               </button>
               <button className="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex">
                 <div className="relative bg-black bg-opacity-0">
-                  <FontAwesomeIcon className="w-8 h-8 lg:w-11 lg:h-11 text-amber-400" icon={faApple} />
+                  <FontAwesomeIcon size='2x' className="text-amber-400" icon={faApple} />
                 </div>
                 <div className="text-amber-400 text-lg lg:text-2xl font-bold">App Store</div>
               </button>
