@@ -3,11 +3,12 @@
 import { motion, AnimatePresence } from "framer-motion"
 
 interface Props {
+    className?: string
     condition?: boolean
     children: JSX.Element|JSX.Element[]
 }
 
-export default function If({ condition, children }: Props) {
+export default function If({ className, condition, children }: Props) {
     const fade = {
         hidden: {
             opacity: 0,
@@ -31,7 +32,8 @@ export default function If({ condition, children }: Props) {
     return (
         <AnimatePresence>
             { condition &&
-                <motion.div 
+                <motion.div
+                    className={className}
                     initial="hidden"
                     animate="show"
                     exit="out"
