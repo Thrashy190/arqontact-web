@@ -77,7 +77,7 @@ export default function Home() {
               <Target field='condition' self="table">
                 <If>
                   <Image
-                    src='/organizer.png'
+                    src='/organizer.jpg'
                     width={250}
                     height={490}
                     alt='organizer'
@@ -88,7 +88,7 @@ export default function Home() {
               <Target field='condition' self="usercheck">
                 <If>
                   <Image
-                    src='/reviews.png'
+                    src='/reviews.jpg'
                     width={250}
                     height={490}
                     alt='reviews'
@@ -99,7 +99,7 @@ export default function Home() {
               <Target field='condition' self="image">
                 <If>
                   <Image
-                    src='/galleries.png'
+                    src='/galleries.jpg'
                     width={250}
                     height={490}
                     alt='galleries'
@@ -110,7 +110,7 @@ export default function Home() {
               <Target field='condition' self="wifi">
                 <If>
                   <Image
-                    src='/map.png'
+                    src='/map.jpg'
                     width={250}
                     height={490}
                     alt='map'
