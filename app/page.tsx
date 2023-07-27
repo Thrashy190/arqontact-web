@@ -248,7 +248,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden lg:flex w-80 flex-col space-y-36 justify-between">
-            <RoadmapItem right="true">
+            <RoadmapItem right={true}>
               <h2 className='text-start font-semibold text-3xl'>Crea un proyecto</h2>
               <div className="flex justify-center lg:justify-start items-start space-x-4">
                 <div className="flex space-x-4">
@@ -267,7 +267,7 @@ export default function Home() {
                 </div>
               </div>
             </RoadmapItem>
-            <RoadmapItem right="true">
+            <RoadmapItem right={true}>
               <h2 className='text-start font-semibold text-3xl'>Recibe personas para el puesto</h2>
               <div className="flex justify-center lg:justify-start text-gray-800 space-x-3 items-center">
                 <div className="flex -space-x-8">
