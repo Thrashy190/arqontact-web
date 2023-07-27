@@ -67,10 +67,10 @@ export default function Home() {
           <div className="flex flex-wrap md:space-y-16 justify-center md:justify-between xl:items-center items-start">
             <div className="flex flex-col md:space-y-16">
               <InteractiveTrigger event="onClick" id="table" self="table" field="active">
-                <LandingIconText icon={<FontAwesomeIcon className='w-10 h-10 text-amber-400' icon={faTable} />} description="Podrás organizar a la gente trabajando en tu proyecto." />
+                <LandingIconText icon={<FontAwesomeIcon  size='2x' className='text-amber-400' icon={faTable} />} description="Podrás organizar a la gente trabajando en tu proyecto." />
               </InteractiveTrigger>
               <InteractiveTrigger event="onClick" id="usercheck" self="usercheck" field="active">
-                <LandingIconText icon={<FontAwesomeIcon className='w-10 h-10 text-amber-400' icon={faUserCheck} />} description="Verás las reseñas del trabajador de otros arquitectos." />
+                <LandingIconText icon={<FontAwesomeIcon size='2x' className='text-amber-400' icon={faUserCheck} />} description="Verás las reseñas del trabajador de otros arquitectos." />
               </InteractiveTrigger>
             </div>
             <div className="w-[250px] h-[490px] hidden md:flex xl:relative xl:top-0 sticky top-1/4">
@@ -121,10 +121,10 @@ export default function Home() {
             </div>
             <div className="flex flex-col md:space-y-16">
               <InteractiveTrigger event="onClick" id="image" self="image" field="active">
-                <LandingIconText icon={<FontAwesomeIcon className='w-10 h-10 text-amber-400' icon={faImage} />} description="Verás como es el trabajo de los obreros." />
+                <LandingIconText icon={<FontAwesomeIcon size='2x' className='text-amber-400' icon={faImage} />} description="Verás como es el trabajo de los obreros." />
               </InteractiveTrigger>
               <InteractiveTrigger event="onClick" id="wifi" self="wifi" field="active">
-                <LandingIconText icon={<FontAwesomeIcon className='w-10 h-10 text-amber-400' icon={faWifi} />} description="No necesitarás moverte de donde estés." />
+                <LandingIconText icon={<FontAwesomeIcon size='2x' className='text-amber-400' icon={faWifi} />} description="No necesitarás moverte de donde estés." />
               </InteractiveTrigger>
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function Home() {
                 </div>
                 <div className="self-center flex justify-center items-center">
                   <div className="bg-amber-100 text-amber-400 rounded-md p-3 flex items-center">
-                    <FontAwesomeIcon className="w-6 h-6 text-amber-400" icon={faProjectDiagram} />
+                    <FontAwesomeIcon size='lg' className="text-amber-400" icon={faProjectDiagram} />
                   </div>
                 </div>
               </div>
@@ -188,7 +188,7 @@ export default function Home() {
                   <div className="w-3 h-3 bg-lime-500 rounded-full"></div>
                 </div>
                 <div className='flex justify-center items-center'>
-                  <FontAwesomeIcon className="w-6 h-6 text-gray-400" icon={faTrashAlt} />
+                  <FontAwesomeIcon size='lg' className="text-gray-400" icon={faTrashAlt} />
                 </div>
               </div>
             </RoadmapItem>
@@ -223,7 +223,7 @@ export default function Home() {
                 </div>
                 <div className="bg-amber-100 text-amber-400 px-2 py-1 rounded-md flex items-center space-x-2">
                   <span>+5</span>
-                  <FontAwesomeIcon className="w-5 h-5 text-amber-400" icon={faBell} />
+                  <FontAwesomeIcon size='lg' className="text-amber-400" icon={faBell} />
                 </div>
               </div>
             </RoadmapItem>
@@ -262,7 +262,7 @@ export default function Home() {
                 </div>
                 <div className="flex justify-center items-center">
                   <div className="bg-amber-100 text-amber-400 rounded-md p-3 flex items-center">
-                    <FontAwesomeIcon className="w-6 h-6 text-amber-400" icon={faProjectDiagram} />
+                    <FontAwesomeIcon size='lg' className=" text-amber-400" icon={faProjectDiagram} />
                   </div>
                 </div>
               </div>
@@ -298,7 +298,7 @@ export default function Home() {
                 </div>
                 <div className="bg-amber-100 text-amber-400 px-2 py-1 rounded-md flex items-center space-x-2">
                   <span>+5</span>
-                  <FontAwesomeIcon className="w-5 h-5 text-amber-400" icon={faBell} />
+                  <FontAwesomeIcon  size='lg' className="text-amber-400" icon={faBell} />
                 </div>
               </div>
             </RoadmapItem>
@@ -336,10 +336,10 @@ export default function Home() {
               ¿Aún tienes dudas? Contáctanos y te responderemos lo más rápido que podamos.
             </p>
             <div className="flex space-x-10">
-              <div className='transition-all hover:scale-110'><FontAwesomeIcon className="w-10 h-10 text-amber-400" icon={faFacebook} /></div>
-              <div className='transition-all hover:scale-110'><FontAwesomeIcon className="w-10 h-10 text-amber-400" icon={faLinkedin} /></div>
-              <div className='transition-all hover:scale-110'><FontAwesomeIcon className="w-10 h-10 text-amber-400" icon={faTwitter} /></div>
-              <div className='transition-all hover:scale-110'><FontAwesomeIcon className="w-10 h-10 text-amber-400" icon={faInstagram} /></div>
+              <div className='transition-all hover:scale-110'><FontAwesomeIcon size="3x" className="text-amber-400" icon={faFacebook} /></div>
+              <div className='transition-all hover:scale-110'><FontAwesomeIcon size="3x" className="text-amber-400" icon={faLinkedin} /></div>
+              <div className='transition-all hover:scale-110'><FontAwesomeIcon size="3x" className="text-amber-400" icon={faTwitter} /></div>
+              <div className='transition-all hover:scale-110'><FontAwesomeIcon size="3x" className="text-amber-400" icon={faInstagram} /></div>
             </div>
           </div>
           <form action="https://formsubmit.co/contact@arqontact.com" method="POST" encType='multipart/form-data' className="flex w-full lg:w-auto flex-1 grow flex-col space-y-5">

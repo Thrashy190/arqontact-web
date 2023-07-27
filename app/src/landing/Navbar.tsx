@@ -26,10 +26,10 @@ export default function Navbar() {
             </div>
             <button onClick={() => setMNState(!mNState)} className='relative w-8 h-8 focus:outline-none md:hidden flex'>
                 <If condition={!mNState} className='absolute'>
-                    <FontAwesomeIcon className="w-8 h-8 text-gray-800" icon={faBars} />
+                    <FontAwesomeIcon size='2x' className="text-gray-800" icon={faBars} />
                 </If>
                 <If condition={mNState} className='absolute'>
-                    <FontAwesomeIcon className="w-8 h-8 text-gray-800" icon={faTimes} />
+                    <FontAwesomeIcon size='2x' className="text-gray-800" icon={faTimes} />
                 </If>
             </button>
             <If condition={mNState} className='w-full shadow-md -ml-6 pl-6 fixed top-24 bg-white text-xl z-50 flex flex-col'>

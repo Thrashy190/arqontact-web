@@ -10,7 +10,9 @@ export default function FAQItem() {
         <div onClick={() => setAnswerIsOpen(!answerIsOpen)}  className={`cursor-pointer flex flex-col py-6 ${answerIsOpen ? 'space-y-4' : ''}`}>
           <div className='flex justify-between items-center'>
             <h3 className="font-semibold text-xl">¿Cuál es el precio de los servicios?</h3>
-            <button className={`duration-300 animation-ping transition-all outline-none focus:outline-none ${ answerIsOpen ? '-rotate-180' : 'rotate-0'  }`}><FontAwesomeIcon className="w-5 h-5 text-gray-500" icon={faChevronDown }/></button>
+            <button className={`duration-300 animation-ping transition-all outline-none focus:outline-none ${ answerIsOpen ? '-rotate-180' : 'rotate-0'  }`}>
+              <FontAwesomeIcon size='lg' className="text-gray-500" icon={faChevronDown }/>
+              </button>
           </div>
           <p className={`duration-300 animation-ping transition-all ${answerIsOpen ? 'h-auto' : ''} h-0 overflow-hidden`}>Nuestros servicios son gratuitos hasta cierto punto, solamente tendrás que pagar para acceder a algunas funcionalidades.</p>
         </div>
