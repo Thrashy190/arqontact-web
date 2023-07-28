@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image'
-import { If } from '../helpers';
+import { AnimatedIf } from '../helpers';
 import { MobileNavbar } from '.'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -25,16 +25,16 @@ export default function Navbar() {
                 <a href="#contact" className="w-auto">Contacto</a>
             </div>
             <button onClick={() => setMNState(!mNState)} className='relative w-8 h-8 focus:outline-none md:hidden flex'>
-                <If condition={!mNState} className='absolute'>
+                <AnimatedIf condition={!mNState} className='absolute'>
                     <FontAwesomeIcon size='2x' className="text-gray-800" icon={faBars} />
-                </If>
-                <If condition={mNState} className='absolute'>
+                </AnimatedIf>
+                <AnimatedIf condition={mNState} className='absolute'>
                     <FontAwesomeIcon size='2x' className="text-gray-800" icon={faTimes} />
-                </If>
+                </AnimatedIf>
             </button>
-            <If condition={mNState} className='w-full shadow-md -ml-6 pl-6 fixed top-24 bg-white text-xl z-50 flex flex-col'>
+            <AnimatedIf condition={mNState} className='w-full rounded-b-2xl divide-y divide-gray-200 shadow-md -ml-6 px-6 fixed top-24 bg-white text-xl z-50 flex flex-col'>
                 <MobileNavbar closeAction={() => setMNState(false)}/>
-            </If>
+            </AnimatedIf>
         </nav>
     )
 }

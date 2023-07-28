@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import { Switch, Target, If, InteractiveTrigger } from './src/helpers'
-import { LandingIconText, RoadmapItem, FAQItem, Button, MobileNavbar, Navbar } from './src/landing'
+import { Switch, Target, If, InteractiveTrigger, AnimatedIf } from './src/helpers'
+import { LandingIconText, RoadmapItem, FAQSection, Button, Navbar, FAQItem } from './src/landing'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTable, faImage, faUserCheck, faWifi, faProjectDiagram, faTrashAlt, faBell, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faTable, faImage, faUserCheck, faWifi, faProjectDiagram, faTrashAlt, faBell, faUser, faMobile, faCogs, faQuestion, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faApple, faGooglePlay, faFacebook, faLinkedin, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
           <div className="w-full h-full z-[15] flex-1 grow flex flex-col justify-center items-center space-y-10">
             <h1 className="text-right xs:text-center md:text-right text-5xl font-semibold">Conecta con el personal adecuado. Sin esfuerzo.</h1>
             <div className="w-full text-right xs:text-center md:text-right text-3xl font-normal">Baja nuestra aplicación:</div>
-            <div className="w-full flex flex-col space-y-6 xs:flex-row xs:space-y-0 justify-between">
+            <div className="w-full flex flex-col space-y-6 xs:flex-row xs:space-y-0 xs:space-x-6 justify-center md:justify-end">
               <button className="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex">
                 <div className="relative bg-black bg-opacity-0">
                   <FontAwesomeIcon size='2x' className="text-amber-400" icon={faGooglePlay} />
@@ -44,8 +44,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="us" className='flex flex-col space-y-12 md:space-y-0 md:flex-row flex-wrap text-gray-800 px-6 md:px-10 lg:px-28 py-20 bg-white'>
-        <h1 className="w-full md:mb-8 text-3xl lg:text-5xl font-semibold">Nosotros</h1>
+      <section id="us" className='flex flex-col space-y-12 md:space-y-0 md:flex-row flex-wrap text-gray-800 px-6 md:px-10 lg:px-28 py-12 md:py-20 bg-white'>
+        <h1 className="w-full md:mb-8 font-semibold flex items-center">
+          <div className="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5">
+            <FontAwesomeIcon size="lg" className='text-amber-400' icon={faUser} />
+          </div>
+          <span className='text-3xl lg:text-5xl'>Nosotros</span>
+        </h1>
         <div className="flex flex-1 grow">
           <div className="flex flex-col space-y-6">
             <p className='w-full text-xl lg:text-3xl font-normal'>Arqontact es una aplicación para que puedas conectar con personal para tu obra. Tenemos perfiles de obreros interesados en colaborar contigo.</p>
@@ -61,7 +66,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className='relative flex flex-col text-gray-800 px-6 md:px-10 lg:px-28 py-24 bg-white'>
+      <section className='relative flex flex-col text-gray-800 px-6 md:px-10 lg:px-28 py-12 md:py-24 bg-white'>
         <Switch target="table">
           <h1 className="w-full mb-16 text-center text-3xl lg:text-5xl font-semibold">Con Arqontact</h1>
           <div className="flex flex-wrap md:space-y-16 justify-center md:justify-between xl:items-center items-start">
@@ -75,7 +80,7 @@ export default function Home() {
             </div>
             <div className="w-[250px] h-[490px] hidden md:flex xl:relative xl:top-0 sticky top-1/4">
               <Target field='condition' self="table">
-                <If>
+                <AnimatedIf>
                   <Image
                     src='/organizer.jpg'
                     width={250}
@@ -83,10 +88,10 @@ export default function Home() {
                     alt='organizer'
                     className={`absolute`}
                   />
-                </If>
+                </AnimatedIf>
               </Target>
               <Target field='condition' self="usercheck">
-                <If>
+                <AnimatedIf>
                   <Image
                     src='/reviews.jpg'
                     width={250}
@@ -94,10 +99,10 @@ export default function Home() {
                     alt='reviews'
                     className={`absolute`}
                   />
-                </If>
+                </AnimatedIf>
               </Target>
               <Target field='condition' self="image">
-                <If>
+                <AnimatedIf>
                   <Image
                     src='/galleries.jpg'
                     width={250}
@@ -105,10 +110,10 @@ export default function Home() {
                     alt='galleries'
                     className={`absolute`}
                   />
-                </If>
+                </AnimatedIf>
               </Target>
               <Target field='condition' self="wifi">
-                <If>
+                <AnimatedIf>
                   <Image
                     src='/map.jpg'
                     width={250}
@@ -116,7 +121,7 @@ export default function Home() {
                     alt='map'
                     className={`absolute`}
                   />
-                </If>
+                </AnimatedIf>
               </Target>
             </div>
             <div className="flex flex-col md:space-y-16">
@@ -130,7 +135,7 @@ export default function Home() {
           </div>
         </Switch>
       </section>
-      <section className="flex flex-col py-14 space-y-6 justify-center items-center bg-gray-100 px-6 md:px-10 lg:px-28">
+      <section className="flex flex-col border-y-2 border-dashed border-gray-300 py-14 space-y-6 justify-center items-center bg-gray-100 px-6 md:px-10 lg:px-28">
         <Image
           src='/landing_server.svg'
           width={150}
@@ -138,14 +143,19 @@ export default function Home() {
           alt='profile'
         />
         <div className="bg-white rounded-md px-10 py-8 flex flex-col space-y-5">
-          <p className='w-auto lg:w-[600px] text-center text-2xl lg:text-3xl font-semibold'>Ten acceso a la base de datos de obreros más grande de México.</p>
+          <p className='w-auto lg:w-[600px] text-center text-2xl lg:text-3xl font-semibold'>Ten acceso a la base de datos de obreros más grande de <span className='text-amber-400'>México</span>.</p>
           <button className='transition-all hover:scale-110 w-auto self-center bg-amber-100 text-amber-400 rounded-xl px-6 py-4 text-xl lg:text-2xl'>Empieza gratis</button>
         </div>
       </section>
-      <section id="how-it-works" className='flex flex-col relative justify-center items-center text-gray-800 px-6 md:px-10 lg:px-28 py-20 bg-white'>
-        <h1 className="w-full text-center lg:text-start mb-20 text-3xl lg:text-5xl font-semibold">¿Cómo funciona?</h1>
+      <section id="how-it-works" className='flex flex-col relative justify-center items-center text-gray-800 px-6 md:px-10 lg:px-28 py-12 md:py-20 bg-white'>
+        <h1 className="w-full text-center lg:text-start mb-8 md:mb-20 font-semibold flex justify-center items-center">
+          <div className="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5">
+            <FontAwesomeIcon size="lg" className='text-amber-400' icon={faCogs} />
+          </div>
+          <span className='text-3xl lg:text-5xl'>¿Cómo funciona?</span>
+        </h1>
         <div className="w-full flex justify-center space-y-36 lg:space-y-0 lg:justify-between">
-          <div className="lg:w-80 flex flex-col space-y-16 md:space-y-36 justify-center lg:justify-between">
+          <div className="lg:w-80 flex flex-col justify-center lg:justify-between">
             <RoadmapItem right={false}>
               <h2 className='text-center lg:text-end font-semibold text-xl lg:text-3xl'>Genera tu cuenta</h2>
               <div className="flex items-center lg:items-start flex-col space-y-5">
@@ -158,6 +168,11 @@ export default function Home() {
                 <div className='self-center bg-amber-400 font-medium px-4 py-2 text-white rounded-md uppercase'>Continuar registro</div>
               </div>
             </RoadmapItem>
+            <div className="lg:hidden flex justify-center h-16 md:h-32">
+              <svg height="100%" width="100%" viewBox='0 0 100 100' preserveAspectRatio="none">
+                <path vectorEffect="non-scaling-stroke" className='stroke-gray-300 fill-none' strokeWidth="18" strokeLinecap="round" strokeDasharray={'4,24'} d="M50 5L50 95" />
+              </svg>
+            </div>
             <RoadmapItem classes="block lg:hidden" right={true}>
               <h2 className='text-center font-semibold text-xl lg:text-3xl'>Crea un proyecto</h2>
               <div className="flex justify-center lg:justify-start items-start space-x-14">
@@ -177,6 +192,11 @@ export default function Home() {
                 </div>
               </div>
             </RoadmapItem>
+            <div className="lg:hidden flex justify-center h-16 md:h-32">
+              <svg height="100%" width="100%" viewBox='0 0 100 100' preserveAspectRatio="none">
+                <path vectorEffect="non-scaling-stroke" className='stroke-gray-300 fill-none' strokeWidth="18" strokeLinecap="round" strokeDasharray={'4,24'} d="M50 5L50 95" />
+              </svg>
+            </div>
             <RoadmapItem right={false}>
               <h2 className='text-center lg:text-end font-semibold text-xl lg:text-3xl'>Publica tus vacantes</h2>
               <div className="flex justify-center lg:justify-start text-gray-800 space-x-5 items-center">
@@ -192,6 +212,11 @@ export default function Home() {
                 </div>
               </div>
             </RoadmapItem>
+            <div className="lg:hidden flex justify-center h-16 md:h-32">
+              <svg height="100%" width="100%" viewBox='0 0 100 100' preserveAspectRatio="none">
+                <path vectorEffect="non-scaling-stroke" className='stroke-gray-300 fill-none' strokeWidth="18" strokeLinecap="round" strokeDasharray={'4,24'} d="M50 5L50 95" />
+              </svg>
+            </div>
             <RoadmapItem classes="block lg:hidden" right={true}>
               <h2 className='text-center font-semibold text-xl lg:text-3xl'>Recibe personas para el puesto</h2>
               <div className="flex justify-center text-gray-800 space-x-3 items-center">
@@ -305,11 +330,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="faq" className="flex flex-col justify-center items-center px-6 md:px-10 lg:px-28 py-28">
-        <h1 className="w-full text-center mb-20 text-3xl lg:text-5xl font-semibold">Preguntas frecuentes</h1>
+      <section id="faq" className="flex flex-col justify-center items-center border-y-2 border-dashed border-gray-300 bg-gray-100 px-6 md:px-10 lg:px-28 py-12 md:py-28">
+        <h1 className="w-full text-center mb-8 md:mb-20 font-semibold flex justify-center items-center">
+          <div className="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5">
+            <FontAwesomeIcon size="lg" className='text-amber-400' icon={faQuestion} />
+          </div>
+          <span className='text-3xl lg:text-5xl'>Preguntas frecuentes</span></h1>
         <div className="w-full sm:w-auto flex flex-col space-y-8 md:space-y-0 md:flex-row md:space-x-6">
+        <Switch target={0} >
           <div className="w-full sm:w-auto pb-2 flex-nowrap overflow-x-auto flex space-x-4 md:space-x-0 md:flex-col md:space-y-4">
-            <Switch target={0} >
               <InteractiveTrigger event="onClick" id={0} self={0} field="active">
                 <Button>Aplicación</Button>
               </InteractiveTrigger>
@@ -319,23 +348,46 @@ export default function Home() {
               <InteractiveTrigger event="onClick" id={2} self={2} field="active">
                 <Button>Servicios</Button>
               </InteractiveTrigger>
-            </Switch>
           </div>
-          <div className="flex flex-col divide-y divide-gray-200 text-gray-800 flex-1 grow bg-white rounded-md px-5">
-            <FAQItem />
-            <FAQItem />
-            <FAQItem />
-          </div>
+          <FAQSection>
+            <Target field='condition' self={0}>
+              <If>
+                  <FAQItem question="¿Cuando saldrá la aplicación al mercado?" answer="Se planea que la aplicación salga la luz a más tardar en Enero 2024, listos para iniciar un nuevo año con todo."/>
+                  <FAQItem question="Aplicación" answer="ola"/>
+                  <FAQItem question="Aplicación" answer="ola"/>
+              </If>
+            </Target>
+            <Target field='condition' self={1}>
+              <If>
+                  <FAQItem question="¿Cuáles son las suscripciones que manejan?" answer="Por el momento, solo mantendremos un producto, el poder posicionar mejor tus tableros en relación a otros en la plataforma."/>
+                  <FAQItem question="Suscripciones" answer="ola"/>
+                  <FAQItem question="Suscripciones" answer="ola"/>
+              </If>
+            </Target>
+            <Target field='condition' self={2}>
+              <If>
+                  <FAQItem question="¿Cuál es el precio de los servicios?" answer="Nuestros servicios son gratuitos hasta cierto punto, solamente tendrás que pagar para acceder a algunas funcionalidades."/>
+                  <FAQItem question="Servicios" answer="ola"/>
+                  <FAQItem question="Servicios" answer="ola"/>
+              </If>
+            </Target>
+          </FAQSection>
+        </Switch>
         </div>
       </section>
-      <section id="contact" className="flex flex-col justify-center items-center bg-white px-6 md:px-10 lg:px-28 py-28">
+      <section id="contact" className="flex flex-col justify-center items-center bg-white px-6 md:px-10 lg:px-28 py-12 md:py-28">
         <div className="w-full flex flex-col lg:flex-row items-center space-y-16 lg:space-y-0 md:space-x-8 text-gray-800">
           <div className="flex w-full lg:w-96 flex-col space-y-8">
-            <h1 className="w-full text-3xl lg:text-5xl font-semibold">Contacto</h1>
-            <p className='text-xl lg:text-4xl'>
+            <h1 className="w-full font-semibold flex items-center">
+              <div className="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5">
+                <FontAwesomeIcon size="lg" className='text-amber-400' icon={faEnvelope} />
+              </div>
+              <span className='text-3xl lg:text-5xl'>Contacto</span>
+            </h1>
+            <p className='text-xl lg:text-2xl'>
               ¿Aún tienes dudas? Contáctanos y te responderemos lo más rápido que podamos.
             </p>
-            <div className="flex space-x-10">
+            <div className="flex justify-around sm:justify-start sm:space-x-10">
               <div className='transition-all hover:scale-110'><FontAwesomeIcon size="3x" className="text-amber-400" icon={faFacebook} /></div>
               <div className='transition-all hover:scale-110'><FontAwesomeIcon size="3x" className="text-amber-400" icon={faLinkedin} /></div>
               <div className='transition-all hover:scale-110'><FontAwesomeIcon size="3x" className="text-amber-400" icon={faTwitter} /></div>
