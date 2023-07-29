@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image'
-import { AnimatedIf } from '../helpers';
+import { AnimatedIf } from '../../_helpers';
 import { MobileNavbar } from '.'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'

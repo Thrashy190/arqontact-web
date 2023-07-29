@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import { Switch, Target, If, InteractiveTrigger, AnimatedIf } from './src/helpers'
-import { LandingIconText, RoadmapItem, FAQSection, Button, Navbar, FAQItem } from './src/landing'
+import { Switch, Target, If, InteractiveTrigger, AnimatedIf } from '../_helpers'
+import { LandingIconText, RoadmapItem, FAQSection, Button, Navbar, FAQItem } from '../_components/landing'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTable, faImage, faUserCheck, faWifi, faProjectDiagram, faTrashAlt, faBell, faUser, faMobile, faCogs, faQuestion, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faTable, faImage, faUserCheck, faWifi, faProjectDiagram, faTrashAlt, faBell, faUser, faCogs, faQuestion, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faApple, faGooglePlay, faFacebook, faLinkedin, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 export default function Home() {
