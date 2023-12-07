@@ -5,11 +5,21 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  weight: ['200', '300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
+})
 
 export const metadata: Metadata = {
   title: 'Arqontact',
   description: 'La aplicación de contactos para arquitectos.',
+  manifest: '/manifest.json',
+  icons: {
+    apple: 'icon-512x512.png',
+  },
+  themeColor: '#ffffff'
 }
 
 export default function RootLayout({
@@ -19,7 +29,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>{children}</body>
+      <body 
+        className={inter.className}
+      >
+        {children}
+      </body>
     </html>
   )
 }

@@ -18,11 +18,12 @@ export default function Navbar() {
                 height={40}
                 alt="logo"
             />
-            <div className="hidden md:flex text-md lg:text-lg justify-start items-center gap-12 text-gray-800">
+            <div className="hidden md:flex text-sm lg:text-base justify-start items-center gap-12 text-gray-800">
                 <a href="#us" className="w-auto">Nosotros</a>
                 <a href="#how-it-works" className="w-auto">Como funciona</a>
                 <a href="#faq" className="w-auto">Preguntas frecuentes</a>
                 <a href="#contact" className="w-auto">Contacto</a>
+                <a href="#workers" className="w-auto">Obreros</a>
             </div>
             <button onClick={() => setMNState(!mNState)} className='relative w-8 h-8 focus:outline-none md:hidden flex'>
                 <AnimatedIf condition={!mNState} className='absolute'>

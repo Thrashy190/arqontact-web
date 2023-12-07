@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Switch, Target, If, InteractiveTrigger, AnimatedIf } from '../_helpers'
 import { LandingIconText, RoadmapItem, FAQSection, Button, Navbar, FAQItem } from '../_components/landing'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTable, faImage, faUserCheck, faWifi, faProjectDiagram, faTrashAlt, faBell, faUser, faCogs, faQuestion, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faTable, faImage, faUserCheck, faWifi, faProjectDiagram, faTrashAlt, faBell, faUser, faCogs, faQuestion, faEnvelope, faHammer, faExternalLink } from '@fortawesome/free-solid-svg-icons'
 import { faApple, faGooglePlay, faFacebook, faLinkedin, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 export default function Home() {
@@ -18,18 +19,22 @@ export default function Home() {
             <h1 className="text-right xs:text-center md:text-right text-5xl font-semibold">Conecta con el personal adecuado. Sin esfuerzo.</h1>
             <div className="w-full text-right xs:text-center md:text-right text-3xl font-normal">Baja nuestra aplicación:</div>
             <div className="w-full flex flex-col space-y-6 xs:flex-row xs:space-y-0 xs:space-x-6 justify-center md:justify-end">
-              <button className="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex">
-                <div className="relative bg-black bg-opacity-0">
-                  <FontAwesomeIcon size='2x' className="text-amber-400" icon={faGooglePlay} />
-                </div>
-                <div className="text-amber-400 text-lg lg:text-2xl font-bold">Google Play</div>
-              </button>
-              <button className="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex">
-                <div className="relative bg-black bg-opacity-0">
-                  <FontAwesomeIcon size='2x' className="text-amber-400" icon={faApple} />
-                </div>
-                <div className="text-amber-400 text-lg lg:text-2xl font-bold">App Store</div>
-              </button>
+              <Link href="/dashboard">
+                <button className="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex">
+                  <div className="relative bg-black bg-opacity-0">
+                    <FontAwesomeIcon size='2x' className="text-amber-400" icon={faGooglePlay} />
+                  </div>
+                  <div className="text-amber-400 text-lg lg:text-2xl font-bold">Google Play</div>
+                </button>
+              </Link>
+              <Link href="/dashboard">
+                <button className="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex">
+                  <div className="relative bg-black bg-opacity-0">
+                    <FontAwesomeIcon size='2x' className="text-amber-400" icon={faApple} />
+                  </div>
+                  <div className="text-amber-400 text-lg lg:text-2xl font-bold">App Store</div>
+                </button>
+              </Link>
             </div>
           </div>
           <div className="hidden md:flex relative h-full flex-1 grow justify-center items-center">
@@ -168,7 +173,7 @@ export default function Home() {
                 <div className='self-center bg-amber-400 font-medium px-4 py-2 text-white rounded-md uppercase'>Continuar registro</div>
               </div>
             </RoadmapItem>
-            <div className="lg:hidden flex justify-center h-16 md:h-32">
+            <div className="lg:hidden flex justify-center h-16">
               <svg height="100%" width="100%" viewBox='0 0 100 100' preserveAspectRatio="none">
                 <path vectorEffect="non-scaling-stroke" className='stroke-gray-300 fill-none' strokeWidth="18" strokeLinecap="round" strokeDasharray={'4,24'} d="M50 5L50 95" />
               </svg>
@@ -192,7 +197,7 @@ export default function Home() {
                 </div>
               </div>
             </RoadmapItem>
-            <div className="lg:hidden flex justify-center h-16 md:h-32">
+            <div className="lg:hidden flex justify-center h-16">
               <svg height="100%" width="100%" viewBox='0 0 100 100' preserveAspectRatio="none">
                 <path vectorEffect="non-scaling-stroke" className='stroke-gray-300 fill-none' strokeWidth="18" strokeLinecap="round" strokeDasharray={'4,24'} d="M50 5L50 95" />
               </svg>
@@ -212,7 +217,7 @@ export default function Home() {
                 </div>
               </div>
             </RoadmapItem>
-            <div className="lg:hidden flex justify-center h-16 md:h-32">
+            <div className="lg:hidden flex justify-center h-16">
               <svg height="100%" width="100%" viewBox='0 0 100 100' preserveAspectRatio="none">
                 <path vectorEffect="non-scaling-stroke" className='stroke-gray-300 fill-none' strokeWidth="18" strokeLinecap="round" strokeDasharray={'4,24'} d="M50 5L50 95" />
               </svg>
@@ -335,7 +340,8 @@ export default function Home() {
           <div className="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5">
             <FontAwesomeIcon size="lg" className='text-amber-400' icon={faQuestion} />
           </div>
-          <span className='text-3xl lg:text-5xl'>Preguntas frecuentes</span></h1>
+          <span className='text-3xl lg:text-5xl'>Preguntas frecuentes</span>
+        </h1>
         <div className="w-full sm:w-auto flex flex-col space-y-8 md:space-y-0 md:flex-row md:space-x-6">
         <Switch target={0} >
           <div className="w-full sm:w-auto pb-2 flex-nowrap overflow-x-auto flex space-x-4 md:space-x-0 md:flex-col md:space-y-4">
@@ -421,6 +427,40 @@ export default function Home() {
               <button type="submit" className='bg-amber-400 font-medium px-4 py-2 text-white rounded-md uppercase'>ENVIAR</button>
             </div>
           </form>
+        </div>
+      </section>
+      <section id="workers" className="flex flex-col border-t-2 border-dashed border-gray-300 py-14 space-y-6 justify-center items-center bg-gray-100 px-6 md:px-10 lg:px-28">
+        <h1 className="w-full text-center mb-8 md:mb-20 font-semibold flex justify-center items-center">
+          <div className="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5">
+            <FontAwesomeIcon size="lg" className='text-amber-400' icon={faHammer} />
+          </div>
+          <span className='text-3xl lg:text-5xl'>Para los obreros</span>
+        </h1>
+        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-5 text-gray-800">
+          <div className="flex flex-col bg-white rounded-md px-10 py-8 space-y-4">
+            <h2 className='text-xl font-semibold'>Queremos darte más información de como podemos ayudarte</h2>
+            <Link target='_blank' href="obrero" className='w-auto self-start flex items-center space-x-4 text-amber-400 border-b-2 border-amber-400'>
+              <p className='font-medium'>Más información</p>
+              <FontAwesomeIcon icon={faExternalLink} />
+            </Link>
+          </div>
+          <div className="flex flex-col bg-white rounded-md px-10 py-8 space-y-4">
+            <h2 className='text-xl font-semibold'>Baja nuestra aplicación:</h2>
+            <div className='w-auto self-start flex items-center space-x-4 text-amber-400'>
+              <button className="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex">
+                <div className="relative bg-black bg-opacity-0">
+                  <FontAwesomeIcon size="lg" className="text-amber-400" icon={faGooglePlay} />
+                </div>
+                <div className="text-amber-400 text-lg font-bold">Google Play</div>
+              </button>
+              <button className="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex">
+                <div className="relative bg-black bg-opacity-0">
+                  <FontAwesomeIcon size="lg" className="text-amber-400" icon={faApple} />
+                </div>
+                <div className="text-amber-400 text-lg font-bold">App Store</div>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
       <footer className='bg-gray-800 flex items-center h-24 w-full px-6 md:px-10 lg:px-28'>

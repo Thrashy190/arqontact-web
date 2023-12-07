@@ -3,7 +3,7 @@
 import { Fragment } from "react"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faUser, faCogs, faQuestion, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCogs, faQuestion, faEnvelope, faHammer } from '@fortawesome/free-solid-svg-icons'
 
 export default function MobileNavbar({ closeAction }: any) {
     return (
@@ -23,6 +23,10 @@ export default function MobileNavbar({ closeAction }: any) {
             <a onClick={() => closeAction()} href="#contact" className="transition-all w-auto hover:bg-gray-50 hover:text-amber-400 hover:font-medium py-4 flex items-center">
                 <div className="w-10 mx-4"><FontAwesomeIcon className="inline text-amber-400" icon={faEnvelope}/></div>
                 <span>Contacto</span>
+            </a>
+            <a onClick={() => closeAction()} href="#workers" className="transition-all w-auto hover:bg-gray-50 hover:text-amber-400 hover:font-medium py-4 flex items-center">
+                <div className="w-10 mx-4"><FontAwesomeIcon className="inline text-amber-400" icon={faHammer}/></div>
+                <span>Obreros</span>
             </a>
         </Fragment>
     )

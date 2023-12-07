@@ -1,0 +1,52 @@
+function handleStart(e: any) {
+        const position = e.clientY ?? e.touches[0].pageY;
+
+        setStartingPoint(position);
+    }
+
+    function handleResize(e: any) {
+        e.stopPropagation();
+
+        const eType = e.clientY ? 'drag' : 'touch';
+        const position = e.clientY ?? e.touches[0].pageY;
+        const difference = startingPoint - position;
+
+        const elInfo = list.current?.getBoundingClientRect();
+
+        const infoTop = elInfo?.top ?? 0;
+        const filtersBottom = filters.current?.getBoundingClientRect()?.bottom ?? 0;
+
+        const newHeight = (eType == 'touch' ? (elInfo?.height ?? 0) + (difference - previousDifference) : (elInfo?.height ?? 0) + (elInfo?.top ?? 0) - position);
+
+        if (newHeight > (elInfo?.height ?? 0)) {
+            return;
+        }
+
+        if (position <= filtersBottom || infoTop <= filtersBottom && difference > 0) {
+            setListIsFull(true);
+            return;
+        }
+
+        setListIsFull(false);
+
+        if (e.clientY == 0) {
+            return;
+        }
+
+        if (mode == 'list') {
+            setListHeight(newHeight);
+        }
+        if (newHeight <= 60) {
+            let newElement = listCarrousel.current ?? { scrollTop: 0 };
+            newElement.scrollTop = 0;
+            setMode('');
+            setListHeight(0);
+        }
+
+        setPreviousDifference(difference);
+    };
+
+    function handleEnd() {
+        setStartingPoint(0);
+        setPreviousDifference(0);
+    }
