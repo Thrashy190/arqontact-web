@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import AnimatedIf from "@components/common/AnimatedIf";
 import MobileNavbar from "@components/landing/MobileNavbar";
 
@@ -7,7 +7,7 @@ export default function Navbar() {
     return (
         <nav className="w-full z-[100] h-24 bg-white shadow-sm px-6 md:px-10 lg:px-28 sticky flex justify-between items-center top-0">
             <img
-                className='inline w-full h-10'
+                className='inline w-auto h-10'
                 src="/logo_light.svg"
                 alt="logo"
             />
@@ -20,10 +20,10 @@ export default function Navbar() {
             </div>
             <button onClick={() => setMNState(!mNState)} className='relative w-8 h-8 focus:outline-none md:hidden flex'>
                 <AnimatedIf condition={!mNState} className='absolute'>
-                    <icon className="text-2xl text-gray-800 fas fa-bars"></icon>
+                    <i className="text-2xl text-gray-800 fas fa-bars"></i>
                 </AnimatedIf>
                 <AnimatedIf condition={mNState} className='absolute'>
-                    <icon className="text-2xl text-gray-800 fas fa-times"></icon>
+                    <i className="text-2xl text-gray-800 fas fa-times"></i>
                 </AnimatedIf>
             </button>
             <AnimatedIf condition={mNState} className='w-full rounded-b-2xl divide-y divide-gray-200 shadow-md -ml-6 px-6 fixed top-24 bg-white text-xl z-50 flex flex-col'>

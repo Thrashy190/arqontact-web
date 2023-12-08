@@ -1,0 +1,16 @@
+---
+import AppLayout from "@layouts/AppLayout.astro";
+import Header from "@components/dashboard/Header";
+import List from "@components/dashboard/List";
+import Navbar from "@components/app/Navbar";
+---
+
+<AppLayout title="Dashboard">
+    <Header client:load />
+    <div class='w-screen h-full bg-gray-100'>
+    </div>
+    <List client:load/>
+    <!-- <nav class="z-20 flex-shrink-0 w-screen bg-white flex justify-between p-5 border-t border-gray-200">
+        <Navbar client:load transition:name="app-navbar" transition:persist/>
+    </nav> -->
+</AppLayout>

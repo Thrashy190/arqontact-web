@@ -1,16 +1,22 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": "C:/Users/galac/Desktop/OZ/Programacion/Proyectos/arqontact-web",
+    "baseUrl": "./src/",
     "paths": {
       "@components/*": [
-        "src/components/*"
+        "components/*"
+      ],
+      "@layouts/*": [
+        "layouts/*"
       ],
       "@lib/*": [
-        "src/lib/*"
+        "lib/*"
       ],
-      "@types/*": [
-        "src/lib/types/*"
+      "@customTypes/*": [
+        "lib/types/*"
+      ],
+      "@stores/*": [
+        "stores/*"
       ]
     },
     "jsx": "react-jsx",

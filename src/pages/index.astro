@@ -1,39 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Icon from "@components/common/Icon.astro";
-import { Switch, Trigger, Target, InteractiveTrigger } from "@components/common/Switch.tsx";
-import If from "@components/common/If.tsx";
-import AnimatedIf from "@components/common/AnimatedIf.tsx";
 
 import Navbar from "@components/landing/Navbar.tsx";
 import RoadmapItem from "@components/landing/RoadmapItem.astro";
-import FAQSection from "@components/landing/FAQSection.astro";
-import FAQItem from "@components/landing/FAQItem.tsx";
-import LandingIconText from "@components/landing/LandingIconText.tsx";
-import Button from "@components/landing/Button.tsx";
+import FAQArea from "@components/landing/FAQArea.tsx";
+import InfoArea from "@components/landing/InfoArea.tsx";
 ---
 
-<Layout title="Arqontact | Inicio">
+<Layout title="Inicio | Arqontact">
 	<main id="landing-page" class="w-full h-full relative bg-gray-100">
-		<Navbar />
+		<Navbar client:load />
 		<section class="h-[calc(100vh-6rem)] relative flex items-center">
 			<div
 				class="bg-white absolute z-10 w-full h-full"
-				style="clip-path: 'polygon(0 0, 0 100%, 100% 0)"
+				style="clip-path: polygon(0 0, 0 100%, 100% 0)"
 			>
 			</div>
 			<div
 				class="self-end right-0 bg-white absolute md:z-30 w-[60vw] h-[60%] xl:w-[55vw] xl:h-[55%]"
-				style="clip-path: 'polygon(100% 100%, 0 100%, 100% 0)"
+				style="clip-path: polygon(100% 100%, 0 100%, 100% 0)"
 			>
 			</div>
-			<div
-				class="white-gradient z-[25] absolute bottom-0 w-full h-24"
-			>
+			<div class="white-gradient z-[25] absolute bottom-0 w-full h-24">
 			</div>
-			<div
-				class="px-6 md:px-10 lg:px-28 w-full h-full flex items-center"
-			>
+			<div class="px-6 md:px-10 lg:px-28 w-full h-full flex items-center">
 				<div
 					class="w-full h-full z-[15] flex-1 grow flex flex-col justify-center items-center space-y-10"
 				>
@@ -57,7 +48,7 @@ import Button from "@components/landing/Button.tsx";
 								<div class="relative bg-black bg-opacity-0">
 									<Icon
 										classes="text-2xl text-amber-400"
-										icon="fas fa-google-play"
+										icon="fab fa-google-play"
 									/>
 								</div>
 								<div
@@ -96,8 +87,8 @@ import Button from "@components/landing/Button.tsx";
 					<img
 						class="absolute z-20"
 						src="/worker.png"
-						width={525}
-						height={60}
+						width="525"
+						height="60"
 						alt="worker-cover"
 					/>
 				</div>
@@ -111,10 +102,7 @@ import Button from "@components/landing/Button.tsx";
 				<div
 					class="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5"
 				>
-					<Icon
-						classes="text-lg text-amber-400"
-						icon="fas fa-user"
-					/>
+					<Icon classes="text-lg text-amber-400" icon="fas fa-user" />
 				</div>
 				<span class="text-3xl lg:text-5xl">Nosotros</span>
 			</h1>
@@ -134,8 +122,8 @@ import Button from "@components/landing/Button.tsx";
 			<div class="flex flex-1 grow items-center justify-center">
 				<img
 					src="/landing_profile.svg"
-					width={400}
-					height={225}
+					width="400"
+					height="225"
 					alt="profile"
 				/>
 			</div>
@@ -143,126 +131,18 @@ import Button from "@components/landing/Button.tsx";
 		<section
 			class="relative flex flex-col text-gray-800 px-6 md:px-10 lg:px-28 py-12 md:py-24 bg-white"
 		>
-			<Switch target="table">
-				<h1
-					class="w-full mb-16 text-center text-3xl lg:text-5xl font-semibold"
-				>
-					Con Arqontact
-				</h1>
-				<div
-					class="flex flex-wrap md:space-y-16 justify-center md:justify-between xl:items-center items-start"
-				>
-					<div class="flex flex-col md:space-y-16">
-						<InteractiveTrigger
-							event="onClick"
-							id="table"
-							self="table"
-							field="active"
-						>
-							<LandingIconText
-								icon={{ classes: "text-2xl text-amber-400", icon: "fas fa-table" }}
-								description="Podrás organizar a la gente trabajando en tu proyecto."
-							/>
-						</InteractiveTrigger>
-						<InteractiveTrigger
-							event="onClick"
-							id="usercheck"
-							self="usercheck"
-							field="active"
-						>
-							<LandingIconText
-								icon={{ classes: "text-2xl text-amber-400", icon: "fas fa-user-check" }}
-								description="Verás las reseñas del trabajador de otros arquitectos."
-							/>
-						</InteractiveTrigger>
-					</div>
-					<div
-						class="w-[250px] h-[490px] hidden md:flex xl:relative xl:top-0 sticky top-1/4"
-					>
-						<Target field="condition" self="table">
-							<AnimatedIf>
-								<img
-									src="/organizer.jpg"
-									width={250}
-									height={490}
-									alt="organizer"
-									class={`absolute`}
-								/>
-							</AnimatedIf>
-						</Target>
-						<Target field="condition" self="usercheck">
-							<AnimatedIf>
-								<img
-									src="/reviews.jpg"
-									width={250}
-									height={490}
-									alt="reviews"
-									class={`absolute`}
-								/>
-							</AnimatedIf>
-						</Target>
-						<Target field="condition" self="img">
-							<AnimatedIf>
-								<img
-									src="/galleries.jpg"
-									width={250}
-									height={490}
-									alt="galleries"
-									class={`absolute`}
-								/>
-							</AnimatedIf>
-						</Target>
-						<Target field="condition" self="wifi">
-							<AnimatedIf>
-								<img
-									src="/map.jpg"
-									width={250}
-									height={490}
-									alt="map"
-									class={`absolute`}
-								/>
-							</AnimatedIf>
-						</Target>
-					</div>
-					<div class="flex flex-col md:space-y-16">
-						<InteractiveTrigger
-							event="onClick"
-							id="img"
-							self="img"
-							field="active"
-						>
-							<LandingIconText
-								icon={{ classes: "text-2xl text-amber-400", icon: "fas fa-image" }}
-								description="Verás como es el trabajo de los obreros."
-							/>
-						</InteractiveTrigger>
-						<InteractiveTrigger
-							event="onClick"
-							id="wifi"
-							self="wifi"
-							field="active"
-						>
-							<LandingIconText
-								icon={{ classes: "text-2xl text-amber-400", icon: "fas fa-wifi" }}
-								description="No necesitarás moverte de donde estés."
-							/>
-						</InteractiveTrigger>
-					</div>
-				</div>
-			</Switch>
+			<InfoArea client:load />
 		</section>
 		<section
 			class="flex flex-col border-y-2 border-dashed border-gray-300 py-14 space-y-6 justify-center items-center bg-gray-100 px-6 md:px-10 lg:px-28"
 		>
 			<img
 				src="/landing_server.svg"
-				width={150}
-				height={190}
+				width="150"
+				height="190"
 				alt="profile"
 			/>
-			<div
-				class="bg-white rounded-md px-10 py-8 flex flex-col space-y-5"
-			>
+			<div class="bg-white rounded-md px-10 py-8 flex flex-col space-y-5">
 				<p
 					class="w-auto lg:w-[600px] text-center text-2xl lg:text-3xl font-semibold"
 				>
@@ -286,10 +166,7 @@ import Button from "@components/landing/Button.tsx";
 				<div
 					class="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5"
 				>
-					<Icon
-						classes="text-lg text-amber-400"
-						icon="fas fa-cogs"
-					/>
+					<Icon classes="text-lg text-amber-400" icon="fas fa-cogs" />
 				</div>
 				<span class="text-3xl lg:text-5xl">¿Cómo funciona?</span>
 			</h1>
@@ -418,9 +295,7 @@ import Button from "@components/landing/Button.tsx";
 							<div
 								class="w-6 h-6 bg-lime-200 rounded-full flex justify-center items-center"
 							>
-								<div
-									class="w-3 h-3 bg-lime-500 rounded-full"
-								>
+								<div class="w-3 h-3 bg-lime-500 rounded-full">
 								</div>
 							</div>
 							<div class="flex justify-center items-center">
@@ -648,81 +523,10 @@ import Button from "@components/landing/Button.tsx";
 						icon="fas fa-question"
 					/>
 				</div>
-				<span class="text-3xl lg:text-5xl"
-					>Preguntas frecuentes</span
-				>
+				<span class="text-3xl lg:text-5xl">Preguntas frecuentes</span>
 			</h1>
-			<div
-				class="w-full sm:w-auto flex flex-col space-y-8 md:space-y-0 md:flex-row md:space-x-6"
-			>
-				<Switch target={0}>
-					<div
-						class="w-full sm:w-auto pb-2 flex-nowrap overflow-x-auto flex space-x-4 md:space-x-0 md:flex-col md:space-y-4"
-					>
-						<InteractiveTrigger
-							event="onClick"
-							id={0}
-							self={0}
-							field="active"
-						>
-							<Button>Aplicación</Button>
-						</InteractiveTrigger>
-						<InteractiveTrigger
-							event="onClick"
-							id={1}
-							self={1}
-							field="active"
-						>
-							<Button>Suscripciones</Button>
-						</InteractiveTrigger>
-						<InteractiveTrigger
-							event="onClick"
-							id={2}
-							self={2}
-							field="active"
-						>
-							<Button>Servicios</Button>
-						</InteractiveTrigger>
-					</div>
-					<FAQSection>
-						<Target field="condition" self={0}>
-							<If>
-								<FAQItem
-									question="¿Cuando saldrá la aplicación al mercado?"
-									answer="Se planea que la aplicación salga la luz a más tardar en Enero 2024, listos para iniciar un nuevo año con todo."
-								/>
-								<FAQItem question="Aplicación" answer="ola" />
-								<FAQItem question="Aplicación" answer="ola" />
-							</If>
-						</Target>
-						<Target field="condition" self={1}>
-							<If>
-								<FAQItem
-									question="¿Cuáles son las suscripciones que manejan?"
-									answer="Por el momento, solo mantendremos un producto, el poder posicionar mejor tus tableros en relación a otros en la plataforma."
-								/>
-								<FAQItem
-									question="Suscripciones"
-									answer="ola"
-								/>
-								<FAQItem
-									question="Suscripciones"
-									answer="ola"
-								/>
-							</If>
-						</Target>
-						<Target field="condition" self={2}>
-							<If>
-								<FAQItem
-									question="¿Cuál es el precio de los servicios?"
-									answer="Nuestros servicios son gratuitos hasta cierto punto, solamente tendrás que pagar para acceder a algunas funcionalidades."
-								/>
-								<FAQItem question="Servicios" answer="ola" />
-								<FAQItem question="Servicios" answer="ola" />
-							</If>
-						</Target>
-					</FAQSection>
-				</Switch>
+			<div class="w-full sm:w-auto flex flex-col md:flex-row gap-6">
+				<FAQArea client:load />
 			</div>
 		</section>
 		<section
@@ -730,7 +534,7 @@ import Button from "@components/landing/Button.tsx";
 			class="flex flex-col justify-center items-center bg-white px-6 md:px-10 lg:px-28 py-12 md:py-28"
 		>
 			<div
-				class="w-full flex flex-col lg:flex-row items-center space-y-16 lg:space-y-0 md:space-x-8 text-gray-800"
+				class="w-full flex flex-col lg:flex-row items-center space-y-16 lg:space-y-0 lg:space-x-8 text-gray-800"
 			>
 				<div class="flex w-full lg:w-96 flex-col space-y-8">
 					<h1 class="w-full font-semibold flex items-center">
@@ -787,9 +591,7 @@ import Button from "@components/landing/Button.tsx";
 						class="w-auto flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:space-x-10"
 					>
 						<div class="flex flex-col w-full space-y-2">
-							<label
-								for="name"
-								class="text-lg font-medium"
+							<label for="name" class="text-lg font-medium"
 								>Nombre (s)</label
 							>
 							<input
@@ -800,9 +602,8 @@ import Button from "@components/landing/Button.tsx";
 							/>
 						</div>
 						<div class="flex flex-col w-full space-y-2">
-							<label
-								for="email"
-								class="text-lg font-medium">Email</label
+							<label for="email" class="text-lg font-medium"
+								>Email</label
 							>
 							<input
 								required
@@ -822,9 +623,8 @@ import Button from "@components/landing/Button.tsx";
 					}
 					<div class="w-auto flex space-x-10">
 						<div class="flex flex-col w-full space-y-2">
-							<label
-								for="message"
-								class="text-lg font-medium">Mensaje</label
+							<label for="message" class="text-lg font-medium"
+								>Mensaje</label
 							>
 							<textarea
 								required
@@ -893,7 +693,7 @@ import Button from "@components/landing/Button.tsx";
 							<div class="relative bg-black bg-opacity-0">
 								<Icon
 									classes="text-lg text-amber-400"
-									icon="fas fa-google-play"
+									icon="fab fa-google-play"
 								/>
 							</div>
 							<div class="text-amber-400 text-lg font-bold">
@@ -923,10 +723,16 @@ import Button from "@components/landing/Button.tsx";
 			<img
 				class="inline"
 				src="/logo_dark.svg"
-				width={210}
-				height={40}
+				width="210"
+				height="40"
 				alt="logo"
 			/>
 		</footer>
 	</main>
 </Layout>
+
+<style>
+	.white-gradient {
+		background: linear-gradient(transparent, #fff);
+	}
+</style>

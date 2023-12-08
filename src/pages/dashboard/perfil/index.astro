@@ -1,0 +1,190 @@
+---
+import AppLayout from "@layouts/AppLayout.astro";
+import Icon from "@components/common/Icon.astro";
+import Carrousel from "@components/common/Carrousel.tsx";
+import Navbar from "@components/app/Navbar";
+import Header from "@components/dashboard/Header";
+import List from "@components/dashboard/List";
+
+---
+
+<AppLayout title="Perfil">
+    <header class="flex-shrink-0 bg-white flex flex-col gap-6 border-b border-gray-200 pt-5 px-5">
+        <div class="flex justify-between">
+            <a href="/dashboard" data-astro-reload="push" class='text-gray-600'>
+                <Icon icon="fas fa-chevron-left"/>
+            </a>
+            <div class="flex gap-6 text-[#0088ff]">
+                <Icon icon="fas fa-bookmark"/>
+                <Icon icon="fas fa-share-alt"/>
+            </div>
+        </div>
+        <div class="flex gap-6 items-center">
+            <img class='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
+            <div class="w-full flex flex-col text-xs gap-2">
+                <h2 class='text-sm font-medium'>Juan José Cruz Aguirre</h2>
+                <div class='w-auto self-start flex items-center bg-amber-100 text-amber-400 rounded-md px-2 py-1 gap-3'>
+                    <span>Bloquero</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Querétaro, QRO.</span>
+                    <div class='w-auto flex items-center bg-amber-100 text-amber-400 rounded-md px-2 py-1 gap-3'>
+                        <span>4.5</span>
+                        <Icon icon="fas fa-star"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex">
+            <div class='flex justify-center flex-grow flex-shrink-0'>
+                <!-- <span onClick={() => setItem(0)} class={`flex flex-col justify-center text-sm ${currentPanel == 0 ? 'text-amber-400' : 'text-gray-400'} transition-all`}>
+                    <Icon icon="fas faUserAlt"/>
+                    { currentPanel == 0 ? <motion.div layoutId='header-underline' class='w-8 h-[3px] mt-2 rounded-t-md bg-amber-400'></motion.div>
+                     : <div class='w-8 h-[3px] bg-transparent mt-2'></div> }
+                </span> -->
+            </div>
+            <div class='flex justify-center flex-grow flex-shrink-0'>
+                <!-- <span onClick={() => setItem(1)} class={`flex flex-col justify-center text-sm ${currentPanel == 1 ? 'text-amber-400' : 'text-gray-400'} transition-all`}>
+                    <Icon icon="fas faMessage"/>
+                    { currentPanel == 1 ? <motion.div layoutId='header-underline' class='w-8 h-[3px] mt-2 rounded-t-md bg-amber-400'></motion.div>
+                     : <div class='w-8 h-[3px] bg-transparent mt-2'></div> }
+                </span> -->
+            </div>
+            <div class='flex justify-center flex-grow flex-shrink-0'>
+                <!-- <span onClick={() => setItem(2)} class={`flex flex-col justify-center text-sm ${currentPanel == 2 ? 'text-amber-400' : 'text-gray-400'} transition-all`}>
+                    <Icon icon="fas faBorderAll"/>
+                    { currentPanel == 2 ? <motion.div layoutId='header-underline' class='w-8 h-[3px] mt-2 rounded-t-md bg-amber-400'></motion.div>
+                     : <div class='w-8 h-[3px] bg-transparent mt-2'></div> }
+                </span> -->
+            </div>
+        </div>
+    </header>
+    <div class='w-screen h-full bg-gray-100 flex overflow-x-auto no-scrollbar snap-x snap-mandatory'>
+        <div class="snap-center flex-shrink-0 w-screen h-full p-5 flex flex-col gap-6">
+            <div class="flex flex-col gap-2 text-xs">
+                <h2 class='uppercase text-gray-500 font-semibold'>Contacto</h2>
+                <div class="bg-white rounded-lg flex flex-col divide-y divide-gray-100">
+                    <div class="py-3 px-5 flex justify-between">
+                        <span class='font-medium'>Teléfono:</span>
+                        <div class="flex items-center gap-3">
+                            <span>4461117033</span>
+                            <span class='text-gray-500'>
+                                <Icon icon="fas faUserAlt"/>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 text-xs">
+                <h2 class='uppercase text-gray-500 font-semibold'>Localización</h2>
+                <div class="bg-white rounded-lg flex flex-col divide-y divide-gray-100">
+                    <div class="py-3 px-5 flex justify-between">
+                        <span class='font-medium'>Residencia:</span>
+                        <div class="flex items-center gap-3">
+                            <span>Querétaro, Querétaro</span>
+                        </div>
+                    </div>
+                    <div class="py-3 px-5 flex justify-between">
+                        <span class='font-medium'>Origen</span>
+                        <div class="flex items-center gap-3">
+                            <span>Michoacán, Zamora</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 text-xs">
+                <h2 class='uppercase text-gray-500 font-semibold'>Habilidad</h2>
+                <div class="bg-white rounded-lg flex flex-col divide-y divide-gray-100">
+                    <div class="py-3 px-5 flex justify-between">
+                        <span class='font-medium'>Rol:</span>
+                        <div class="flex items-center gap-3">
+                            <span>Constructor</span>
+                        </div>
+                    </div>
+                    <div class="py-3 px-5 flex flex-col gap-2">
+                        <span class='font-medium'>Puestos:</span>
+                        <div class="flex gap-3">
+                        <button class='flex-shrink-0 flex items-center bg-amber-100 text-amber-400 rounded-md px-4 py-1 gap-3'>
+                            <span>Bloquero</span>
+                        </button>
+                        <button class='flex-shrink-0 flex items-center bg-amber-100 text-amber-400 rounded-md px-4 py-1 gap-3'>
+                            <span>Bloquero</span>
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="snap-center flex-shrink-0 w-screen h-full flex flex-col justify-start no-scrollbar overflow-y-auto p-5">
+            <div class="flex flex-col gap-6">
+                {
+                    Array(5).fill(0).map((e, i) => {
+                        return (
+                            <div class="flex flex-col gap-2 text-xs">
+                                <div class="w-full flex justify-between">
+                                    <div class="flex gap-3">
+                                        <img class='w-4 h-4 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
+                                        <span class='font-semibold'>John Connor</span>
+                                    </div>
+                                    <span class='flex gap-3 text-amber-400'>
+                                        <Icon icon="fas fa-star"/>
+                                        <span>5/5</span>
+                                    </span>
+                                </div>
+                                <div class="bg-white rounded-lg flex flex-col gap-4 py-3 px-5">
+                                    <h3>Muy buen trabajo.</h3>
+                                    <p class='text-gray-500'>La neta se anduvo rifando bien perro con los muros de block. Muy bien puestos, se los aventaba de volada, 100% recomendado</p>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        </div>
+        <div class="snap-center flex-shrink-0 w-screen h-full flex flex-col justify-start no-scrollbar overflow-y-auto p-5">
+            <div class="flex flex-col gap-6">
+                {
+                    Array(1).fill(0).map((e, i) => {
+                        return (
+                            <div class="bg-white flex flex-col items-center gap-3 py-4 px-2 rounded-md">
+                                <div class='relative w-[300px] h-[300px]'>
+                                    <Carrousel client:load>
+                                        <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>
+                                        <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240512/EB-JH8782.JPG" alt="gallery-item" />
+                                        <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240509/EB-JH8782.JPG" alt="gallery-item" />
+                                    </Carrousel>
+                                    {/* {
+                                        currentItem != 0 ? <div onClick={previous} class='w-10 h-10 bg-[rgba(255,255,255,.5)] rounded-full flex justify-center items-center absolute top-1/2 left-2'>
+                                            <Icon icon="fas faChevronLeft"/>
+                                        </div> : null
+                                    }
+                                    {
+                                        currentItem != 2 ? <div onClick={next} class='w-10 h-10 bg-[rgba(255,255,255,.5)] rounded-full flex justify-center items-center absolute top-1/2 right-2'>
+                                            <Icon icon="fas faChevronRight"/>
+                                        </div> : null
+                                    } */}
+                                    <div class="bg-[rgba(0,0,0,.3)] w-full flex justify-center py-1 gap-1 bottom-0 left-0 absolute">
+                                        {
+                                            Array(3).fill(0).map((f, j) => {
+                                                return (
+                                                    <div class={`w-2 h-2 rounded-full ${j == 0 ? 'bg-white' : 'bg-[rgba(255,255,255,.3)]'}`}></div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                                <div class='w-[300px] text-sm flex gap-1'>
+                                    <p class='line-clamp-1 break-words'>Ola demonio, esta es una casa muy chingona que está aquí en Querétaro. Ola demonio, esta es una casa muy chingona que está aquí en Querétaro. Ola demonio, esta es una casa muy chingona que está aquí en Querétaro.</p>
+                                    <span class='font-medium'>más</span>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        </div>
+    </div>
+    <!-- <nav class="z-20 flex-shrink-0 w-screen bg-white flex justify-between p-5 border-t border-gray-200">
+        <Navbar client:load transition:name="app-navbar" transition:persist/>
+    </nav> -->
+</AppLayout>

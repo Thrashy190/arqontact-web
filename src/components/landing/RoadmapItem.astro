@@ -9,6 +9,6 @@ const { classes, right } = Astro.props;
 
 <div class={`w-full ${ classes ?? '' } flex ${ right ? 'justify-center lg:justify-start' : 'justify-center lg:justify-start' } items-center border-2 border-gray-200 rounded-xl p-4 xs:p-8 lg:border-0 space-x-8`}>
     <div class="flex flex-col space-y-8">
-        <slot>
+        <slot />
     </div>
 </div>

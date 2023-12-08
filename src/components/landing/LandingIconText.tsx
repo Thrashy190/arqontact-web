@@ -1,7 +1,7 @@
-import React, { useRef } from "react"
+import { useRef } from "react"
 import { useScroll } from "framer-motion"
 
-import Icon from "@types/components/Icon.tsx";
+import type { Icon } from "@customTypes/components/Icon";
 
 interface Props {
   active?: boolean
