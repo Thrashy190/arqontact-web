@@ -1,5 +1,4 @@
-import { Switch, Trigger, Target, InteractiveTrigger } from "@components/common/Switch";
-import If from "@components/common/If";
+import { Switch, Target, InteractiveTrigger } from "@components/common/Switch";
 import AnimatedIf from "@components/common/AnimatedIf";
 
 import LandingIconText from "@components/landing/LandingIconText";
@@ -23,7 +22,7 @@ export default function InfoArea() {
                         field="active"
                     >
                         <LandingIconText
-                            icon={{ classes: "text-2xl text-amber-400", icon: "fas fa-table" }}
+                            icon={{ classes: "w-6 h-6 flex-shrink-0 text-amber-400", icon: "fa-solid:table" }}
                             description="Podrás organizar a la gente trabajando en tu proyecto."
                         />
                     </InteractiveTrigger>
@@ -34,7 +33,7 @@ export default function InfoArea() {
                         field="active"
                     >
                         <LandingIconText
-                            icon={{ classes: "text-2xl text-amber-400", icon: "fas fa-user-check" }}
+                            icon={{ classes: "w-6 h-6 flex-shrink-0 text-amber-400", icon: "fa-solid:user-check" }}
                             description="Verás las reseñas del trabajador de otros arquitectos."
                         />
                     </InteractiveTrigger>
@@ -95,7 +94,7 @@ export default function InfoArea() {
                         field="active"
                     >
                         <LandingIconText
-                            icon={{ classes: "text-2xl text-amber-400", icon: "fas fa-image" }}
+                            icon={{ classes: "w-6 h-6 flex-shrink-0 text-amber-400", icon: "fa-solid:image" }}
                             description="Verás como es el trabajo de los obreros."
                         />
                     </InteractiveTrigger>
@@ -106,7 +105,7 @@ export default function InfoArea() {
                         field="active"
                     >
                         <LandingIconText
-                            icon={{ classes: "text-2xl text-amber-400", icon: "fas fa-wifi" }}
+                            icon={{ classes: "w-6 h-6 flex-shrink-0 text-amber-400", icon: "fa-solid:wifi" }}
                             description="No necesitarás moverte de donde estés."
                         />
                     </InteractiveTrigger>

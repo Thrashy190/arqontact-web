@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Icon from "@components/common/Icon.astro";
+import { Icon } from "astro-icon";
 
 import Navbar from "@components/landing/Navbar.tsx";
 import RoadmapItem from "@components/landing/RoadmapItem.astro";
@@ -43,16 +43,13 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 					>
 						<a href="/dashboard">
 							<button
-								class="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex"
+								class="text-amber-400 transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex"
 							>
 								<div class="relative bg-black bg-opacity-0">
-									<Icon
-										classes="text-2xl text-amber-400"
-										icon="fab fa-google-play"
-									/>
+									<Icon name="fa-brands:google-play" class="w-6 h-6"/>
 								</div>
 								<div
-									class="text-amber-400 text-lg lg:text-2xl font-bold"
+									class="text-lg lg:text-2xl font-bold"
 								>
 									Google Play
 								</div>
@@ -60,16 +57,13 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 						</a>
 						<a href="/dashboard">
 							<button
-								class="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex"
+								class="text-amber-400 transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex"
 							>
 								<div class="relative bg-black bg-opacity-0">
-									<Icon
-										classes="text-2xl text-amber-400"
-										icon="fab fa-apple"
-									/>
+									<Icon name="fa-brands:apple" class="w-6 h-6"/>
 								</div>
 								<div
-									class="text-amber-400 text-lg lg:text-2xl font-bold"
+									class="text-lg lg:text-2xl font-bold"
 								>
 									App Store
 								</div>
@@ -100,9 +94,9 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 		>
 			<h1 class="w-full md:mb-8 font-semibold flex items-center">
 				<div
-					class="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5"
+					class="bg-white text-amber-400 w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5"
 				>
-					<Icon classes="text-lg text-amber-400" icon="fas fa-user" />
+					<Icon name="fa-solid:user" class="flex-shrink-0 w-4 h-4"/>
 				</div>
 				<span class="text-3xl lg:text-5xl">Nosotros</span>
 			</h1>
@@ -166,7 +160,7 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 				<div
 					class="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5"
 				>
-					<Icon classes="text-lg text-amber-400" icon="fas fa-cogs" />
+					<Icon class="flex-shrink-0 w-4 h-4 text-amber-400" name="fa-solid:cogs" />
 				</div>
 				<span class="text-3xl lg:text-5xl">¿Cómo funciona?</span>
 			</h1>
@@ -254,8 +248,8 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 									class="bg-amber-100 text-amber-400 rounded-md p-3 flex items-center"
 								>
 									<Icon
-										classes="text-lg text-amber-400"
-										icon="fas fa-project-diagram"
+										class="w-4 h-4"
+										name="fa-solid:project-diagram"
 									/>
 								</div>
 							</div>
@@ -300,8 +294,8 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 							</div>
 							<div class="flex justify-center items-center">
 								<Icon
-									classes="text-lg text-gray-400"
-									icon="fas fa-trash-alt"
+									class="w-4 h-4 text-gray-400"
+									name="fa-solid:trash-alt"
 								/>
 							</div>
 						</div>
@@ -368,8 +362,8 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 							>
 								<span>+5</span>
 								<Icon
-									classes="text-lg text-amber-400"
-									icon="fas fa-bell"
+									class="w-4 h-4"
+									name="fa-solid:bell"
 								/>
 							</div>
 						</div>
@@ -448,8 +442,8 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 									class="bg-amber-100 text-amber-400 rounded-md p-3 flex items-center"
 								>
 									<Icon
-										classes="text-lg text-amber-400"
-										icon="fas fa-project-diagram"
+										class="w-4 h-4"
+										name="fa-solid:project-diagram"
 									/>
 								</div>
 							</div>
@@ -499,8 +493,8 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 							>
 								<span>+5</span>
 								<Icon
-									classes="text-lg text-amber-400"
-									icon="fas fa-bell"
+									class="w-4 h-4"
+									name="fa-solid:bell"
 								/>
 							</div>
 						</div>
@@ -519,8 +513,8 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 					class="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5"
 				>
 					<Icon
-						classes="text-lg text-amber-400"
-						icon="fas fa-question"
+						class="w-4 h-4 flex-shrink-0 text-amber-400"
+						name="fa-solid:question"
 					/>
 				</div>
 				<span class="text-3xl lg:text-5xl">Preguntas frecuentes</span>
@@ -542,8 +536,8 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 							class="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5"
 						>
 							<Icon
-								classes="text-lg text-amber-400"
-								icon="fas fa-envelope"
+								class="w-4 h-4 flex-shrink-0 text-amber-400"
+								name="fa-solid:envelope"
 							/>
 						</div>
 						<span class="text-3xl lg:text-5xl">Contacto</span>
@@ -553,30 +547,30 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 						rápido que podamos.
 					</p>
 					<div
-						class="flex justify-around sm:justify-start sm:space-x-10"
+						class="text-amber-400 flex justify-around sm:justify-start sm:space-x-10"
 					>
 						<div class="transition-all hover:scale-110">
 							<Icon
-								classes="text-3xl text-amber-400"
-								icon="fab fa-facebook-f"
+								class="w-8 h-8"
+								name="fa-brands:facebook-f"
 							/>
 						</div>
 						<div class="transition-all hover:scale-110">
 							<Icon
-								classes="text-3xl text-amber-400"
-								icon="fab fa-linkedin"
+								class="w-8 h-8"
+								name="fa-brands:linkedin"
 							/>
 						</div>
 						<div class="transition-all hover:scale-110">
 							<Icon
-								classes="text-3xl text-amber-400"
-								icon="fab fa-twitter"
+								class="w-8 h-8"
+								name="fa-brands:twitter"
 							/>
 						</div>
 						<div class="transition-all hover:scale-110">
 							<Icon
-								classes="text-3xl text-amber-400"
-								icon="fab fa-instagram"
+								class="w-8 h-8"
+								name="fa-brands:instagram"
 							/>
 						</div>
 					</div>
@@ -654,8 +648,8 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 					class="bg-white w-10 h-10 inline-flex justify-center items-center mr-4 rounded-full shadow-md p-5"
 				>
 					<Icon
-						classes="text-lg text-amber-400"
-						icon="fas fa-hammer"
+						class="w-4 h-4 flex-shrink-0 text-amber-400"
+						name="fa-solid:hammer"
 					/>
 				</div>
 				<span class="text-3xl lg:text-5xl">Para los obreros</span>
@@ -675,7 +669,7 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 						class="w-auto self-start flex items-center space-x-4 text-amber-400 border-b-2 border-amber-400"
 					>
 						<p class="font-medium">Más información</p>
-						<Icon icon="fas fa-external-link-alt" />
+						<Icon class="w-4 h-4" name="fa-solid:external-link-alt" />
 					</a>
 				</div>
 				<div
@@ -690,28 +684,24 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 						<button
 							class="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex"
 						>
-							<div class="relative bg-black bg-opacity-0">
-								<Icon
-									classes="text-lg text-amber-400"
-									icon="fab fa-google-play"
-								/>
-							</div>
-							<div class="text-amber-400 text-lg font-bold">
+							<Icon
+								class="w-6 h-6 flex-shrink-0 text-amber-400"
+								name="fa-brands:google-play"
+							/>
+							<span class="text-amber-400 text-lg font-bold">
 								Google Play
-							</div>
+							</span>
 						</button>
 						<button
 							class="transition-all hover:scale-110 self-end px-3.5 py-2.5 bg-amber-100 rounded-2xl justify-start items-center gap-5 inline-flex"
 						>
-							<div class="relative bg-black bg-opacity-0">
-								<Icon
-									classes="text-lg text-amber-400"
-									icon="fab fa-apple"
-								/>
-							</div>
-							<div class="text-amber-400 text-lg font-bold">
+							<Icon
+								class="w-6 h-6 flex-shrink-0 text-amber-400"
+								name="fa-brands:apple"
+							/>
+							<span class="text-amber-400 text-lg font-bold">
 								App Store
-							</div>
+							</span>
 						</button>
 					</div>
 				</div>

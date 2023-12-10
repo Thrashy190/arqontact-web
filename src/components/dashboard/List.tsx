@@ -1,5 +1,5 @@
+import { Icon } from "@iconify/react";
 import { useState, useRef } from "react";
-import { navigate } from 'astro:transitions/client';
 import { useDashboard } from "@stores/dashboard.store";
 
 export default function List() {
@@ -83,12 +83,12 @@ export default function List() {
         <div className="w-screen relative">
             {
                 mode == 'map' ? <div onClick={() => setListMode()} className="w-10 h-10 z-[15] bg-white flex justify-center items-center text-gray-400 absolute -top-8 right-5 border border-gray-200 rounded-md">
-                    <i className="fas fa-list"/>
+                    <Icon icon="fa6-solid:list"/>
                 </div> : null
             }
             {
                 listIsFull ? <div onClick={() => setMapMode()} className="w-10 h-10 z-[15] bg-white flex justify-center items-center text-gray-400 absolute right-5 bottom-5 border border-gray-200 rounded-md">
-                    <i className="fas fa-map"/>
+                    <Icon icon="fa6-solid:map"/>
                 </div> : null
             }
             <div 
@@ -108,7 +108,7 @@ export default function List() {
                         </div>
                         {
                             Array(10).fill(null).map((e, index) => {
-                                return <button key={index} onClick={() => navigate('/dashboard/perfil')}>
+                                return <a onClick={() => setMode('')} key={index} href='/dashboard/profile'>
                                     <div className="flex items-center gap-4 py-6 px-3">
                                         <img className='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
                                         <div className="w-full text-xs flex flex-col gap-2">
@@ -120,12 +120,12 @@ export default function List() {
                                                 <span>Querétaro, QRO.</span>
                                                 <div className='w-auto flex items-center bg-amber-100 text-amber-400 rounded-md px-2 py-1 gap-3'>
                                                     <span>4.5</span>
-                                                    <i className="fas fa-star"/>
+                                                    <Icon icon="fa6-solid:star"/>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </button>
+                                </a>
                             })
                         }
                     </div>
@@ -135,7 +135,7 @@ export default function List() {
                 mode == 'map' ? <div className="relative bg-gray-100 flex overflow-x-auto mobile-scrollbar gap-5 p-5">
                     {
                         Array(10).fill(null).map((e, index) => {
-                            return <button key={index} onClick={() => navigate('/dashboard/perfil')}>
+                            return <a onClick={() => setMode('')} key={index} href='/dashboard/profile'>
                                 <div className="w-[calc(100vw-4rem)] bg-white flex flex-shrink-0 items-center rounded-lg gap-4 py-6 px-3">
                                     <img className='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
                                     <div className="w-full flex flex-col text-xs gap-2">
@@ -147,12 +147,12 @@ export default function List() {
                                             <span>Querétaro, QRO.</span>
                                             <div className='w-auto flex items-center bg-amber-100 text-amber-400 rounded-md px-2 py-1 gap-3'>
                                                 <span>4.5</span>
-                                                <i className="fas fa-star"/>
+                                                    <Icon icon="fa6-solid:star"/>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </button>
+                            </a>
                         })
                     }
                 </div> : null

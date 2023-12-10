@@ -1,5 +1,6 @@
 import { useRef } from "react"
 import { useScroll } from "framer-motion"
+import { Icon as ReactIcon } from "@iconify/react";
 
 import type { Icon } from "@customTypes/components/Icon";
 
@@ -34,7 +35,7 @@ export default function LandingIconText({ active, icon, description, onClick }: 
   return (
     <div className="xs:w-96 p-4 xs:p-8 space-y-10 flex flex-col justify-center items-center">
       <button ref={targetElement} onClick={() => elementAction()} className={`${ active ? 'md:border-4 border-amber-400' : ''} transition-all hover:scale-110 w-20 h-20 flex justify-center items-center text-amber-400 rounded-full shadow-md`}>
-        <i className={`${icon.classes} ${icon.icon}`}></i>
+        <ReactIcon icon={icon.icon} className={icon.classes}></ReactIcon>
       </button>
       <p className='text-center w-full text-xl lg:text-2xl'>{ description }</p>
     </div>
