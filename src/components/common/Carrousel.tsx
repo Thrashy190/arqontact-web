@@ -62,12 +62,19 @@ interface CarrouselProps {
 function Target({ type = 'x', children, className }: CarrouselProps) {
     const carrousel = useRef<HTMLDivElement | null>(null);
     const ctx = useContext(CarrouselContext);
+    const [wasScroll, setWasScroll] = useState<boolean>(false);
 
     useEffect(() => {
         carrousel.current.scrollLeft = 0;
+        setWasScroll(true);
     }, [carrousel])
 
     useEffect(() => {
+        if (wasScroll) {
+            setWasScroll(false);
+            return;
+        }
+
         carrousel.current.scrollLeft = (ctx.currentItem * (carrousel.current.scrollWidth / ctx.childCount));
     }, [ctx.currentItem])
 
@@ -75,6 +82,7 @@ function Target({ type = 'x', children, className }: CarrouselProps) {
         let item = Math.ceil(e.target.scrollLeft / (carrousel.current.scrollWidth / ctx.childCount));
         if (item != ctx.currentItem) {
             ctx.changeCurrentItem(item);
+            setWasScroll(true);
         }
     }
 
