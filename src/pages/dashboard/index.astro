@@ -1,10 +1,12 @@
 ---
 import AppLayout from "@layouts/AppLayout.astro";
+import Overlay from "@components/common/Overlay";
 import Header from "@components/dashboard/Header";
 import List from "@components/dashboard/List";
 ---
 
 <AppLayout title="Dashboard">
+    <Overlay client:load />
     <Header client:load />
     <div class='w-screen h-full bg-gray-100'>
     </div>

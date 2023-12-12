@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
 type IModal = {
-    modal: string,
-    setModal: (modal: string) => void
+    modal: JSX.Element | null,
+    setModal: (modal: JSX.Element) => void
 }
 
 export const useModal = create<IModal>((set) => ({
-    modal: '',
+    modal: null,
     setModal: (modal) => set({ modal }),
 }))
