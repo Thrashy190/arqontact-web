@@ -11,25 +11,25 @@ export default function GradeFilters() {
                     <span className='text-base font-normal text-gray-400'>· por lo menos</span>
                 </div>
                 <div className="bg-white text-gray-600 flex rounded-lg divide-x divide-gray-200 border border-gray-200">
-                    <div className="px-2 py-1 flex-grow flex justify-center items-center gap-2">
+                    <div className="px-2 py-1 flex-1 flex justify-center items-center gap-2">
                         <span>
                             Cualquiera
                         </span>
                     </div>
-                    <div className="px-2 py-1 flex-grow flex justify-center items-center gap-2">
-                        <span className='flex-shrink-0'>
+                    <div className="px-2 py-1 flex-1 flex justify-center items-center gap-2">
+                        <span>
                             <Icon icon="fa6-solid:star" className="w-3 h-3"/>
                         </span>
                         <p>3.5</p>
                     </div>
-                    <div className="px-2 py-1 flex-grow flex justify-center items-center gap-2">
-                        <span className='flex-shrink-0'>
+                    <div className="px-2 py-1 flex-1 flex justify-center items-center gap-2">
+                        <span>
                             <Icon icon="fa6-solid:star" className="w-3 h-3"/>
                         </span>
                         <p>4.0</p>
                     </div>
-                    <div className="px-2 py-1 flex-grow flex justify-center items-center gap-2">
-                        <span className='flex-shrink-0'>
+                    <div className="px-2 py-1 flex-1 flex justify-center items-center gap-2">
+                        <span>
                             <Icon icon="fa6-solid:star" className="w-3 h-3"/>
                         </span>
                         <p>4.5</p>

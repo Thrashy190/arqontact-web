@@ -9,10 +9,10 @@ export default function OrderByFilters() {
                     <span>Ordenar por</span>
                 </div>
                 <div className="bg-white text-gray-600 flex rounded-lg divide-x divide-gray-200 border border-gray-200">
-                    <div className="px-2 py-1 flex-grow flex justify-center">
+                    <div className="px-2 py-1 flex-1 flex justify-center">
                         <span>Ascendente</span>
                     </div>
-                    <div className="px-2 py-1 flex-grow flex justify-center">
+                    <div className="px-2 py-1 flex-1 flex justify-center">
                         <span>Descendente</span>
                     </div>
                 </div>
