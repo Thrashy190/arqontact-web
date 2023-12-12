@@ -66,7 +66,6 @@ function Target({ type = 'x', children, className }: CarrouselProps) {
 
     useEffect(() => {
         carrousel.current.scrollLeft = 0;
-        setWasScroll(true);
     }, [carrousel])
 
     useEffect(() => {
