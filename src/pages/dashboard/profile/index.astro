@@ -3,18 +3,18 @@ import { Icon } from "astro-icon";
 import AppLayout from "@layouts/AppLayout.astro";
 import Profile from "@components/profiles/Profile.tsx";
 import Gallery from "@components/profiles/Gallery.tsx";
+import Overlay from "@components/common/Overlay";
+import ProfileOptions from "@components/profiles/ProfileOptions.tsx";
 ---
 
 <AppLayout title="Perfil">
+    <Overlay client:load />
     <Profile client:load>
         <div slot="links" class="flex justify-between">
             <a href="/dashboard" class='text-gray-600'>
                 <Icon name="fa-solid:chevron-left" class="w-4 h-4"/>
             </a>
-            <div class="flex gap-6 text-[#0088ff]">
-                <Icon name="fa-solid:bookmark" class="w-4 h-4"/>
-                <Icon name="fa-solid:share-alt" class="w-4 h-4"/>
-            </div>
+            <ProfileOptions client:load />
         </div>
         <div slot="profileHeader" class="flex gap-6 items-center">
             <img class='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
@@ -116,7 +116,7 @@ import Gallery from "@components/profiles/Gallery.tsx";
         <div slot="profileGalleries" class="snap-center flex-shrink-0 w-screen h-full flex flex-col justify-start no-scrollbar overflow-y-auto p-5">
             <div class="flex flex-col gap-6">
                 {
-                    Array(1).fill(0).map((e, i) => {
+                    Array(4).fill(0).map((e, i) => {
                         return (
                             <div class="w-full bg-white rounded-b-md flex flex-col items-center gap-3">
                                 <Gallery totalChildren={3} client:load>

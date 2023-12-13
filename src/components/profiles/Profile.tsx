@@ -1,5 +1,10 @@
 import { Carrousel, InteractiveTrigger, Observer, Target } from "@components/common/Carrousel.tsx";
 import ProfileLocation from "@components/profiles/ProfileLocation.tsx";
+import InviteBubble from "@components/profiles/actions/InviteBubble.tsx";
+import CommentBubble from "@components/profiles/actions/CommentBubble.tsx";
+import EmptyBubble from "@components/profiles/actions/EmptyBubble.tsx";
+
+import GalleryLocation from "./GalleryLocation";
 
 interface ProfileProps {
     children: any[],
@@ -28,6 +33,15 @@ export default function Profile({ links, profileHeader, profileInfo, profileComm
                     </InteractiveTrigger>
                 </div>
             </header>
+            <Observer key={0} field="active" self={0}>
+                <InviteBubble />
+            </Observer>
+            <Observer key={1} field="active" self={1}>
+                <CommentBubble />
+            </Observer>
+            <Observer key={2} field="active" self={2}>
+                <EmptyBubble />
+            </Observer>
             <Target className='w-screen h-full bg-gray-100'>
                 { ...[profileInfo, profileComments, profileGalleries] }
             </Target>
