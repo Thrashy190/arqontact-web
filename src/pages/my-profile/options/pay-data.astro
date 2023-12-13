@@ -1,0 +1,59 @@
+---
+import { Icon } from "astro-icon";
+import AppLayout from "@layouts/AppLayout.astro";
+import Overlay from "@components/common/Overlay";
+import StepScaffold from "@components/app/StepScaffold.astro";
+---
+
+<AppLayout title="Datos de pago">
+    <Overlay client:load />
+    <StepScaffold title="Datos de pago" backLink="/my-profile/options">
+        <div class="flex flex-col gap-6 overflow-y-auto mobile-scrollbar">
+            <div class="flex flex-col gap-2">
+                <h3 class="text-sm font-semibold uppercase text-gray-400 pb-2">Tarjetas</h3>
+                <a href="#" class="flex justify-between items-center gap-4 py-2">
+                    <div class="flex gap-3">
+                        <Icon name="fa-brands:cc-mastercard" class="w-6 h-6 text-gray-800"/>
+                        <div class="flex flex-col">
+                            <p class="font-semibold">Mastercard ....1234</p>
+                            <p class="text-sm text-gray-400">Vence el 12/22</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="bg-lime-500 p-2 rounded-full">
+                            <Icon name="fa-solid:check" class="w-4 h-4 text-white"/>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="flex justify-between items-center gap-4 py-2">
+                    <div class="flex gap-3">
+                        <Icon name="fa-brands:cc-visa" class="w-6 h-6 text-gray-800"/>
+                        <div class="flex flex-col">
+                            <p class="font-semibold">Visa ....1234</p>
+                            <p class="text-sm text-gray-400">Vence el 12/22</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="bg-gray-300 p-2 rounded-full">
+                            <Icon name="fa-solid:check" class="w-4 h-4 text-white"/>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="flex justify-center items-center gap-3 py-2 rounded-md border border-gray-200 text-action">
+                    <Icon name="fa-solid:plus" class="w-3 h-3"/>
+                    <p class="font-medium">Agregar tarjeta</p>
+                </a>
+            </div>
+            <div class="flex flex-col gap-2">
+                <h3 class="text-sm font-semibold uppercase text-gray-400 pb-2">Configuración</h3>
+                <div class="flex justify-between items-center gap-4">
+                    <p class="font-medium">Pagar siempre con tarjeta activa</p>
+                    <label class="switch flex-shrink-0">
+                        <input type="checkbox"/>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </StepScaffold>
+</AppLayout>

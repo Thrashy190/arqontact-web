@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon";
+import AppLayout from "@layouts/AppLayout.astro";
+import Overlay from "@components/common/Overlay";
+import StepScaffold from "@components/app/StepScaffold.astro";
+---
+
+<AppLayout title="Guardados">
+    <Overlay client:load />
+    <StepScaffold title="Guardados" backLink="/my-profile/options">
+        <div class="flex flex-col divide-y divide-gray-200 overflow-y-auto mobile-scrollbar">
+            {
+                Array(10).fill(null).map((e, index) => {
+                    return <a href='/dashboard/profile'>
+                        <div class="w-full bg-white flex flex-shrink-0 items-center gap-4 py-6 px-3">
+                            <img class='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
+                            <div class="w-full flex flex-col text-xs gap-2">
+                                <h2 class='text-sm font-medium'>Juan José Cruz Aguirre</h2>
+                                <div class='w-auto self-start flex items-center bg-amber-100 text-amber-400 rounded-md px-2 py-1 gap-3'>
+                                    <span>Bloquero</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Querétaro, QRO.</span>
+                                    <div class='w-auto flex items-center bg-amber-100 text-amber-400 rounded-md px-2 py-1 gap-3'>
+                                        <span>4.5</span>
+                                        <Icon name="fa-solid:star" class="w-3 h-3"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                })
+            }
+        </div>
+    </StepScaffold>
+</AppLayout>

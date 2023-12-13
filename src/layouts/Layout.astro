@@ -119,4 +119,53 @@ const { title } = Astro.props;
 		background-position: center;
 		border: 1px solid #FBBF24;
 	}
+
+	.switch {
+		display: inline-block;
+		height: 20px;
+		position: relative;
+		width: 36px;
+	}
+
+	.switch input {
+		display:none;
+	}
+
+	.slider {
+		background-color: #ccc;
+		bottom: 0;
+		cursor: pointer;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: .4s;
+	}
+
+	.slider:before {
+		background-color: #fff;
+		bottom: 2px;
+		content: "";
+		height: 16px;
+		left: 2px;
+		position: absolute;
+		transition: .4s;
+		width: 16px;
+	}
+
+	input:checked + .slider {
+		background-color: #fbbf24;
+	}
+
+	input:checked + .slider:before {
+		transform: translateX(16px);
+	}
+
+	.slider.round {
+		border-radius: 20px;
+	}
+
+	.slider.round:before {
+		border-radius: 50%;
+	}
 </style>

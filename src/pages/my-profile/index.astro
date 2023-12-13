@@ -7,14 +7,14 @@ import Overlay from "@components/common/Overlay";
 import ProfileOptions from "@components/profiles/ProfileOptions.tsx";
 ---
 
-<AppLayout title="Perfil">
+<AppLayout title="Mi perfil">
     <Overlay client:load />
     <Profile client:load>
-        <div slot="links" class="flex justify-between">
-            <a href="/dashboard" class='text-gray-600'>
-                <Icon name="fa-solid:chevron-left" class="w-4 h-4"/>
+        <div slot="links" class="flex justify-between py-3">
+            <h1 class="text-2xl font-medium">Mi perfil</h1>
+            <a href="/my-profile/options">
+                <Icon name="fa-solid:bars" className="w-6 h-6 text-gray-400" />
             </a>
-            <ProfileOptions client:load />
         </div>
         <div slot="profileHeader" class="flex gap-6 items-center">
             <img class='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
