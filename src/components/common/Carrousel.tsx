@@ -65,10 +65,6 @@ function Target({ type = 'x', children, className }: CarrouselProps) {
     const [wasScroll, setWasScroll] = useState<boolean>(false);
 
     useEffect(() => {
-        carrousel.current.scrollLeft = 0;
-    }, [carrousel])
-
-    useEffect(() => {
         if (wasScroll) {
             setWasScroll(false);
             return;
