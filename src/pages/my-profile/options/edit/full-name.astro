@@ -1,0 +1,18 @@
+---
+import AppLayout from "@layouts/AppLayout.astro";
+import Overlay from "@components/common/Overlay";
+import FullScreenForm from "@components/app/FullScreenForm.astro";
+---
+<AppLayout title="Datos personales">
+    <Overlay client:load />
+    <FullScreenForm backLink="/my-profile/options/edit" title="Datos personales" label="Confirmar">
+        <div class="flex flex-col gap-1">
+            <label class="font-medium text-sm" for="first_name">Nombre (s)</label>
+            <input class="bg-gray-100 text-gray-500 px-4 py-1 rounded-md" placeholder="Juan José" name="first_name" type="text">
+        </div>
+        <div class="flex flex-col gap-1">
+            <label class="font-medium text-sm" for="last_name">Apellido (s)</label>
+            <input class="bg-gray-100 text-gray-500 px-4 py-1 rounded-md" placeholder="Cruz Aguirre" name="last_name" type="text">
+        </div>
+    </FullScreenForm>
+</AppLayout>

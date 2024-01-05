@@ -1,0 +1,26 @@
+---
+import { Icon } from "astro-icon";
+interface Props {
+    card: string,
+    name: string,
+    expiration: string,
+    active?: boolean,
+}
+
+const { card, name, expiration, active = false } = Astro.props;
+---
+
+<a href="#" class={`${ active ? 'is-active-card bg-blue-50' : 'bg-white'} group flex justify-between items-center rounded-md gap-4 p-2`}>
+    <div class="flex gap-3">
+        <Icon name={`fa-brands:cc-${card}`} class="group-[.is-active-card]:text-blue-900 w-6 h-6 text-gray-800"/>
+        <div class="flex flex-col">
+            <p class="group-[.is-active-card]:text-blue-900 font-semibold">{ name }</p>
+            <p class="group-[.is-active-card]:text-blue-700 text-sm text-gray-400">Vence en { expiration }</p>
+        </div>
+    </div>
+    <div class="flex items-center gap-3">
+        <span class={`group-[.is-active-card]:bg-lime-500 bg-gray-300 p-2 rounded-full`}>
+            <Icon name="fa-solid:check" class="w-4 h-4 text-white"/>
+        </span>
+    </div>
+</a>

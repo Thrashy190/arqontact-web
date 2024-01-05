@@ -3,8 +3,7 @@ import ProfileLocation from "@components/profiles/ProfileLocation.tsx";
 import InviteBubble from "@components/profiles/actions/InviteBubble.tsx";
 import CommentBubble from "@components/profiles/actions/CommentBubble.tsx";
 import EmptyBubble from "@components/profiles/actions/EmptyBubble.tsx";
-
-import GalleryLocation from "./GalleryLocation";
+import { Fragment } from "react";
 
 interface ProfileProps {
     children: any[],
@@ -13,15 +12,16 @@ interface ProfileProps {
     profileInfo: JSX.Element,
     profileComments: JSX.Element,
     profileGalleries: JSX.Element,
+    withActions?: boolean,
 }
 
-export default function Profile({ links, profileHeader, profileInfo, profileComments, profileGalleries }: ProfileProps) {
+export default function Profile({ links, profileHeader, profileInfo, profileComments, profileGalleries, withActions = false }: ProfileProps) {
     return (
         <Carrousel totalChildren={3}>
-            <header className="flex-shrink-0 bg-white flex flex-col gap-6 border-b border-gray-200 pt-5 px-5">
+            <header className="flex-shrink-0 bg-white flex flex-col gap-6 border-b border-gray-200 pt-5 pb-2 px-5">
                 { links }
                 { profileHeader }
-                <div className="w-full flex">
+                <div className="bg-gray-100 p-1 gap-2 text-gray-600 flex rounded-xl">
                     <InteractiveTrigger event="onClick" field="active" id={0} self={0}>
                         <ProfileLocation icon="fa6-solid:user"/>
                     </InteractiveTrigger>
@@ -33,15 +33,20 @@ export default function Profile({ links, profileHeader, profileInfo, profileComm
                     </InteractiveTrigger>
                 </div>
             </header>
-            <Observer key={0} field="active" self={0}>
-                <InviteBubble />
-            </Observer>
-            <Observer key={1} field="active" self={1}>
-                <CommentBubble />
-            </Observer>
-            <Observer key={2} field="active" self={2}>
-                <EmptyBubble />
-            </Observer>
+            { withActions ?
+                <Fragment>
+                    <Observer field="active" self={0}>
+                        <InviteBubble />
+                    </Observer>
+                    <Observer field="active" self={1}>
+                        <CommentBubble />
+                    </Observer>
+                    <Observer field="active" self={2}>
+                        <EmptyBubble />
+                    </Observer>
+                </Fragment> :
+                null
+            }
             <Target className='w-screen h-full bg-gray-100'>
                 { ...[profileInfo, profileComments, profileGalleries] }
             </Target>

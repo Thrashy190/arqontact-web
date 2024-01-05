@@ -5,11 +5,11 @@ export default function OrderByFilters() {
     return (
         <div onClick={(e) => e.stopPropagation()} className={`w-full bg-white p-5 flex flex-col gap-10 rounded-t-xl self-end`}>
             <div className="flex flex-col gap-5">
-                <div className='flex items-center gap-1 text-gray-600 text-lg font-medium'>
-                    <span>Ordenar por</span>
+                <div className='flex items-center gap-1 text-gray-600 text-lg font-semibold'>
+                    <span>Tipo de orden</span>
                 </div>
-                <div className="bg-white text-gray-600 flex rounded-lg divide-x divide-gray-200 border border-gray-200">
-                    <div className="px-2 py-1 flex-1 flex justify-center">
+                <div className="bg-gray-100 p-2 gap-2 text-gray-600 flex rounded-xl">
+                    <div className="bg-white rounded-xl shadow-md font-semibold text-amber-400 px-2 py-1 flex-1 flex justify-center">
                         <span>Ascendente</span>
                     </div>
                     <div className="px-2 py-1 flex-1 flex justify-center">

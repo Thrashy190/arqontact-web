@@ -25,13 +25,14 @@ interface InteractiveTriggerProps {
     event: string
     field: string
     self?: any
+    loc?: string
 }
 
-function InteractiveTrigger({ children, event, field, id, self }: InteractiveTriggerProps) {
+function InteractiveTrigger({ children, event, field, id, self, loc = 'loc' }: InteractiveTriggerProps) {
     const ctx = useContext(CarrouselContext);
 
     let controlledChildren = Children.map(children, (el: React.ReactElement) => {
-        return cloneElement(el, { [event]: () => { ctx.changeCurrentItem(id) }, [field]: self != undefined ? ctx.currentItem === self : ctx.currentItem })
+        return cloneElement(el, { [event]: () => { ctx.changeCurrentItem(id) }, [loc ?? 'loc']: ctx.currentItem, [field]: self != undefined ? ctx.currentItem === self : ctx.currentItem })
     })
 
     return controlledChildren;

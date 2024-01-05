@@ -16,10 +16,10 @@ export default function ProfileLocation({ active = false, icon, onClick }: Props
 
     return (
         <div onClick={() => elementAction()} className='flex justify-center flex-grow flex-shrink-0'>
-            <span className={`flex flex-col justify-center text-sm ${active ? 'text-amber-400' : 'text-gray-400'} transition-all`}>
-                <Icon icon={icon} className={`self-center`}/>
-                { active ? <motion.div layoutId='header-underline' className='w-8 h-[3px] mt-2 rounded-t-md bg-amber-400'></motion.div>
-                : <div className='w-8 h-[3px] bg-transparent mt-2'></div> }
+            <span className={`w-6 h-6 flex flex-col justify-center text-sm ${active ? 'text-amber-400' : 'text-gray-400'} transition-all`}>
+                <Icon icon={icon} className={`self-center z-10`}/>
+                { active ? <motion.div layoutId='header-underline' className='z-0 absolute w-6 h-6 rounded-md bg-white'></motion.div>
+                : null }
             </span>
         </div>
     )

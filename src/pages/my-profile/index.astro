@@ -2,9 +2,11 @@
 import { Icon } from "astro-icon";
 import AppLayout from "@layouts/AppLayout.astro";
 import Profile from "@components/profiles/Profile.tsx";
-import Gallery from "@components/profiles/Gallery.tsx";
+import ProfileHeader from "@components/profiles/ProfileHeader.astro";
+import ProfileInfo from "@components/profiles/ProfileInfo.astro";
+import ProfileComments from "@components/profiles/ProfileComments.astro";
+import ProfileGalleries from "@components/profiles/ProfileGalleries.astro";
 import Overlay from "@components/common/Overlay";
-import ProfileOptions from "@components/profiles/ProfileOptions.tsx";
 ---
 
 <AppLayout title="Mi perfil">
@@ -16,123 +18,9 @@ import ProfileOptions from "@components/profiles/ProfileOptions.tsx";
                 <Icon name="fa-solid:bars" className="w-6 h-6 text-gray-400" />
             </a>
         </div>
-        <div slot="profileHeader" class="flex gap-6 items-center">
-            <img class='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
-            <div class="w-full flex flex-col text-xs gap-2">
-                <h2 class='text-sm font-medium'>Juan José Cruz Aguirre</h2>
-                <div class='w-auto self-start flex items-center bg-amber-100 text-amber-400 rounded-md px-2 py-1 gap-3'>
-                    <span>Bloquero</span>
-                </div>
-                <div class="flex items-center gap-4">
-                    <div class='w-auto flex items-center bg-amber-100 text-amber-400 rounded-md px-2 py-1 gap-3'>
-                        <span>4.5</span>
-                        <Icon name="fa-solid:star" class="w-3 h-3"/>
-                    </div>
-                    <span class="text-gray-500">7 posts</span>
-                </div>
-            </div>
-        </div>
-        <div slot="profileInfo" class="snap-center flex-shrink-0 w-screen h-full p-5 flex flex-col gap-6">
-            <div class="flex flex-col gap-2 text-xs">
-                <h2 class='uppercase text-gray-500 font-semibold'>Contacto</h2>
-                <div class="bg-white rounded-lg flex flex-col divide-y divide-gray-100">
-                    <div class="py-3 px-5 flex justify-between">
-                        <span class='font-medium'>Teléfono:</span>
-                        <div class="flex items-center gap-3">
-                            <span>4461117033</span>
-                            <span class='text-gray-500'>
-                                <Icon name="fa-solid:user" class="w-3 h-3"/>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col gap-2 text-xs">
-                <h2 class='uppercase text-gray-500 font-semibold'>Localización</h2>
-                <div class="bg-white rounded-lg flex flex-col divide-y divide-gray-100">
-                    <div class="py-3 px-5 flex justify-between">
-                        <span class='font-medium'>Residencia:</span>
-                        <div class="flex items-center gap-3">
-                            <span>Querétaro, Querétaro</span>
-                        </div>
-                    </div>
-                    <div class="py-3 px-5 flex justify-between">
-                        <span class='font-medium'>Origen</span>
-                        <div class="flex items-center gap-3">
-                            <span>Michoacán, Zamora</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col gap-2 text-xs">
-                <h2 class='uppercase text-gray-500 font-semibold'>Habilidad</h2>
-                <div class="bg-white rounded-lg flex flex-col divide-y divide-gray-100">
-                    <div class="py-3 px-5 flex justify-between">
-                        <span class='font-medium'>Rol:</span>
-                        <div class="flex items-center gap-3">
-                            <span>Constructor</span>
-                        </div>
-                    </div>
-                    <div class="py-3 px-5 flex flex-col gap-2">
-                        <span class='font-medium'>Puestos:</span>
-                        <div class="flex gap-3">
-                        <button class='flex-shrink-0 flex items-center bg-amber-100 text-amber-400 rounded-md px-4 py-1 gap-3'>
-                            <span>Bloquero</span>
-                        </button>
-                        <button class='flex-shrink-0 flex items-center bg-amber-100 text-amber-400 rounded-md px-4 py-1 gap-3'>
-                            <span>Bloquero</span>
-                        </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div slot="profileComments" class="snap-center flex-shrink-0 w-screen h-full flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5">
-            <div class="flex flex-col gap-6">
-                {
-                    Array(5).fill(0).map((e, i) => {
-                        return (
-                            <div class="flex flex-col gap-2 text-xs">
-                                <div class="w-full flex justify-between">
-                                    <div class="flex gap-3">
-                                        <img class='w-4 h-4 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
-                                        <span class='font-semibold'>John Connor</span>
-                                    </div>
-                                    <span class='flex items-center gap-3 text-amber-400'>
-                                        <Icon name="fa-solid:star" class="w-3 h-3"/>
-                                        <span>5/5</span>
-                                    </span>
-                                </div>
-                                <div class="bg-white rounded-lg flex flex-col gap-4 py-3 px-5">
-                                    <h3>Muy buen trabajo.</h3>
-                                    <p class='text-gray-500'>La neta se anduvo rifando bien perro con los muros de block. Muy bien puestos, se los aventaba de volada, 100% recomendado</p>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        </div>
-        <div slot="profileGalleries" class="snap-center flex-shrink-0 w-screen h-full flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5">
-            <div class="flex flex-col gap-6">
-                {
-                    Array(4).fill(0).map((e, i) => {
-                        return (
-                            <div class="w-full bg-white rounded-b-md flex flex-col items-center gap-3">
-                                <Gallery totalChildren={3} client:load>
-                                    <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>
-                                    <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240512/EB-JH8782.JPG" alt="gallery-item" />
-                                    <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240509/EB-JH8782.JPG" alt="gallery-item" />
-                                </Gallery>
-                                <div class='w-full px-3 text-sm flex gap-1 pb-3'>
-                                    <p class='line-clamp-1 break-words'>Ola demonio, esta es una casa muy chingona que está aquí en Querétaro. Ola demonio, esta es una casa muy chingona que está aquí en Querétaro. Ola demonio, esta es una casa muy chingona que está aquí en Querétaro.</p>
-                                    <span class='font-medium'>más</span>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        </div>
+        <ProfileHeader slot="profileHeader" />
+        <ProfileInfo slot="profileInfo" />
+        <ProfileComments slot="profileComments" />
+        <ProfileGalleries slot="profileGalleries" />
     </Profile>
 </AppLayout>

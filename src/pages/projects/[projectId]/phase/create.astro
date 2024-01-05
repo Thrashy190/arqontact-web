@@ -1,0 +1,21 @@
+---
+import AppLayout from "@layouts/AppLayout.astro";
+import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
+import Overlay from "@components/common/Overlay";
+import CreatePhase from "@components/projects/CreatePhase";
+
+export function getStaticPaths() {
+  return [
+    {params: {projectId: 1}},
+  ];
+}
+
+const { projectId } = Astro.params;
+---
+
+<AppLayout title="Crear etapa">
+    <Overlay client:load />
+    <FullScreenScaffold title="Crear etapa" backLink="/projects/1">
+        <CreatePhase client:load />
+    </FullScreenScaffold>
+</AppLayout>

@@ -6,11 +6,11 @@ export default function AllFilters() {
         <FullScreenModal title="Filtros">
             <div className="flex flex-col gap-5">
                 <div className="flex flex-col gap-5">
-                    <div className='flex items-center gap-1 text-gray-600 text-lg font-medium'>
-                        <span>Ordenar por</span>
+                    <div className='flex items-center gap-1 text-gray-600 text-lg font-semibold'>
+                        <span>Tipo de orden</span>
                     </div>
-                    <div className="bg-white text-gray-600 flex rounded-lg divide-x divide-gray-200 border border-gray-200">
-                        <div className="px-2 py-1 flex-1 flex justify-center">
+                    <div className="bg-gray-100 p-2 gap-2 text-gray-600 flex rounded-xl">
+                        <div className="bg-white rounded-xl shadow-md font-semibold text-amber-400 px-2 py-1 flex-1 flex justify-center">
                             <span>Ascendente</span>
                         </div>
                         <div className="px-2 py-1 flex-1 flex justify-center">
@@ -21,11 +21,28 @@ export default function AllFilters() {
             </div>
             <div className="flex flex-col gap-5">
                 <div className="flex flex-col gap-5">
-                    <div className='flex items-center gap-1 text-gray-600 text-lg font-medium'>
+                    <div className='flex items-center gap-1 text-gray-600 text-lg font-semibold'>
                         <span>Calificación</span>
-                        <span className='text-base font-normal text-gray-400'>· por lo menos</span>
                     </div>
-                    <div className="bg-white text-gray-600 flex rounded-lg divide-x divide-gray-200 border border-gray-200">
+                    <div className="bg-blue-50 text-blue-600 rounded-md flex items-center gap-3 px-4 py-2">
+                        <Icon icon="fa6-solid:circle-info" className="w-5 h-5"/>
+                        <span className="font-medium">Calificación de por lo menos...</span>
+                    </div>
+                    <div className="bg-gray-100 p-2 gap-2 text-gray-600 flex rounded-xl">
+                        <div className="bg-white rounded-xl shadow-md font-semibold text-amber-400 px-2 py-1 flex-1 flex justify-center">
+                            <span>4.5</span>
+                        </div>
+                        <div className="px-2 py-1 flex-1 flex justify-center">
+                            <span>4.0</span>
+                        </div>
+                        <div className="px-2 py-1 flex-1 flex justify-center">
+                            <span>3.5</span>
+                        </div>
+                        <div className="px-2 py-1 flex-1 flex justify-center">
+                            <span>Cualquiera</span>
+                        </div>
+                    </div>
+                    {/* <div className="bg-white text-gray-600 flex rounded-lg divide-x divide-gray-200 border border-gray-200">
                         <div className="px-2 py-1 flex-1 flex justify-center items-center gap-2">
                             <span>
                                 Cualquiera
@@ -49,12 +66,12 @@ export default function AllFilters() {
                             </span>
                             <p>4.5</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="flex flex-col gap-5">
                 <div className="flex flex-col gap-5">
-                    <div className='flex items-center gap-1 text-gray-600 text-lg font-medium'>
+                    <div className='flex items-center gap-1 text-gray-600 text-lg font-semibold'>
                         <span>Puestos</span>
                     </div>
                     <div className="bg-white text-gray-600 flex flex-col rounded-lg divide-y divide-gray-200 border border-gray-200">

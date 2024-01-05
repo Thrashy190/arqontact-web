@@ -22,7 +22,7 @@ export default function InfoArea() {
                         field="active"
                     >
                         <LandingIconText
-                            icon={{ classes: "w-6 h-6 flex-shrink-0 text-amber-400", icon: "fa-solid:table" }}
+                            icon={{ classes: "w-6 h-6 flex-shrink-0", icon: "fa-solid:table" }}
                             description="Podrás organizar a la gente trabajando en tu proyecto."
                         />
                     </InteractiveTrigger>
@@ -33,7 +33,7 @@ export default function InfoArea() {
                         field="active"
                     >
                         <LandingIconText
-                            icon={{ classes: "w-6 h-6 flex-shrink-0 text-amber-400", icon: "fa-solid:user-check" }}
+                            icon={{ classes: "w-6 h-6 flex-shrink-0", icon: "fa-solid:user-check" }}
                             description="Verás las reseñas del trabajador de otros arquitectos."
                         />
                     </InteractiveTrigger>
@@ -94,7 +94,7 @@ export default function InfoArea() {
                         field="active"
                     >
                         <LandingIconText
-                            icon={{ classes: "w-6 h-6 flex-shrink-0 text-amber-400", icon: "fa-solid:image" }}
+                            icon={{ classes: "w-6 h-6 flex-shrink-0", icon: "fa-solid:image" }}
                             description="Verás como es el trabajo de los obreros."
                         />
                     </InteractiveTrigger>
@@ -105,7 +105,7 @@ export default function InfoArea() {
                         field="active"
                     >
                         <LandingIconText
-                            icon={{ classes: "w-6 h-6 flex-shrink-0 text-amber-400", icon: "fa-solid:wifi" }}
+                            icon={{ classes: "w-6 h-6 flex-shrink-0", icon: "fa-solid:wifi" }}
                             description="No necesitarás moverte de donde estés."
                         />
                     </InteractiveTrigger>

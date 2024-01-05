@@ -1,0 +1,12 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+    active?: boolean
+}
+
+const { active = false } = Astro.props;
+---
+<a href="/projects/1/phase/vacancy/1/create" class={`${ active ? '' : 'hidden' } z-10 fixed bottom-20 right-5 bg-amber-100 text-amber-400 p-3 rounded-xl`}>
+    <Icon name="fa-solid:user-alt" class="w-6 h-6"/>
+</a>

@@ -11,11 +11,11 @@ export default function AllFilters({ title, children }: FullScreenModalProps) {
     return (
         <div onClick={(e) => e.stopPropagation()} className={`w-full h-full bg-white p-5 flex flex-col justify-between gap-10 self-end`}>
             <div className="flex flex-col gap-10 overflow-y-auto mobile-scrollbar">
-                <div onClick={() => setModal(null)} className="sticky top-0 bg-white flex items-center gap-4 text-gray-500">
-                    <span className='text-xl'>
+                <div className="sticky top-0 py-3 bg-white flex items-center gap-10 text-gray-400">
+                    <span onClick={() => setModal(null)} className='text-xl'>
                         <Icon icon="fa6-solid:chevron-left" className="w-5 h-5"/>
                     </span>
-                    <span className='text-2xl'>
+                    <span className='font-medium text-2xl text-gray-800'>
                         { title }
                     </span>
                 </div>

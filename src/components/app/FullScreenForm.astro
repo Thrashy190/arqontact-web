@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string,
+  backLink: string,
+  label: string,
+}
+
+const { title, backLink, label } = Astro.props;
+---
+<div class="w-full h-full bg-white p-5 flex flex-col justify-between overflow-hidden self-end">
+    <div class="h-full flex flex-col gap-3 overflow-y-auto mobile-scrollbar">
+        <a class="text-action font-medium underline" href={backLink}>Cancelar</a>
+        <div class="h-full flex flex-col gap-4">
+          <h1 class="font-medium text-xl">{ title }</h1>
+          <slot />
+        </div>
+        <button class="justify-self-end py-2 text-center font-semibold bg-amber-400 text-white rounded-xl uppercase">{ label }</button>
+    </div>
+</div>

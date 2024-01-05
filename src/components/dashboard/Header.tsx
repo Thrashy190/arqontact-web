@@ -35,11 +35,11 @@ export default function Header() {
                 <button className='flex-shrink-0 flex items-center bg-amber-100 text-amber-400 rounded-full px-4 py-1 gap-3'>
                     <span>Bloquero</span>
                 </button>
-                <button onClick={() => setGradeFiltersModal()} className='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
+                <button onClick={() => setOrderByFiltersModal()} className='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
                     <span>Ordenar por</span>
                     <Icon icon="fa6-solid:chevron-down"/>
                 </button>
-                <button onClick={() => setOrderByFiltersModal()} className='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
+                <button onClick={() => setGradeFiltersModal()} className='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
                     <span>Calificación</span>
                     <Icon icon="fa6-solid:chevron-down"/>
                 </button>

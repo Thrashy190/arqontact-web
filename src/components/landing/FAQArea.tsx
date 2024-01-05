@@ -8,7 +8,7 @@ export default function FAQArea() {
     return (
         <Switch target={0}>
             <div
-                className="w-full sm:w-auto pb-2 flex-nowrap overflow-x-auto flex gap-4 md:flex-col"
+                className="w-full sm:w-auto pb-2 flex-wrap overflow-x-auto flex gap-2 md:gap-4 md:flex-col"
             >
                 <InteractiveTrigger
                     event="onClick"

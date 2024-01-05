@@ -1,0 +1,103 @@
+---
+import { Icon } from "astro-icon";
+import AppLayout from "@layouts/AppLayout.astro";
+import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
+import Overlay from "@components/common/Overlay";
+import CreatePhaseBubble from "@components/projects/actions/CreatePhaseBubble.astro";
+
+export function getStaticPaths() {
+  return [
+    {params: {projectId: 1, phaseId: 1}},
+  ];
+}
+
+const { projectId, phaseId } = Astro.params;
+---
+
+<AppLayout title="Estructuración">
+    <Overlay client:load />
+    <CreatePhaseBubble active />
+    <FullScreenScaffold title="Estructuración" backLink="/projects/1/">
+        <div class="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200 self-end"></div>
+        <div class="w-full flex gap-4">
+          <p class="text-sm self-end">22 ago 2023</p>
+          <div class="flex-1 flex flex-col items-center gap-1">
+            <p class="text-3xl font-medium">30%</p>
+            <p class="text-sm">6 meses restantes</p>
+            <div class="w-full h-1 flex-shrink-0 flex bg-gray-200 rounded-full">
+                <div style={`width: 30%`} class={`bg-amber-400 rounded-full`}></div>
+            </div>
+          </div>
+          <p class="text-sm self-end">22 ago 2023</p>
+        </div>
+        <div class="relative w-full mt-4 flex flex-col gap-3">
+          <h2 class="text-xl font-semibold">Vacantes</h2>
+          <a href="/projects/1/phase/1/vacancy/1" class="w-full flex items-center gap-3 py-3 pb-3">
+            <div class="flex flex-col flex-1 gap-3">
+              <div class="flex justify-between">
+                <h3 class="font-medium">Carpintero</h3>
+                <span class="text-xs bg-amber-100 text-amber-400 font-semibold flex items-center gap-2 px-2 py-1 rounded-md">
+                  <Icon class="w-3 h-3" name="fa-solid:bell"/>
+                  <span>50+</span>
+                </span>
+              </div>
+              <div class="flex items-center">
+                  <div class="w-full flex-shrink-0 flex-1 flex items-center gap-2">
+                      <span class="text-sm font-medium">35/50</span>
+                      <div class="w-full h-1 flex bg-gray-200 rounded-full">
+                          <div style={`width: ${ 30 }%`} class={`bg-amber-400 rounded-full`}></div>
+                      </div>
+                      <span class="text-sm font-medium">{ 30 }%</span>
+                  </div>
+              </div>
+            </div>
+            <div class="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200"></div>
+            <Icon class="w-4 h-4 text-gray-300" name="fa-solid:chevron-right"/>
+          </a>
+          <a href="/projects/1/phase/1/vacancy/1" class="w-full flex items-center gap-3 py-3 pb-3">
+            <div class="flex flex-col flex-1 gap-3">
+              <div class="flex justify-between">
+                <h3 class="font-medium">Carpintero</h3>
+                <span class="text-xs bg-amber-100 text-amber-400 font-semibold flex items-center gap-2 px-2 py-1 rounded-md">
+                  <Icon class="w-3 h-3" name="fa-solid:bell"/>
+                  <span>50+</span>
+                </span>
+              </div>
+              <div class="flex items-center">
+                  <div class="w-full flex-shrink-0 flex-1 flex items-center gap-2">
+                      <span class="text-sm font-medium">35/50</span>
+                      <div class="w-full h-1 flex bg-gray-200 rounded-full">
+                          <div style={`width: ${ 30 }%`} class={`bg-amber-400 rounded-full`}></div>
+                      </div>
+                      <span class="text-sm font-medium">{ 30 }%</span>
+                  </div>
+              </div>
+            </div>
+            <div class="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200"></div>
+            <Icon class="w-4 h-4 text-gray-300" name="fa-solid:chevron-right"/>
+          </a>
+          <a href="/projects/1/phase/1/vacancy/1" class="w-full flex items-center gap-3 py-3 pb-3">
+            <div class="flex flex-col flex-1 gap-3">
+              <div class="flex justify-between">
+                <h3 class="font-medium">Carpintero</h3>
+                <span class="text-xs bg-amber-100 text-amber-400 font-semibold flex items-center gap-2 px-2 py-1 rounded-md">
+                  <Icon class="w-3 h-3" name="fa-solid:bell"/>
+                  <span>50+</span>
+                </span>
+              </div>
+              <div class="flex items-center">
+                  <div class="w-full flex-shrink-0 flex-1 flex items-center gap-2">
+                      <span class="text-sm font-medium">35/50</span>
+                      <div class="w-full h-1 flex bg-gray-200 rounded-full">
+                          <div style={`width: ${ 30 }%`} class={`bg-amber-400 rounded-full`}></div>
+                      </div>
+                      <span class="text-sm font-medium">{ 30 }%</span>
+                  </div>
+              </div>
+            </div>
+            <div class="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200"></div>
+            <Icon class="w-4 h-4 text-gray-300" name="fa-solid:chevron-right"/>
+          </a>
+        </div>
+    </FullScreenScaffold>
+</AppLayout>
