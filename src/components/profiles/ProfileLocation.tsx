@@ -17,8 +17,8 @@ export default function ProfileLocation({ active = false, icon, onClick }: Props
     return (
         <div onClick={() => elementAction()} className='flex justify-center flex-grow flex-shrink-0'>
             <span className={`w-6 h-6 flex flex-col justify-center text-sm ${active ? 'text-amber-400' : 'text-gray-400'} transition-all`}>
-                <Icon icon={icon} className={`self-center z-10`}/>
-                { active ? <motion.div layoutId='header-underline' className='z-0 absolute w-6 h-6 rounded-md bg-white'></motion.div>
+                <Icon icon={icon} className={`self-center z-[1]`}/>
+                { active ? <motion.div layoutId='header-underline' className='z-0 absolute w-6 h-6 rounded-md bg-white shadow-md'></motion.div>
                 : null }
             </span>
         </div>
