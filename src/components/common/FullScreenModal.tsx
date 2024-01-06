@@ -15,7 +15,7 @@ export default function AllFilters({ title, children }: FullScreenModalProps) {
                     <span onClick={() => setModal(null)} className='text-xl'>
                         <Icon icon="fa6-solid:chevron-left" className="w-5 h-5"/>
                     </span>
-                    <span className='font-medium text-2xl text-gray-800'>
+                    <span className='font-bold text-xl text-gray-800'>
                         { title }
                     </span>
                 </div>
