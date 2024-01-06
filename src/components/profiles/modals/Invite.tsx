@@ -3,7 +3,7 @@ import FullScreenModal from "@components/common/FullScreenModal";
 
 export default function AllFilters() {
     return (
-        <FullScreenModal title="Enviar invitación">
+        <FullScreenModal id="invite" title="Enviar invitación">
             <div className="flex flex-col gap-5">
                 <div className="flex flex-col gap-1">
                     <label className="font-medium" html-for="project">Proyecto</label>

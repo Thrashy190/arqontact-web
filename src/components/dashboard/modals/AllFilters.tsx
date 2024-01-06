@@ -5,7 +5,7 @@ import Grade from "./Grade";
 
 export default function AllFilters() {
     return (
-        <FullScreenModal title="Filtros">
+        <FullScreenModal id="all-filters" title="Filtros">
             <div className="flex flex-col gap-5">
                 <OrderBy />
                 <Grade />

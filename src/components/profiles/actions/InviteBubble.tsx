@@ -1,13 +1,11 @@
 import { Icon } from "@iconify/react";
 import { useModal } from "@stores/modal.store";
 
-import { Invite } from "@components/profiles/modals";
-
 const InviteBubble = ({ active }: { active?: boolean }) => {
     const { setModal } = useModal(state => state);
 
     function invite() {
-        setModal(<Invite />);
+        setModal('invite');
     }
 
     return (

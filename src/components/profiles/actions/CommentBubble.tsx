@@ -1,13 +1,11 @@
 import { Icon } from "@iconify/react";
 import { useModal } from "@stores/modal.store";
 
-import { Comment } from "@components/profiles/modals";
-
 const CommentBubble = ({ active }: { active?: boolean }) => {
     const { setModal } = useModal(state => state);
 
     function comment() {
-        setModal(<Comment />);
+        setModal('comment');
     }
 
     return (

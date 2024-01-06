@@ -3,8 +3,6 @@ import { useEffect, useRef} from "react";
 import { useModal } from "@stores/modal.store";
 import { useDashboard } from "@stores/dashboard.store";
 
-import { AllFilters, GradeFilters, OrderByFilters } from "./modals";
-
 export default function Header() {
     const { setModal } = useModal(state => state);
     const { setFilters } = useDashboard(state => state);
@@ -15,15 +13,15 @@ export default function Header() {
     }, [])
 
     function setAllFiltersModal() {
-        setModal(<AllFilters />);
+        setModal('all-filters');
     }
 
     function setGradeFiltersModal() {
-        setModal(<GradeFilters />);
+        setModal('grade-filters');
     }
 
     function setOrderByFiltersModal() {
-        setModal(<OrderByFilters />);
+        setModal('order-by-filters');
     }
 
     return (

@@ -1,12 +1,14 @@
 ---
 import { Icon } from "astro-icon";
+import { AllFilters, GradeFilters, OrderByFilters } from "@components/dashboard/modals";
 import AppLayout from "@layouts/AppLayout.astro";
-import Overlay from "@components/common/Overlay";
 import Header from "@components/dashboard/Header";
 ---
 
 <AppLayout title="Dashboard">
-    <Overlay client:load />
+    <AllFilters client:load/>
+    <GradeFilters client:load/>
+    <OrderByFilters client:load/>
     <Header client:load />
     <div class='w-screen h-full bg-gray-100 flex flex-col divide-y divide-gray-200 overflow-y-auto mobile-scrollbar'>
         {

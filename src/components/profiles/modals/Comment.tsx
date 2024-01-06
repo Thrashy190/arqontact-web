@@ -3,7 +3,7 @@ import FullScreenModal from "@components/common/FullScreenModal";
 
 export default function AllFilters() {
     return (
-        <FullScreenModal title="Agregar comentario">
+        <FullScreenModal id="comment" title="Agregar comentario">
             <div className="flex flex-col gap-5">
                 <div className="bg-amber-50 font-medium rounded-md text-amber-400 p-3">
                     Estás escribiendo un comentario en el perfil de Juan José Cruz Aguirre
