@@ -1,8 +1,26 @@
 ---
 import { Icon } from "astro-icon";
+
+interface Props {
+    withVacancyActions?: boolean,
+}
+
+const { withVacancyActions = false } = Astro.props;
 ---
 
 <div class="snap-center flex-shrink-0 w-screen h-full flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5 gap-5">
+    {
+        withVacancyActions && <div class="w-full flex justify-between items-center">
+            <button class="bg-red-100 text-red-600 flex items-center gap-2 rounded-lg py-2 px-4 font-semibold">
+                <Icon name="fa-solid:times" class="w-4 h-4"/>
+                <span>Rechazar</span>
+            </button>
+            <button class="bg-lime-100 text-lime-600 flex items-center gap-2 rounded-lg py-2 px-4 font-semibold">
+                <Icon name="fa-solid:check" class="w-4 h-4"/>
+                <span>Aceptar</span>
+            </button>
+        </div>
+    }
     <div class="flex flex-col gap-2">
         <h2 class='uppercase text-gray-500 font-semibold text-sm'>Acerca de Carpinterías Ramírez</h2>
         <div class="bg-white rounded-lg flex flex-col divide-y divide-gray-100">
@@ -18,18 +36,14 @@ import { Icon } from "astro-icon";
                     <Icon name="fa-solid:hammer" class="w-4 h-4"/>
                     <span>Categoría:</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <span>Carpintería</span>
-                </div>
+                <span>Carpintería</span>
             </div>
             <div class="py-3 px-5 flex justify-between gap-4">
                 <div class='text-amber-400 flex-shrink-0 flex items-center gap-2 font-semibold'>
                     <Icon name="fa-solid:map-pin" class="w-4 h-4"/>
                     <span>Zona de trabajo:</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <span>Querétaro, QRO.</span>
-                </div>
+                <span>Querétaro, QRO.</span>
             </div>
             <div class="py-3 px-5 flex justify-between gap-4">
                 <div class='text-amber-400 flex-shrink-0 flex items-center gap-2 font-semibold'>
@@ -48,16 +62,14 @@ import { Icon } from "astro-icon";
                     <Icon name="fa-solid:clock" class="w-4 h-4"/>
                     <span>Años de experiencia:</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <span>15</span>
-                </div>
+                <span>15</span>
             </div>
             <div class="py-3 px-5 flex justify-between gap-4">
                 <div class='text-amber-400 flex-shrink-0 flex items-center gap-2 font-semibold'>
                     <Icon name="fa-solid:globe" class="w-4 h-4"/>
                     <span>Sitio web:</span>
                 </div>
-                <div class="truncate flex items-center gap-3">
+                <div class="truncate">
                     <span>https://carpinteria-ramirez.com</span>
                 </div>
             </div>

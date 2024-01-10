@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { Carrousel, Target, InteractiveTrigger } from "@components/common/Carrousel";
-import Pin from "@components/projects/Pin";
+import Pin from "@components/boards/Pin";
 
 export default function CreatePhase() {
     return (

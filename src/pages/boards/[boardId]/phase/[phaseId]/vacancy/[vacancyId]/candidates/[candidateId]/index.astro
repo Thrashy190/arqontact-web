@@ -8,19 +8,27 @@ import ProfileComments from "@components/profiles/ProfileComments.astro";
 import ProfileGalleries from "@components/profiles/ProfileGalleries.astro";
 import Profile from "@components/profiles/Profile.tsx";
 import ProfileOptions from "@components/profiles/ProfileOptions.tsx";
+
+export function getStaticPaths() {
+  return [
+    {params: {boardId: 1, phaseId: 1, vacancyId: 1, candidateId: 1}},
+  ];
+}
+
+const { boardId, phaseId, vacancyId } = Astro.params;
 ---
 
 <AppLayout title="Perfil">
     <Overlay client:load />
-    <Profile client:load withActions>
+    <Profile client:load>
         <div slot="links" class="flex justify-between">
-            <a href="/dashboard" class='text-gray-600'>
+            <a href={`/boards/${boardId}/phase/${phaseId}/vacancy/${vacancyId}`} class='text-gray-600'>
                 <Icon name="fa-solid:chevron-left" class="w-4 h-4"/>
             </a>
             <ProfileOptions client:load />
         </div>
-        <ProfileHeader interactive slot="profileHeader" />
-        <ProfileInfo slot="profileInfo" />
+        <ProfileHeader slot="profileHeader" />
+        <ProfileInfo withVacancyActions slot="profileInfo" />
         <ProfileComments slot="profileComments" />
         <ProfileGalleries slot="profileGalleries" />
     </Profile>

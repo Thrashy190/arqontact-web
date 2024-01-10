@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon";
+import AppLayout from "@layouts/AppLayout.astro";
+import ProfileHeader from "@components/profiles/ProfileHeader.astro";
+import ProfileInfo from "@components/profiles/ProfileInfo.astro";
+import ProfileComments from "@components/profiles/ProfileComments.astro";
+import ProfileGalleries from "@components/profiles/ProfileGalleries.astro";
+import Profile from "@components/profiles/Profile.tsx";
+import ProfileOptions from "@components/profiles/ProfileOptions.tsx";
+
+export function getStaticPaths() {
+  return [
+    {params: {profileId: 1}},
+  ];
+}
+---
+
+<AppLayout title="Perfil">
+    <Profile client:load withActions>
+        <div slot="links" class="flex justify-between">
+            <a href="/dashboard" class='text-gray-600'>
+                <Icon name="fa-solid:chevron-left" class="w-4 h-4"/>
+            </a>
+            <ProfileOptions client:load />
+        </div>
+        <ProfileHeader interactive slot="profileHeader" />
+        <ProfileInfo slot="profileInfo" />
+        <ProfileComments slot="profileComments" />
+        <ProfileGalleries slot="profileGalleries" />
+    </Profile>
+</AppLayout>

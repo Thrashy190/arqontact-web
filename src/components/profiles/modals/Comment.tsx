@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import FullScreenModal from "@components/common/FullScreenModal";
 
-export default function AllFilters() {
+export default function Comment() {
     return (
         <FullScreenModal id="comment" title="Agregar comentario">
             <div className="flex flex-col gap-5">

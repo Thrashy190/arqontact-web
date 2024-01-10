@@ -9,6 +9,7 @@ type IModal = {
 export const useModal = create<IModal>((set) => ({
     modal: '',
     setModal: (modal) => {
+        console.log(modal, document.getElementById(modal));
         document.getElementById(modal).classList.remove('translate-y-full');
         document.getElementById(modal).classList.add('translate-y-0');
 

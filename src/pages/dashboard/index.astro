@@ -12,8 +12,33 @@ import Header from "@components/dashboard/Header";
     <Header client:load />
     <div class='w-screen h-full bg-gray-100 flex flex-col divide-y divide-gray-200 overflow-y-auto mobile-scrollbar'>
         {
+            Array(3).fill(null).map((e, index) => {
+                return <a href='/dashboard/board/1'>
+                    <div class="w-full bg-white flex flex-shrink-0 items-center gap-4 py-6 px-3">
+                        <div class="w-full flex flex-col gap-2">
+                            <div class="flex justify-between items-center">
+                                <h2 class='font-semibold underline'>Hospital San Felipe</h2>
+                                <div class="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200"></div>
+                            </div>
+                            <p>Cimentación</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex gap-1 items-center">
+                                    <Icon name="fa-solid:map-pin" class="w-4 h-4 text-amber-400"/>
+                                    <span>Querétaro, QRO.</span>
+                                </div>
+                                <div class="flex gap-1 items-center">
+                                    <Icon name="fa-solid:clock" class="w-4 h-4 text-amber-400"/>
+                                    <span>12 FEB - 12 ABR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            })
+        }
+        {
             Array(10).fill(null).map((e, index) => {
-                return <a href='/dashboard/profile'>
+                return <a href='/dashboard/profile/1'>
                     <div class="w-full bg-white flex flex-shrink-0 items-center gap-4 py-6 px-3">
                         <img class='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
                         <div class="w-full flex flex-col gap-2">
