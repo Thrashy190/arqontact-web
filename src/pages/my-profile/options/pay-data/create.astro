@@ -1,0 +1,17 @@
+---
+import AppLayout from "@layouts/AppLayout.astro";
+import Overlay from "@components/common/Overlay";
+import FullScreenForm from "@components/app/FullScreenForm.astro";
+import { Input } from "@components/common/inputs";
+---
+<AppLayout title="Datos personales">
+    <Overlay client:load />
+    <FullScreenForm backLink="/my-profile/options/pay-data" title="Agregar tarjeta" label="Confirmar">
+        <Input id="full_name" label="Nombre completo" type="text" placeholder="Juan José"/>
+        <Input id="card_number" label="Número de tarjeta" type="text" placeholder="#### #### #### ####"/>
+        <div class="flex items-center gap-4">
+            <Input id="expiration_date" label="Expiración" type="text" placeholder="10/23"/>
+            <Input id="cvc" label="CVC" type="number" placeholder="146"/>
+        </div>
+    </FullScreenForm>
+</AppLayout>
