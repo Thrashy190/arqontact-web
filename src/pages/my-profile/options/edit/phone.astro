@@ -1,14 +1,10 @@
 ---
 import AppLayout from "@layouts/AppLayout.astro";
-import Overlay from "@components/common/Overlay";
 import FullScreenForm from "@components/app/FullScreenForm.astro";
+import { Input } from "@components/common/inputs";
 ---
 <AppLayout title="Contacto">
-    <Overlay client:load />
     <FullScreenForm backLink="/my-profile/options/edit" title="Cambiar teléfono" label="Confirmar">
-        <div class="flex flex-col gap-1">
-            <label class="font-medium text-sm" for="phone">Teléfono</label>
-            <input class="bg-gray-100 text-gray-500 px-4 py-1 rounded-md" placeholder="4461117033" name="phone" type="text">
-        </div>
+        <Input id="phone_number" label="Teléfono" type="text" placeholder="4461117033"/>
     </FullScreenForm>
 </AppLayout>

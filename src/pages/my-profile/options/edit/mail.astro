@@ -1,14 +1,10 @@
 ---
 import AppLayout from "@layouts/AppLayout.astro";
-import Overlay from "@components/common/Overlay";
 import FullScreenForm from "@components/app/FullScreenForm.astro";
+import { Input } from "@components/common/inputs";
 ---
 <AppLayout title="Contacto">
-    <Overlay client:load />
     <FullScreenForm backLink="/my-profile/options/edit" title="Cambiar correo electrónico" label="Confirmar">
-        <div class="flex flex-col gap-1">
-            <label class="font-medium text-sm" for="mail">correo electrónico</label>
-            <input class="bg-gray-100 text-gray-500 px-4 py-1 rounded-md" placeholder="jjca@gmail.com" name="mail" type="text">
-        </div>
+        <Input id="mail" label="Correo electrónico" type="text" placeholder="jjca@gmail.com"/>
     </FullScreenForm>
 </AppLayout>

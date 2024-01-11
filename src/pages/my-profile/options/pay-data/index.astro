@@ -1,13 +1,11 @@
 ---
 import { Icon } from "astro-icon";
 import AppLayout from "@layouts/AppLayout.astro";
-import Overlay from "@components/common/Overlay";
 import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
 import CardState from "@components/my-profile/CardState.astro";
 ---
 
 <AppLayout title="Datos de pago">
-    <Overlay client:load />
     <FullScreenScaffold title="Datos de pago" backLink="/my-profile/options">
         <div class="flex flex-col gap-6 overflow-y-auto mobile-scrollbar">
             <div class="flex flex-col gap-2">
