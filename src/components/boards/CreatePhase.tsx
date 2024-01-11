@@ -36,7 +36,7 @@ export default function CreatePhase() {
                             </span>
                         </div>
                         <input
-                            className="bg-gray-100 px-4 py-2 rounded-lg focus-visible:outline-gray-300"
+                            className="bg-gray-100 px-4 py-2 rounded-lg border-2 border-transparent focus-visible:border-gray-300 outline-none"
                             placeholder="Hospital San Felipe"
                         />
                     </div>
@@ -47,17 +47,17 @@ export default function CreatePhase() {
                         </div>
                         <div className="justify-between flex flex-shrink">
                             <label html-for="start">Inicio</label>
-                            <input className="bg-gray-100 text-gray-500 px-4 py-1 rounded-md" type="date" />
+                            <input className="bg-gray-100 px-4 py-2 rounded-lg border-2 border-transparent focus-visible:border-gray-300 outline-none" type="date" />
                         </div>
                         <div className="justify-between flex flex-shrink">
                             <label html-for="end">Final</label>
-                            <input className="bg-gray-100 text-gray-500 px-4 py-1 rounded-md" type="date" />
+                            <input className="bg-gray-100 px-4 py-2 rounded-lg border-2 border-transparent focus-visible:border-gray-300 outline-none" type="date" />
                         </div>
                     </div>
                     <div className="snap-center w-[calc(100vw-2.5rem)] flex-shrink-0 flex flex-col gap-1">
                         <label className="font-medium" html-for="comment">Puestos requeridos</label>
                         <input
-                            className="bg-gray-100 px-4 py-2 rounded-lg focus-visible:outline-gray-300"
+                            className="bg-gray-100 px-4 py-2 rounded-lg border-2 border-transparent focus-visible:border-gray-300 outline-none"
                             placeholder="Carpintero"
                         />
                     </div>
@@ -83,7 +83,7 @@ export default function CreatePhase() {
                                     <input
                                         name="job[]"
                                         type="number"
-                                        className="w-14 bg-gray-100 px-4 py-2 rounded-lg focus-visible:outline-gray-300"
+                                        className="w-14 bg-gray-100 px-4 py-2 rounded-lg border-2 border-transparent focus-visible:border-gray-300 outline-none"
                                         placeholder="30"
                                     />
                                     <div className="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200"></div>
@@ -97,7 +97,7 @@ export default function CreatePhase() {
                                     <input
                                         name="job[]"
                                         type="number"
-                                        className="w-14 bg-gray-100 px-4 py-2 rounded-lg focus-visible:outline-gray-300"
+                                        className="w-14 bg-gray-100 px-4 py-2 rounded-lg border-2 border-transparent focus-visible:border-gray-300 outline-none"
                                         placeholder="30"
                                     />
                                     <div className="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200"></div>
@@ -111,7 +111,7 @@ export default function CreatePhase() {
                                     <input
                                         name="job[]"
                                         type="number"
-                                        className="w-14 bg-gray-100 px-4 py-2 rounded-lg focus-visible:outline-gray-300"
+                                        className="w-14 bg-gray-100 px-4 py-2 rounded-lg border-2 border-transparent focus-visible:border-gray-300 outline-none"
                                         placeholder="30"
                                     />
                                     <div className="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200"></div>

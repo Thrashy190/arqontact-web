@@ -33,7 +33,7 @@ export default function CreateProject() {
                             </span>
                         </div>
                         <input
-                            className="bg-gray-100 px-4 py-2 rounded-lg focus-visible:outline-gray-300"
+                            className="bg-gray-100 px-4 py-2 rounded-lg border-2 border-transparent focus-visible:border-gray-300 outline-none"
                             placeholder="Hospital San Felipe"
                         />
                     </div>
@@ -52,7 +52,7 @@ export default function CreateProject() {
                             </span>
                         </div>
                         <input
-                            className="bg-gray-100 px-4 py-2 rounded-lg focus-visible:outline-gray-300"
+                            className="bg-gray-100 px-4 py-2 rounded-lg border-2 border-transparent focus-visible:border-gray-300 outline-none"
                             placeholder="Zamora, Michoacán."
                         />
                         <a href="#" className="flex justify-center items-center gap-3 mt-2 py-2 rounded-md border border-gray-200 text-action">

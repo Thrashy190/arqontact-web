@@ -2,7 +2,6 @@
 import { Icon } from "astro-icon";
 import AppLayout from "@layouts/AppLayout.astro";
 import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
-import Overlay from "@components/common/Overlay";
 import CreatePhaseBubble from "@components/boards/actions/CreatePhaseBubble.astro";
 
 export function getStaticPaths() {
@@ -15,7 +14,6 @@ const { boardId } = Astro.params;
 ---
 
 <AppLayout title="Hospital San Felipe">
-    <Overlay client:load />
     <CreatePhaseBubble active />
     <FullScreenScaffold title="Hospital San Felipe" backLink="/boards">
         <div class="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200 self-end"></div>
