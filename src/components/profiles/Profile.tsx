@@ -16,7 +16,7 @@ interface ProfileProps {
 
 export default function Profile({ links, profileHeader, profileInfo, profileComments, profileGalleries, withActions = false }: ProfileProps) {
     return (
-        <Fragment>
+        <div className="min-w-0 flex flex-col">
             <Comment />
             <Invite />
             <Carrousel totalChildren={3}>
@@ -49,10 +49,10 @@ export default function Profile({ links, profileHeader, profileInfo, profileComm
                     </Fragment> :
                     null
                 }
-                <Target className='w-screen h-full bg-gray-100'>
+                <Target className='w-screen sm:w-[calc(100vw-4rem)] h-full bg-gray-100'>
                     { ...[profileInfo, profileComments, profileGalleries] }
                 </Target>
             </Carrousel>
-        </Fragment>
+        </div>
     )
 }

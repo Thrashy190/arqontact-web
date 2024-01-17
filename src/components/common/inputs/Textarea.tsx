@@ -10,7 +10,7 @@ export default function Textarea({ id, label, placeholder }: TextareaProps) {
             <label className="font-medium" htmlFor={ id }>{ label }</label>
             <textarea
                 name={ id }
-                className="bg-gray-100 px-4 py-2 rounded-lg focus-visible:outline-gray-300"
+                className="bg-gray-100 px-4 py-2 rounded-lg border-2 border-transparent focus-visible:border-gray-300 outline-none"
                 placeholder={ placeholder }
             />
         </div>

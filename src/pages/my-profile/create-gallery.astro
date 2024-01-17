@@ -10,34 +10,10 @@ import { SetCollaborators, SetHashtags } from "@components/my-profile/modals";
 <AppLayout title="Crear galería">
     <SetCollaborators client:load/>
     <SetHashtags client:load/>
-    <FullScreenScaffold title="Crear galería" backLink="/my-profile">
+    <FullScreenScaffold title="Crear galería" backLink="/my-profile" shrink>
         <div class="flex flex-col gap-5 pb-5">
             <Input id="title" label="Título de Galería" type="text" placeholder="Nombre de tu Galería"/>
             <Textarea id="description" label="Descripción" placeholder="¿Qué publicarás?"/>
-            <div class="flex flex-col gap-1">
-                <TitleAction title="Colaboradores" action="set-collabs" client:load/>
-                <!-- <ul class="flex flex-col gap-2 divide-y divide-gray-200">
-                    {
-                        Array(5).fill(0).map((_, i) => {
-                            return <li class="flex pt-2 justify-between items-center">
-                                <p class="text-action">Luis Alonso Guerrero Santos</p>
-                                <Icon name="fa-solid:times" class="w-4 h-4"/>
-                            </li>
-                        })
-                    }
-                </ul> -->
-                <ul class="bg-gray-100 overflow-x-auto no-scrollbar flex gap-2 rounded-lg p-2">
-                    {
-                        Array(10).fill(0).map((_, i) => {
-                            return <li class="flex-shrink-0">
-                                <picture class="w-16 h-16">
-                                    <img class="w-16 h-16 object-cover rounded-full" src="https://imageio.forbes.com/specials-images/imageserve/5ed00f17d4a99d0006d2e738/0x0.jpg"/>
-                                </picture>
-                            </li>
-                        })
-                    }
-                </ul>
-            </div>
             <div class="flex flex-col gap-1">
                 <TitleAction title="Hashtags" action="set-hashtags" client:load/>
                 <div class="flex flex-wrap gap-2">
@@ -50,6 +26,20 @@ import { SetCollaborators, SetHashtags } from "@components/my-profile/modals";
                         })
                     }
                 </div>
+            </div>
+            <div class="flex flex-col gap-1">
+                <TitleAction title="Colaboradores" action="set-collabs" client:load/>
+                <ul class="bg-gray-100 overflow-x-auto no-scrollbar flex gap-2 rounded-lg p-2">
+                    {
+                        Array(10).fill(0).map((_, i) => {
+                            return <li class="flex-shrink-0">
+                                <picture class="w-16 h-16">
+                                    <img class="w-16 h-16 object-cover rounded-full" src="https://imageio.forbes.com/specials-images/imageserve/5ed00f17d4a99d0006d2e738/0x0.jpg"/>
+                                </picture>
+                            </li>
+                        })
+                    }
+                </ul>
             </div>
             <div class="flex flex-col gap-1">
                 <p class="font-medium">Fotos</p>

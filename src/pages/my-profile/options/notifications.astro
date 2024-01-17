@@ -1,12 +1,10 @@
 ---
 import AppLayout from "@layouts/AppLayout.astro";
-import Overlay from "@components/common/Overlay";
 import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
 ---
 
 <AppLayout title="Notificaciones">
-    <Overlay client:load />
-    <FullScreenScaffold title="Notificaciones" backLink="/my-profile/options">
+    <FullScreenScaffold title="Notificaciones" backLink="/my-profile/options" shrink>
         <div class="flex flex-col gap-6 overflow-y-auto mobile-scrollbar">
             <div class="flex flex-col gap-2">
                 <h3 class="text-sm font-semibold uppercase text-gray-400 pb-2">Suscripciones</h3>

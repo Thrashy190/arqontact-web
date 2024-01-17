@@ -10,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <Layout title={`${title} | Arqontact`}>
-    <main class="fixed w-screen h-screen flex flex-col justify-between overflow-hidden">
+    <main class="fixed w-screen h-screen sm:flex-row-reverse flex flex-col justify-between overflow-hidden">
         <slot />
         <Navbar client:load transition:persist />
     </main>

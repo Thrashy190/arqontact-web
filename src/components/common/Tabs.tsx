@@ -8,16 +8,17 @@ interface TabItem {
 
 interface TabsProps {
     tabId: string,
-    items: TabItem[]
+    items: TabItem[],
+    tabClasses?: string
 }
 
-export default function Tabs({ tabId, items }: TabsProps) {
+export default function Tabs({ tabId, items, tabClasses }: TabsProps) {
     const [currentItem, setCurrentItem] = useState<string>(items[0].id);
     return (
         <div className="bg-gray-100 p-2 gap-2 text-gray-600 flex rounded-xl">
             {
                 items.map(({ name, id }) => {
-                    return <div key={id} onClick={() => setCurrentItem(id)} className="relative flex-1 flex justify-center w-full">
+                    return <div key={id} onClick={() => setCurrentItem(id)} className={`${tabClasses ?? ''} relative flex-1 flex justify-center w-full`}>
                         <span className={`${currentItem == id ? 'font-semibold text-amber-400' : ''} z-[1] py-1`}>
                             { name }
                         </span>

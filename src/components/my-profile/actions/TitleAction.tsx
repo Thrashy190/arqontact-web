@@ -9,9 +9,9 @@ export default function TitleAction({ title, action }: { title: string, action: 
     }
 
     return (
-        <div onClick={() => setAction()} className="flex justify-between items-center">
+        <div className="flex justify-between items-center">
             <span className="font-medium">{ title }</span>
-            <div className="flex items-center gap-2">
+            <div onClick={() => setAction()} className="cursor-pointer flex items-center gap-2">
                 <span className="text-sm">Agregar</span>
                 <Icon icon="fa6-solid:chevron-right" className="w-4 h-4 text-gray-400"/>
             </div>
