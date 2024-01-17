@@ -2,11 +2,9 @@
 import { Icon } from "astro-icon";
 import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
 import AppLayout from "@layouts/AppLayout.astro";
-import Overlay from "@components/common/Overlay";
 ---
 
 <AppLayout title="Editar perfil">
-    <Overlay client:load />
     <FullScreenScaffold title="Editar perfil" backLink="/my-profile/options">
         <div class="flex flex-col overflow-hidden">
             <div class="flex justify-center items-center gap-6">
