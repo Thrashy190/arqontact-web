@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon";
+import Tabs from "@components/common/Tabs";
+---
+
+<div class="flex flex-col gap-5">
+    <div class='flex items-center gap-1 text-gray-600 text-lg font-semibold'>
+        <span>Tipo de orden</span>
+    </div>
+    <Tabs
+        client:load
+        tabId="orderby"
+        items={[
+            { name:'Ascendente', id: 'asc'},
+            { name:'Descendente', id: 'desc'}
+        ]}
+        tabClasses="px-2"
+    />
+</div>

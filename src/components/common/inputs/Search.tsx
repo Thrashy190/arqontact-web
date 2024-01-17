@@ -7,7 +7,7 @@ interface InputProps {
 
 export default function Search({ id, placeholder }: InputProps) {
     return (
-        <div className="flex gap-2 items-center bg-gray-100 px-4 py-2 rounded-lg focus-within:ring-2 focus-within:ring-gray-300 focus-within:outline-gray-300">
+        <div className="w-full flex gap-4 items-center bg-gray-100 px-4 py-2 rounded-lg focus-within:ring-2 focus-within:ring-gray-300 focus-within:outline-gray-300">
             <Icon icon="fa6-solid:magnifying-glass" className="w-4 h-4 text-gray-400" />
             <input
                 name={ id }

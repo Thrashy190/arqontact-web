@@ -1,0 +1,14 @@
+---
+interface Props {
+    id: string,
+}
+
+const { id } = Astro.props;
+---
+<div
+    class={`transform has-[:checked]:translate-y-0 translate-y-full transition-all z-50 w-screen h-screen absolute flex justify-center items-center`}
+>
+    <label for={id} class="absolute -z-10 w-full h-full bg-[rgba(0,0,0,.3)]"></label>
+    <input type="checkbox" id={id} class="hidden"/>
+    <slot />
+</div>

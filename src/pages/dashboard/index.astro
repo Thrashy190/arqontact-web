@@ -1,75 +1,199 @@
 ---
 import { Icon } from "astro-icon";
-import { AllFilters, GradeFilters, OrderByFilters } from "@components/dashboard/modals";
+import AllFilters from "@components/dashboard/modals/AllFilters.astro";
+import GradeFilters from "@components/dashboard/modals/GradeFilters.astro";
+import OrderByFilters from "@components/dashboard/modals/OrderByFilters.astro";
+import Grade from "@components/dashboard/modals/Grade.astro";
 import AppLayout from "@layouts/AppLayout.astro";
-import Header from "@components/dashboard/Header";
+import Header from "@components/dashboard/Header.tsx";
+import { Search } from "@components/common/inputs";
+import HeaderContent from "@components/dashboard/HeaderContent.astro";
 ---
 
 <AppLayout title="Dashboard">
-    <AllFilters client:load/>
-    <GradeFilters client:load/>
-    <OrderByFilters client:load/>
-    <Header client:load />
-    <div class='w-screen h-full bg-gray-100 flex flex-col divide-y divide-gray-200 overflow-y-auto mobile-scrollbar'>
-        {
-            Array(3).fill(null).map((e, index) => {
-                return <a href='/dashboard/board/1'>
-                    <div class="w-full bg-white flex flex-shrink-0 items-center gap-4 py-6 px-3">
-                        <div class="w-full flex flex-col gap-2">
-                            <div class="flex justify-between items-center">
-                                <h2 class='font-semibold underline'>Hospital San Felipe</h2>
-                                <div class="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200"></div>
-                            </div>
-                            <p>Cimentación</p>
-                            <div class="flex justify-between items-center">
-                                <div class="flex gap-1 items-center">
-                                    <Icon name="fa-solid:map-pin" class="w-4 h-4 text-amber-400"/>
-                                    <span>Querétaro, QRO.</span>
-                                </div>
-                                <div class="flex gap-1 items-center">
-                                    <Icon name="fa-solid:clock" class="w-4 h-4 text-amber-400"/>
-                                    <span>12 FEB - 12 ABR</span>
-                                </div>
-                            </div>
+    <AllFilters/>
+    <GradeFilters/>
+    <OrderByFilters/>
+    <div class="min-w-0 w-full min-h-0 flex flex-col">
+        <Header client:load>
+            <HeaderContent/>
+        </Header>
+        <div class='min-w-0 w-screen sm:w-full h-full bg-gray-100 flex flex-col sm:flex-row sm:p-4 sm:justify-center overflow-y-auto gap-4'>
+            <div class="h-auto max-h-full overflow-y-auto mobile-scrollbar sticky top-0 bg-white self-start p-5 hidden flex-col rounded-lg shadow-lg gap-3">
+                <div class="text-gray-400 flex justify-between gap-3">
+                    <h2 class="font-semibold uppercase">Filtros</h2>
+                    <Icon name="fa-solid:chevron-up" class="w-4 h-4 cursor-pointer"/>
+                </div>
+                <Grade/>
+                <div class="flex flex-col gap-5">
+                    <div class="flex items-center gap-1 text-gray-600 text-lg font-semibold">
+                        <span>Habilidades</span>
+                    </div>
+                    <div class="w-full hidden sm:flex items-center gap-3">
+                        <Search id="professional-search" placeholder="Buscar..." client:load/>
+                        <button class="bg-amber-400 text-white py-1 px-2 uppercase rounded-md font-semibold">
+                            Buscar
+                        </button>
+                    </div>
+                    <div class="h-48 mobile-scrollbar overflow-y-auto w-full flex flex-col gap-2">
+                        {
+                            Array(10).fill(null).map((e, index) => {
+                                return <label for={`skill-${index}`} class="has-[:checked]:bg-amber-100/70 has-[:checked]:text-amber-500 rounded-md py-1 px-2 flex justify-between items-center gap-2 cursor-pointer">
+                                    <span>Carpintería</span>
+                                    <input id={`skill-${index}`} type="checkbox" class="w-5 h-5"/>
+                                </label>
+                            })
+                        }
+                    </div>
+                </div>
+                <div class="flex flex-col gap-5">
+                    <div class="flex items-center gap-1 text-gray-600 text-lg font-semibold">
+                        <span>Actividad</span>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="has-commentaries" class="flex gap-2 cursor-pointer">
+                            <input id="has-commentaries" type="checkbox" class="w-5 h-5"/>
+                            <span>Tiene comentarios</span>
+                        </label>
+                        <label for="has-projects" class="flex gap-2 cursor-pointer">
+                            <input id="has-projects" type="checkbox" class="w-5 h-5"/>
+                            <span>Tiene proyectos</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="sm:w-[650px] md:w-[800px] flex flex-col divide-y sm:divide-y-0 sm:gap-4 divide-gray-200 sm:[&>*:last-child]:pb-4">
+                <div class="hidden sm:flex justify-end items-center gap-4">
+                    <span class="font-semibold text-gray-400">451 resultados</span>
+                    <div class="flex gap-2">
+                        <div class="w-8 h-8 font-bold bg-white flex justify-center items-center rounded-md text-gray-800 border border-gray-200 cursor-pointer">
+                            1
+                        </div>
+                        <div class="w-8 h-8 font-medium bg-white flex justify-center items-center rounded-md text-gray-400 border border-gray-200 cursor-pointer">
+                            2
+                        </div>
+                        <div class="w-8 h-8 font-medium bg-white flex justify-center items-center rounded-md text-gray-400 border border-gray-200 cursor-pointer">
+                            3
+                        </div>
+                        <div class="w-8 h-8 font-medium bg-white flex justify-center items-center rounded-md text-gray-400 border border-gray-200 cursor-pointer">
+                            4
+                        </div>
+                        <div class="w-8 h-8 font-medium bg-white flex justify-center items-center rounded-md text-gray-400 border border-gray-200 cursor-pointer">
+                            5
                         </div>
                     </div>
-                </a>
-            })
-        }
-        {
-            Array(10).fill(null).map((e, index) => {
-                return <a href='/dashboard/profile/1'>
-                    <div class="w-full bg-white flex flex-shrink-0 items-center gap-4 py-6 px-3">
-                        <img class='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
-                        <div class="w-full flex flex-col gap-2">
-                            <div class="flex justify-between items-center">
-                                <h2 class='font-semibold underline'>Juan José Cruz Aguirre</h2>
-                                <div class='w-auto flex items-center rounded-md px-2 py-1 gap-1'>
-                                    <Icon name="fa-solid:star" class="w-3 h-3 text-amber-400"/>
-                                    <span class="text-gray-400">4.5</span>
+                </div>
+                {
+                    Array(3).fill(null).map((e, index) => {
+                        return (
+                            <div class="w-full sm:rounded-lg sm:shadow-lg bg-white flex flex-shrink-0 items-center gap-4 p-4">
+                                <div class="w-full flex flex-col gap-2">
+                                    <div class="flex justify-between items-center">
+                                        <h2 class='font-semibold underline'>Hospital San Felipe</h2>
+                                        <div class="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200"></div>
+                                    </div>
+                                    <p>Cimentación</p>
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex gap-1 items-center">
+                                            <Icon name="fa-solid:map-pin" class="w-4 h-4 text-amber-400"/>
+                                            <span>Querétaro, QRO.</span>
+                                        </div>
+                                        <div class="flex gap-1 items-center">
+                                            <Icon name="fa-solid:clock" class="w-4 h-4 text-amber-400"/>
+                                            <span>12 FEB - 12 ABR</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 text-amber-400">
-                                <Icon name="fa-solid:hammer" class="w-5 h-5"/>
-                                <div class='w-auto self-start text-sm font-medium flex items-center bg-amber-100 rounded-md px-2 py-1 gap-3'>
-                                    <span>Bloquero</span>
+                        )
+                    })
+                }
+                {
+                    Array(10).fill(null).map((e, index) => {
+                        return (
+                            <div>
+                                <div class="bg-white sm:rounded-lg sm:shadow-lg p-4 gap-4 flex flex-col divide-y divide-gray-200">
+                                    <div class="w-full flex flex-shrink-0 items-center gap-4">
+                                        <div class="flex-shrink-0 flex flex-col gap-3">
+                                            <img class='w-20 h-20 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
+                                            <Icon name="fa-regular:bookmark" class="w-4 h-4 text-action self-center"/>
+                                        </div>
+                                        <div class="w-full flex flex-col gap-2">
+                                            <div class="flex justify-between items-center">
+                                                <a href="#" class='font-semibold underline'>Juan José Cruz Aguirre</a>
+                                                <div class='w-auto text-gray-400 flex items-center rounded-md px-2 py-1 gap-3'>
+                                                    <Icon name="fa-solid:star" class="sm:hidden w-3 h-3 text-amber-400"/>
+                                                    <span>4.5</span>
+                                                    <div class="hidden sm:flex gap-1">
+                                                        <Icon name="fa-solid:star" class="w-3 h-3 text-amber-400"/>
+                                                        <Icon name="fa-solid:star" class="w-3 h-3 text-amber-400"/>
+                                                        <Icon name="fa-solid:star" class="w-3 h-3 text-amber-400"/>
+                                                        <Icon name="fa-solid:star" class="w-3 h-3 text-amber-400"/>
+                                                        <Icon name="fa-solid:star" class="w-3 h-3 text-gray-400"/>
+                                                    </div>
+                                                    <span class="hidden sm:block">(35)</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-2 text-amber-400">
+                                                <Icon name="fa-solid:hammer" class="w-5 h-5"/>
+                                                <div class='w-auto self-start text-sm font-medium flex items-center bg-amber-100 rounded-md px-2 py-1 gap-3'>
+                                                    <span>Bloquero</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-wrap gap-2 sm:gap-4">
+                                                <div class="flex gap-1 items-center">
+                                                    <Icon name="fa-solid:map-pin" class="w-4 h-4 text-amber-400"/>
+                                                    <span>Querétaro, QRO.</span>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <Icon name="fa-solid:clock" class="w-4 h-4 text-amber-400"/>
+                                                    <span>15 años de experiencia.</span>
+                                                </div>
+                                            </div>
+                                            <div class="hidden sm:flex justify-between text-action">
+                                                <a href="#" class="flex items-center p-1 gap-2 text-sm rounded-md border border-gray-200">
+                                                    <Icon name="fa-solid:coins" class="w-4 h-4"/>
+                                                    <span>¡Pide una cotización!</span>
+                                                </a>
+                                                <a href="#" class="flex items-center p-1 gap-2 text-sm rounded-md border border-gray-200">
+                                                    <Icon name="fa-solid:globe" class="w-4 h-4"/>
+                                                    <span>Ver página</span>
+                                                </a>
+                                                <a href="#" class="flex items-center p-1 gap-2 text-sm rounded-md border border-gray-200">
+                                                    <Icon name="fa-solid:phone-alt" class="w-4 h-4"/>
+                                                    <span>Ver teléfono</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hidden sm:flex flex-col lg:flex-row justify-between items-center gap-4 pt-4">
+                                        <div class="flex flex-col text-sm text-gray-500">
+                                            <p>“Trabajan bastante bien, me encantó la atención que tuvieron con nosotros.”</p>
+                                            <p>- Armando Jaramillo</p>
+                                            <a href="#" class="underline font-medium text-gray-900 self-end pt-3">Ver más...</a>
+                                        </div>
+                                        <div class="flex-shrink-0 flex gap-3">
+                                            <picture class="overflow-hidden w-24 aspect-square rounded-md">
+                                                <img class="w-full h-full object-cover" src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery" />
+                                            </picture>
+                                            <picture class="overflow-hidden w-24 aspect-square rounded-md">
+                                                <img class="w-full h-full object-cover" src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery" />
+                                            </picture>
+                                            <picture class="overflow-hidden w-24 aspect-square rounded-md">
+                                                <img class="w-full h-full object-cover" src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery" />
+                                            </picture>
+                                            <div class="bg-gray-100 rounded-md flex justify-center items-center p-2 text-gray-400">
+                                                <Icon name="fa-solid:ellipsis-h" class="w-4 h-4"/>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex flex-wrap gap-2 sm:gap-4">
-                                <div class="flex gap-1 items-center">
-                                    <Icon name="fa-solid:map-pin" class="w-4 h-4 text-amber-400"/>
-                                    <span>Querétaro, QRO.</span>
-                                </div>
-                                <div class="flex gap-1 items-center">
-                                    <Icon name="fa-solid:clock" class="w-4 h-4 text-amber-400"/>
-                                    <span>15 años de experiencia.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            })
-        }
+                        )
+                    })
+                }
+            </div>
+        </div>
     </div>
     <!-- <List client:load /> -->
 </AppLayout>

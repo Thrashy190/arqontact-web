@@ -6,11 +6,9 @@ import ProfileHeader from "@components/profiles/ProfileHeader.astro";
 import ProfileInfo from "@components/profiles/ProfileInfo.astro";
 import ProfileComments from "@components/profiles/ProfileComments.astro";
 import ProfileGalleries from "@components/profiles/ProfileGalleries.astro";
-import Overlay from "@components/common/Overlay";
 ---
 
 <AppLayout title="Mi perfil">
-    <Overlay client:load />
     <Profile client:load>
         <div slot="links" class="flex justify-between py-3">
             <h1 class="text-xl font-bold">Mi perfil</h1>

@@ -3,6 +3,9 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			boxShadow: {
+				'strong': '0 0 20px 0 rgb(0 0 0 / 0.1)'
+			},
 			colors: {
 				'action': '#0088ff',
 			},

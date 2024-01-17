@@ -4,13 +4,14 @@ import { Icon } from "astro-icon";
 interface Props {
     title: string,
     backLink?: string,
+    shrink?: boolean
 }
 
-const { title, backLink } = Astro.props;
+const { title, backLink, shrink } = Astro.props;
 ---
-<div class="w-full h-full bg-white pt-5 px-5 flex flex-col justify-between overflow-hidden self-end">
-    <div class="h-full flex flex-col gap-3 overflow-y-auto mobile-scrollbar">
-        <div class="sticky top-0 py-3 bg-white flex items-center gap-10 text-gray-400">
+<div class={`w-full h-full bg-white pt-5 px-5 flex flex-col ${ shrink ? 'items-center' : '' } justify-center overflow-y-auto self-end`}>
+    <div class={`${ shrink ? 'sm:w-[450px]' : ''} h-full flex flex-col gap-3`}>
+        <div class="z-10 before:content-[''] before:w-full before:h-5 before:bg-white before:absolute before:-top-5 sticky top-0 py-3 bg-white flex items-center gap-10 text-gray-400">
             {
                 backLink ? <a href={backLink} class='text-xl'>
                     <Icon name="fa-solid:chevron-left" class="w-5 h-5"/>
