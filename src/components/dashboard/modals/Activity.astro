@@ -1,0 +1,22 @@
+---
+interface Props {
+    name: string,
+}
+
+const { name } = Astro.props;
+---
+<div class="flex flex-col gap-5">
+    <div class="flex items-center gap-1 text-gray-600 text-lg font-semibold">
+        <span>Actividad</span>
+    </div>
+    <div class="flex flex-col gap-2">
+        <label for={`has-commentaries_${name}`} class="flex gap-2 cursor-pointer">
+            <input id={`has-commentaries_${name}`} type="checkbox" class="w-5 h-5"/>
+            <span>Tiene comentarios</span>
+        </label>
+        <label for={`has-projects_${name}`} class="flex gap-2 cursor-pointer">
+            <input id={`has-projects_${name}`} type="checkbox" class="w-5 h-5"/>
+            <span>Tiene proyectos</span>
+        </label>
+    </div>
+</div>

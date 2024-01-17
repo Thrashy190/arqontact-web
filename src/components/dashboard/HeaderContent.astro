@@ -1,9 +1,11 @@
 ---
 import { Icon } from "astro-icon";
 import Tabs from "@components/common/Tabs"
+import { Search } from "@components/common/inputs";
 import Grade from "./modals/Grade.astro";
 import OrderBy from "./modals/OrderBy.astro";
-import { Search } from "@components/common/inputs";
+import Abilities from "./modals/Abilities.astro";
+import Activity from "./modals/Activity.astro";
 ---
 <div class="min-w-0 hidden sm:flex items-center justify-between">
     <h1 class="text-2xl font-bold text-gray-800">Directorio de Profesionales</h1>
@@ -74,26 +76,8 @@ import { Search } from "@components/common/inputs";
                     </div>
                 </label>
                 <div class="peer-has-[:checked]:scale-100 scale-0 hidden sm:block z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
-                    <div class="w-64 flex flex-col gap-5">
-                        <div class="flex items-center gap-1 text-gray-600 text-lg font-semibold">
-                            <span>Habilidades</span>
-                        </div>
-                        <div class="w-full hidden sm:flex items-center gap-3">
-                            <Search id="professional-search" placeholder="Buscar..." client:load/>
-                            <button class="bg-amber-400 text-white py-1 px-2 uppercase rounded-md font-semibold">
-                                Buscar
-                            </button>
-                        </div>
-                        <div class="h-48 mobile-scrollbar overflow-y-auto w-full flex flex-col gap-2">
-                            {
-                                Array(10).fill(null).map((e, index) => {
-                                    return <label for={`skill-${index}`} class="has-[:checked]:bg-amber-100/70 has-[:checked]:text-amber-500 rounded-md py-1 px-2 flex justify-between items-center gap-2 cursor-pointer">
-                                        <span>Carpintería</span>
-                                        <input id={`skill-${index}`} type="checkbox" class="w-5 h-5"/>
-                                    </label>
-                                })
-                            }
-                        </div>
+                    <div class="w-64">
+                        <Abilities name="header"/>
                     </div>
                 </div>
             </div>
@@ -106,20 +90,8 @@ import { Search } from "@components/common/inputs";
                     </div>
                 </label>
                 <div class="peer-has-[:checked]:scale-100 scale-0 hidden sm:block z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
-                    <div class="w-48 flex flex-col gap-5">
-                        <div class="flex items-center gap-1 text-gray-600 text-lg font-semibold">
-                            <span>Actividad</span>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="has-commentaries" class="flex gap-2 cursor-pointer">
-                                <input id="has-commentaries" type="checkbox" class="w-5 h-5"/>
-                                <span>Tiene comentarios</span>
-                            </label>
-                            <label for="has-projects" class="flex gap-2 cursor-pointer">
-                                <input id="has-projects" type="checkbox" class="w-5 h-5"/>
-                                <span>Tiene proyectos</span>
-                            </label>
-                        </div>
+                    <div class="w-48">
+                        <Activity name="header"/>
                     </div>
                 </div>
             </div>
