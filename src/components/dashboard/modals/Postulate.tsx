@@ -4,7 +4,7 @@ import { useModal } from "@stores/modal.store";
 
 export default function Postulate() {
     const { removeModal } = useModal(state => state);
-    return (
+    // return (
         // <Overlay id="postulate">
         //     <div onClick={(e) => e.stopPropagation()} className={`w-full bg-white p-5 flex flex-col gap-10 rounded-t-xl self-end`}>
         //         <div className="flex flex-col gap-5">
@@ -24,5 +24,5 @@ export default function Postulate() {
         //         </div>
         //     </div>
         // </Overlay>
-    );
+    // );
 };
