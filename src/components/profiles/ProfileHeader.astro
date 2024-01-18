@@ -8,16 +8,10 @@ interface Props {
 const { interactive = false } = Astro.props;
 ---
 
-<div class="flex gap-6 items-center">
-    <img class='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
+<div class="sm:self-center flex gap-6 items-center">
+    <img class='w-20 h-20 sm:w-28 sm:h-28 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
     <div class="w-full flex flex-col gap-2">
-        <h2 class='font-semibold'>Carpinterías Ramírez</h2>
-        <div class="flex items-center gap-2 text-amber-400">
-            <Icon name="fa-solid:hammer" class="w-5 h-5"/>
-            <div class='w-auto self-start text-sm font-medium flex items-center bg-amber-100 rounded-md px-2 py-1 gap-3'>
-                <span>Carpintería</span>
-            </div>
-        </div>
+        <h2 class='font-semibold sm:text-2xl'>Carpinterías Ramírez</h2>
         <div class="flex items-center gap-4">
             <div class='w-auto text-gray-400 flex items-center rounded-md gap-2'>
                 <span>4.5</span>
@@ -31,8 +25,20 @@ const { interactive = false } = Astro.props;
                 <span>(54)</span>
             </div>
         </div>
+        <div class="flex items-center gap-2 text-amber-400">
+            <Icon name="fa-solid:hammer" class="w-5 h-5"/>
+            <div class='w-auto self-start text-sm font-medium flex items-center bg-amber-100 rounded-md px-2 py-1 gap-3'>
+                <span>Carpintería</span>
+            </div>
+        </div>
+        <div class="hidden sm:flex items-center gap-2">
+            <Icon name="fa-solid:map-pin" class="w-5 h-5 text-amber-400"/>
+            <div class='w-auto self-start text-sm font-medium'>
+                <span>Querétaro, QRO.</span>
+            </div>
+        </div>
         {
-            interactive && <button class="bg-action text-white self-start rounded-md text-sm flex items-center gap-2 py-1 px-2">
+            interactive && <button class="block sm:hidden bg-action text-white self-start rounded-md text-sm flex items-center gap-2 py-1 px-2">
                 <Icon name="fa-solid:coins" class="w-3 h-3 text-white"/>
                 ¡Pide una cotización!
             </button>

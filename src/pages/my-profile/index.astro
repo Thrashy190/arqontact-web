@@ -9,16 +9,18 @@ import ProfileGalleries from "@components/profiles/ProfileGalleries.astro";
 ---
 
 <AppLayout title="Mi perfil">
-    <Profile client:load>
-        <div slot="links" class="flex justify-between py-3">
-            <h1 class="text-xl font-bold">Mi perfil</h1>
-            <a href="/my-profile/options">
-                <Icon name="fa-solid:bars" className="w-6 h-6 text-gray-400" />
-            </a>
-        </div>
-        <ProfileHeader slot="profileHeader" />
-        <ProfileInfo slot="profileInfo" />
-        <ProfileComments slot="profileComments" />
-        <ProfileGalleries slot="profileGalleries" />
-    </Profile>
+    <div class="w-full min-h-0 flex justify-center">
+        <Profile client:load>
+            <div slot="links" class="flex justify-between py-3">
+                <h1 class="text-xl font-bold">Mi perfil</h1>
+                <a href="/my-profile/options">
+                    <Icon name="fa-solid:bars" className="w-6 h-6 text-gray-400" />
+                </a>
+            </div>
+            <ProfileHeader slot="profileHeader" />
+            <ProfileInfo slot="profileInfo" />
+            <ProfileComments slot="profileComments" />
+            <ProfileGalleries slot="profileGalleries" />
+        </Profile>
+    </div>
 </AppLayout>

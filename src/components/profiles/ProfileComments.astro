@@ -1,12 +1,14 @@
 ---
 import { Icon } from "astro-icon";
+import Tabs from "@components/common/Tabs";
 ---
 
-<div class="snap-center flex-shrink-0 w-screen sm:w-[calc(100vw-4rem)] h-full flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5 gap-5">
+<div id="profile-comments" class="snap-center flex-shrink-0 w-screen max-w-[700px] h-full sm:h-auto flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5 gap-5">
+    <h2 class='uppercase text-gray-500 font-semibold text-sm hidden sm:block pb-4'>Reseñas</h2>
     <div class="bg-white rounded-lg py-3 px-5 flex flex-col gap-4">
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 sm:gap-16">
             <div class="flex flex-col items-center">
-                <span class="text-4xl font-bold">4.5</span>
+                <span class="text-4xl sm:text-7xl font-bold">4.5</span>
                 <div class="flex gap-1 text-amber-400">
                     {
                         Array(4).fill(0).map((e, i) => {
@@ -38,37 +40,24 @@ import { Icon } from "astro-icon";
                 }
             </div>
         </div>
-        <div class="bg-gray-100 p-1 gap-2 text-gray-600 flex rounded-xl">
-            <div class='flex justify-center flex-grow flex-shrink-0'>
-                <span class={`w-6 h-6 flex justify-center items-center font-medium rounded-md text-sm text-amber-400 bg-white transition-all`}>
-                    5
-                </span>
-            </div>
-            <div class='flex justify-center flex-grow flex-shrink-0'>
-                <span class={`w-6 h-6 flex justify-center items-center font-medium rounded-md text-sm text-gray-500 transition-all`}>
-                    4
-                </span>
-            </div>
-            <div class='flex justify-center flex-grow flex-shrink-0'>
-                <span class={`w-6 h-6 flex justify-center items-center font-medium rounded-md text-sm text-gray-500 transition-all`}>
-                    3
-                </span>
-            </div>
-            <div class='flex justify-center flex-grow flex-shrink-0'>
-                <span class={`w-6 h-6 flex justify-center items-center font-medium rounded-md text-sm text-gray-500 transition-all`}>
-                    2
-                </span>
-            </div>
-            <div class='flex justify-center flex-grow flex-shrink-0'>
-                <span class={`w-6 h-6 flex justify-center items-center font-medium rounded-md text-sm text-gray-500 transition-all`}>
-                    1
-                </span>
-            </div>
+        <div class="sm:self-center">
+            <Tabs
+                client:load
+                tabId="grades"
+                items={[
+                    { name:'5', id: '5'},
+                    { name:'4', id: '4'},
+                    { name:'3', id: '3'},
+                    { name:'2', id: '2'},
+                    { name:'1', id: '1'},
+                ]}
+                tabClasses="px-6"
+            />
         </div>
     </div>
     <div class="flex flex-col gap-6">
         {
-            Array(5).fill(0).map((e, i) => {
+            Array(2).fill(0).map((e, i) => {
                 return (
                     <div class="flex flex-col gap-2">
                         <div class="w-full flex justify-between">

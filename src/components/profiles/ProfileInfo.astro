@@ -8,7 +8,7 @@ interface Props {
 const { withVacancyActions = false } = Astro.props;
 ---
 
-<div class="snap-center flex-shrink-0 w-screen sm:w-[calc(100vw-4rem)] h-full flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5 gap-5">
+<div id="profile-info" class="snap-center flex-shrink-0 w-screen max-w-[700px] h-full sm:h-auto flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5 gap-5">
     {
         withVacancyActions && <div class="w-full flex justify-between items-center">
             <button class="bg-red-100 text-red-600 flex items-center gap-2 rounded-lg py-2 px-4 font-semibold">
@@ -22,7 +22,7 @@ const { withVacancyActions = false } = Astro.props;
         </div>
     }
     <div class="flex flex-col gap-2">
-        <h2 class='uppercase text-gray-500 font-semibold text-sm'>Acerca de Carpinterías Ramírez</h2>
+        <h2 class='uppercase text-gray-500 font-semibold text-sm pb-4'>Acerca de Carpinterías Ramírez</h2>
         <div class="bg-white rounded-lg flex flex-col divide-y divide-gray-100">
             <p class="py-3 px-5 before:content-['“'] first-letter:text-gray-800 first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-5">
                 Nosotros somos Carpinterías Ramírez, tenemos 15 años de experiencia ofreciendo soluciones de carpintería de alta calidad. Estamos principalmente especializados en muebles de madera, mdf, y algunas melaminas. Podemos ofrecerte una opción buena, barata y bonita para embellezer tu hogar a tu manera.

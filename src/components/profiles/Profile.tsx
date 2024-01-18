@@ -16,11 +16,11 @@ interface ProfileProps {
 
 export default function Profile({ links, profileHeader, profileInfo, profileComments, profileGalleries, withActions = false }: ProfileProps) {
     return (
-        <div className="min-w-0 flex flex-col">
+        <div className="min-w-0 max-w-[700px] flex flex-col">
             <Comment />
             <Invite />
             <Carrousel totalChildren={3}>
-                <header className="flex-shrink-0 bg-white flex flex-col gap-6 border-b border-gray-200 pt-5 pb-2 px-5">
+                <header className="flex-shrink-0 bg-white flex flex-col gap-6 border-b sm:border-0 border-gray-200 pt-5 pb-2 px-5">
                     { links }
                     { profileHeader }
                     <div className="bg-gray-100 p-1 gap-2 text-gray-600 flex rounded-xl">
@@ -49,7 +49,7 @@ export default function Profile({ links, profileHeader, profileInfo, profileComm
                     </Fragment> :
                     null
                 }
-                <Target className='w-screen sm:w-[calc(100vw-4rem)] h-full bg-gray-100'>
+                <Target className='w-screen max-w-[700px] h-full sm:h-auto sm:flex-col bg-gray-100 sm:bg-white'>
                     { ...[profileInfo, profileComments, profileGalleries] }
                 </Target>
             </Carrousel>
