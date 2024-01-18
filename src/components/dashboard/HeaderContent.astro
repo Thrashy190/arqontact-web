@@ -38,12 +38,14 @@ import Activity from "./modals/Activity.astro";
                         <Icon name="fa-solid:chevron-down" class="w-4 h-4"/>
                     </div>
                 </label>
-                <label class="hidden sm:block peer cursor-pointer" for="order-popup">
-                    <input id="order-popup" class="hidden" type="checkbox"/>
+                <label class="hidden sm:block peer cursor-pointer" for="order-by-popup">
+                    <input id="order-by-popup" class="hidden" type="checkbox"/>
                     <div class='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
                         <span>Tipo de orden</span>
                         <Icon name="fa-solid:chevron-down" class="w-4 h-4"/>
                     </div>
+                </label>
+                <label class="z-[29] fixed top-0 left-0 peer-has-[:checked]:block hidden w-screen h-screen bg-transparent" for="order-by-popup">
                 </label>
                 <div class="peer-has-[:checked]:scale-100 scale-0 hidden sm:block z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
                     <OrderBy/>
@@ -63,6 +65,8 @@ import Activity from "./modals/Activity.astro";
                         <Icon name="fa-solid:chevron-down" class="w-4 h-4"/>
                     </div>
                 </label>
+                <label class="z-[29] fixed top-0 left-0 peer-has-[:checked]:block hidden w-screen h-screen bg-transparent" for="grade-popup">
+                </label>
                 <div class="peer-has-[:checked]:scale-100 scale-0 hidden sm:block z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
                     <Grade/>
                 </div>
@@ -74,6 +78,8 @@ import Activity from "./modals/Activity.astro";
                         <span>Habilidades</span>
                         <Icon name="fa-solid:chevron-down" class="w-4 h-4"/>
                     </div>
+                </label>
+                <label class="z-[29] fixed top-0 left-0 peer-has-[:checked]:block hidden w-screen h-screen bg-transparent" for="abilities-popup">
                 </label>
                 <div class="peer-has-[:checked]:scale-100 scale-0 hidden sm:block z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
                     <div class="w-64">
@@ -88,6 +94,8 @@ import Activity from "./modals/Activity.astro";
                         <span>Actividad</span>
                         <Icon name="fa-solid:chevron-down" class="w-4 h-4"/>
                     </div>
+                </label>
+                <label class="z-[29] fixed top-0 left-0 peer-has-[:checked]:block hidden w-screen h-screen bg-transparent" for="activity-popup">
                 </label>
                 <div class="peer-has-[:checked]:scale-100 scale-0 hidden sm:block z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
                     <div class="w-48">
