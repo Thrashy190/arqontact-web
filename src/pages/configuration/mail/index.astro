@@ -1,0 +1,13 @@
+---
+import ConfigurationLayout from "@layouts/ConfigurationLayout.astro";
+import Overview from "@components/configuration/Overview.astro";
+---
+
+<ConfigurationLayout>
+    <Overview
+        title="Correo electrónico"
+        description="Actualmente tu cuenta está vinculada a este correo electrónico:"
+        subject="galac.9173@gmail.com"
+        updateLink="/configuration/mail/update"
+    />
+</ConfigurationLayout>

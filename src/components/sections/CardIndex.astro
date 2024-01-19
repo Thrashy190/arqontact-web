@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon";
+import AppLayout from "@layouts/AppLayout.astro";
+import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
+import CardState from "@components/my-profile/CardState.astro";
+
+interface Props {
+    backLink?: string,
+}
+
+const { backLink = false } = Astro.props;
+---
+
+
+<FullScreenScaffold title="Datos de pago" backLink={backLink} shrink>
+    <div class="flex flex-col gap-6 overflow-y-auto mobile-scrollbar">
+        <div class="flex flex-col gap-2">
+            <h3 class="text-sm font-semibold uppercase text-gray-400 pb-2">Tarjetas</h3>
+            <CardState 
+                card="mastercard"
+                name="Mastercard ....1234"
+                expiration="12/22"
+                active
+            />
+            <CardState 
+                card="visa"
+                name="Visa ....1234"
+                expiration="12/22"
+            />
+            <a href="/configuration/pay-data/create" class="self-end hidden sm:flex justify-center items-center gap-3 p-2 rounded-md border border-gray-200 text-action">
+                <Icon name="fa-solid:plus" class="w-3 h-3"/>
+                <p class="font-medium">Agregar tarjeta</p>
+            </a>
+            <a href="/my-profile/options/pay-data/create" class="sm:hidden flex justify-center items-center gap-3 py-2 rounded-md border border-gray-200 text-action">
+                <Icon name="fa-solid:plus" class="w-3 h-3"/>
+                <p class="font-medium">Agregar tarjeta</p>
+            </a>
+        </div>
+        <div class="flex flex-col gap-2">
+            <h3 class="text-sm font-semibold uppercase text-gray-400 pb-2">Configuración</h3>
+            <div class="flex justify-between items-center gap-4">
+                <p class="font-medium">Pagar siempre con tarjeta activa</p>
+                <label class="switch flex-shrink-0">
+                    <input type="checkbox"/>
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+</FullScreenScaffold>

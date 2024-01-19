@@ -1,0 +1,53 @@
+---
+import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
+
+interface Props {
+    backLink?: string,
+}
+
+const { backLink = false } = Astro.props;
+---
+<FullScreenScaffold title="Notificaciones" backLink={backLink} shrink>
+    <div class="flex flex-col gap-6 overflow-y-auto mobile-scrollbar">
+        <div class="flex flex-col gap-2">
+            <h3 class="text-sm font-semibold uppercase text-gray-400 pb-2">Suscripciones</h3>
+            <div class="flex justify-between items-center gap-4">
+                <p class="font-medium">Recibir cuando esté a puntos de expirar</p>
+                <label class="switch flex-shrink-0">
+                    <input type="checkbox"/>
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+        <div class="flex flex-col gap-2">
+            <h3 class="text-sm font-semibold uppercase text-gray-400 pb-2">Postulaciones</h3>
+            <div class="flex justify-between items-center gap-4">
+                <p class="font-medium">Recibir cuando me acepten en un tablero</p>
+                <label class="switch flex-shrink-0">
+                    <input type="checkbox"/>
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+        <div class="flex flex-col gap-2">
+            <h3 class="text-sm font-semibold uppercase text-gray-400 pb-2">Invitaciones</h3>
+            <div class="flex justify-between items-center gap-4">
+                <p class="font-medium">Recibir cuando me inviten a un tablero</p>
+                <label class="switch flex-shrink-0">
+                    <input type="checkbox"/>
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+        <div class="flex flex-col gap-2">
+            <h3 class="text-sm font-semibold uppercase text-gray-400 pb-2">Canales del tablero</h3>
+            <div class="flex justify-between items-center gap-4">
+                <p class="font-medium">Recibir cuando envíen un mensaje</p>
+                <label class="switch flex-shrink-0">
+                    <input type="checkbox"/>
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+</FullScreenScaffold>

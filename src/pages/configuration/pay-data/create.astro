@@ -1,0 +1,26 @@
+---
+import { Icon } from "astro-icon";
+import ConfigurationLayout from "@layouts/ConfigurationLayout.astro";
+import ActionSection from "@components/configuration/ActionSection.astro";
+import { Input } from "@components/common/inputs";
+---
+
+<ConfigurationLayout>
+    <ActionSection
+        title="Agregar tarjeta"
+        backLink="/configuration/pay-data"
+    >
+        <div class="flex flex-col gap-3">
+            <Input id="full-name" label="Nombre completo" placeholder="Juan José Cruz Aguirre" type="text"/>
+            <Input id="card-number" label="Número de tarjeta" placeholder="4242 4242 4242 4242" type="text"/>
+            <div class="flex gap-3">
+                <Input id="expiration-date" label="Expiración" placeholder="12/23" type="text"/>
+                <Input id="cvv" label="CVV" placeholder="123" type="text"/>
+            </div>
+        </div>
+        <button class="bg-action text-white rounded-md self-end flex gap-3 px-3 py-1">
+            <Icon name="fa-solid:save" class="w-5 h-5"/>
+            <span>Guardar</span>
+        </button>
+    </ActionSection>
+</ConfigurationLayout>

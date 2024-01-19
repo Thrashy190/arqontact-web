@@ -1,0 +1,15 @@
+---
+import { Icon } from "astro-icon";
+interface Props {
+    icon: string,
+    text: string,
+    link: string,
+}
+
+const { icon, text, link } = Astro.props;
+---
+
+<a href={link} class="hover:bg-blue-50 hover:text-blue-700 flex items-center gap-3 py-1 px-3 rounded-md transition-all">
+    <Icon name={icon} class="w-4 h-4"/>
+    <span class="text-sm">{ text }</span>
+</a>

@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon";
+import ConfigurationLayout from "@layouts/ConfigurationLayout.astro";
+import ActionSection from "@components/configuration/ActionSection.astro";
+import { Input } from "@components/common/inputs";
+---
+
+<ConfigurationLayout>
+    <ActionSection
+        title="Cambiar contraseña"
+        backLink="/configuration/password"
+    >
+        <Input id="new-mail" label="Nuevo contraseña" placeholder="··················" type="text"/>
+        <button class="bg-action text-white rounded-md self-end flex gap-3 px-3 py-1">
+            <Icon name="fa-solid:save" class="w-5 h-5"/>
+            <span>Guardar</span>
+        </button>
+    </ActionSection>
+</ConfigurationLayout>

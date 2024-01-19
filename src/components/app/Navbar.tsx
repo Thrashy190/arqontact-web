@@ -46,7 +46,7 @@ export default function Navbar() {
                         <Icon icon="fa6-solid:bookmark"/>
                         <span>Guardados</span>
                     </a>
-                    <a href="/settings" className="flex gap-3 items-center text-gray-600">
+                    <a href="/configuration" className="flex gap-3 items-center text-gray-600">
                         <Icon icon="fa6-solid:gear"/>
                         <span>Configuración</span>
                     </a>
