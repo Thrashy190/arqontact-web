@@ -38,7 +38,7 @@ export default function Navbar() {
                 </label>
                 <label htmlFor="user-options-popup" className="fixed top-0 left-0 peer-has-[:checked]:block hidden w-screen h-screen bg-transparent"></label>
                 <div className="peer-has-[:checked]:scale-100 scale-0 absolute [&>*:not(:first-child)]:pt-2 flex flex-col divide-y divide-gray-200 gap-2 bg-white py-2 px-4 bottom-[calc(100%+.75rem)] left-0 rounded-md shadow-strong transition-all">
-                    <a href="" className="flex gap-3 items-center text-gray-600">
+                    <a href="/edit-my-profile" className="flex gap-3 items-center text-gray-600">
                         <Icon icon="fa6-solid:user"/>
                         <span>Editar perfil</span>
                     </a>
