@@ -37,16 +37,30 @@ const { title } = Astro.props;
 	@tailwind utilities;
 
 	@layer utilities {
-		.no-scrollbar::-webkit-scrollbar {
+		.no-v-scrollbar::-webkit-scrollbar:vertical {
 			display: none;
 		}
 
-		.no-scrollbar {
+		.no-v-scrollbar:vertical {
 			-ms-overflow-style: none;
 			scrollbar-width: none;
 		}
 		
-		.mobile-scrollbar::-webkit-scrollbar {
+		.mobile-v-scrollbar::-webkit-scrollbar:vertical {
+			width: 5px;
+			height: 5px;
+		}
+
+		.no-h-scrollbar::-webkit-scrollbar:horizontal {
+			display: none;
+		}
+
+		.no-h-scrollbar:horizontal {
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+		}
+		
+		.mobile-h-scrollbar::-webkit-scrollbar:horizontal {
 			width: 5px;
 			height: 5px;
 		}

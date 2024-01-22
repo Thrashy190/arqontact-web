@@ -83,7 +83,7 @@ function Target({ type = 'x', children, className }: CarrouselProps) {
     }
 
     return (
-        <div ref={carrousel} onScroll={handleScrollItems} className={`${className ?? ''} ${type == 'x' ? 'overflow-x-auto' : 'overflow-y-auto'} flex no-scrollbar ${type == 'x' ? 'snap-x' : 'snap-y'} snap-mandatory`}>
+        <div ref={carrousel} onScroll={handleScrollItems} className={`${className ?? ''} ${type == 'x' ? 'overflow-x-auto snap-x no-h-scrollbar' : 'overflow-y-auto snap-y no-v-scrollbar'} flex no-scrollbar snap-mandatory`}>
             { children }
         </div>
     )

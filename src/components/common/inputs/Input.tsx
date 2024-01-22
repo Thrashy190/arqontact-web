@@ -7,7 +7,7 @@ interface InputProps {
 
 export default function Input({ id, label, type, placeholder }: InputProps) {
     return (
-        <div className="min-w-0 flex flex-col gap-1">
+        <div className="min-w-0 w-full flex flex-col gap-1">
             <label className="font-medium" htmlFor={ id }>{ label }</label>
             <input
                 name={ id }
