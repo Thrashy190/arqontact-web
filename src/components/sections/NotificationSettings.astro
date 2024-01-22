@@ -5,7 +5,7 @@ interface Props {
     backLink?: string,
 }
 
-const { backLink = false } = Astro.props;
+const { backLink = "" } = Astro.props;
 ---
 <FullScreenScaffold title="Notificaciones" backLink={backLink} shrink>
     <div class="flex flex-col gap-6 overflow-y-auto mobile-scrollbar">

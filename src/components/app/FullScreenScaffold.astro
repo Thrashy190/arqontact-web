@@ -8,10 +8,10 @@ interface Props {
     shrink?: boolean
 }
 
-const { header = true, title, backLink, shrink } = Astro.props;
+const { header = true, title, backLink, shrink = false } = Astro.props;
 ---
 <div class={`w-full h-full bg-white pt-5 px-5 flex flex-col ${ shrink ? 'items-center' : '' } justify-center overflow-y-auto self-end`}>
-    <div class={`${ shrink ? 'sm:w-[450px]' : ''} h-full flex flex-col gap-3`}>
+    <div class={`w-full ${ shrink ? `sm:max-w-[450px]` : ''} h-full flex flex-col gap-3`}>
         {
             header && <div class="z-10 before:content-[''] before:w-full before:h-5 before:bg-white before:absolute before:-top-5 sticky top-0 py-3 bg-white flex items-center gap-10 text-gray-400">
                 {
