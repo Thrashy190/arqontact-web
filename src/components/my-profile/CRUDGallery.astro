@@ -1,0 +1,67 @@
+---
+import { Icon } from "astro-icon";
+import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
+import { Input, Textarea } from "@components/common/inputs";
+import TitleAction from "@components/my-profile/actions/TitleAction.tsx";
+import { SetCollaborators, SetHashtags } from "@components/my-profile/modals";
+
+interface Props {
+    edit?: boolean,
+}
+
+const { edit = false } = Astro.props;
+---
+<SetCollaborators client:load/>
+<SetHashtags client:load/>
+<FullScreenScaffold header={false}>
+    <div class="max-w-[700px] self-center flex flex-col gap-5 pb-5">
+        <div class="z-10 before:content-[''] before:w-full before:h-5 before:bg-white before:absolute before:-top-5 sticky top-0 py-3 bg-white flex items-center gap-10 text-gray-400">
+            <a href="/my-profile" class="text-xl">
+                <Icon name="fa-solid:chevron-left" class="w-5 h-5"/>
+            </a>
+            <span class="font-bold text-xl text-gray-800">{ edit ? 'Editar' : 'Crear' } galería</span>
+        </div>
+        <Input id="title" label="Título de Galería" type="text" placeholder="Nombre de tu Galería"/>
+        <Textarea id="description" label="Descripción" placeholder="¿Qué publicarás?"/>
+        <div class="flex flex-col gap-1">
+            <TitleAction title="Hashtags" action="set-hashtags" client:load/>
+            <div class="flex flex-wrap gap-2">
+                {
+                    Array(5).fill(0).map((_, i) => {
+                        return <div class="flex items-center py-1 px-2 rounded-md gap-3 bg-amber-100 text-amber-400 font-medium">
+                            <span>#block</span>
+                            <Icon name="fa-solid:times" class="w-3 h-3"/>
+                        </div>
+                    })
+                }
+            </div>
+        </div>
+        <div class="flex flex-col gap-1">
+            <TitleAction title="Colaboradores" action="set-collabs" client:load/>
+            <ul class="bg-gray-100 overflow-x-auto no-scrollbar flex gap-2 rounded-lg p-2">
+                {
+                    Array(10).fill(0).map((_, i) => {
+                        return <li class="flex-shrink-0">
+                            <picture class="w-16 h-16">
+                                <img class="w-16 h-16 object-cover rounded-full" src="https://imageio.forbes.com/specials-images/imageserve/5ed00f17d4a99d0006d2e738/0x0.jpg"/>
+                            </picture>
+                        </li>
+                    })
+                }
+            </ul>
+        </div>
+        <div class="flex flex-col gap-1">
+            <p class="font-medium">Fotos</p>
+            <div class="grid grid-cols-3 sm:flex gap-2">
+                <div class="w-full text-gray-400 aspect-square sm:aspect-auto sm:p-5 flex flex-col gap-5 justify-center items-center rounded-md bg-gray-100 border-4 border-gray-300 border-dashed">
+                    <Icon name="fa-solid:paperclip" class="w-8 h-8 mx-auto my-auto"/>
+                    <p class="hidden font-semibold text-center sm:block">Haz click para seleccionar tus imágenes o arrástralas a este recuadro.</p>
+                </div>
+            </div>
+        </div>
+        <button class="bg-action text-white rounded-md self-center flex items-center gap-3 px-3 py-1">
+            <Icon name="fa-solid:save" class="w-5 h-5"/>
+            <span>Guardar</span>
+        </button>
+    </div>
+</FullScreenScaffold>

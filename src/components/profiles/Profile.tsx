@@ -20,10 +20,10 @@ export default function Profile({ links, profileHeader, profileInfo, profileComm
             <Comment />
             <Invite />
             <Carrousel totalChildren={3}>
-                <header className="flex-shrink-0 bg-white flex flex-col gap-6 border-b sm:border-0 border-gray-200 pt-5 pb-2 px-5">
+                <header className="flex-shrink-0 bg-white flex flex-col gap-6 sm:gap-2 border-b border-gray-200 pt-5 pb-2 sm:pb-6 px-5">
                     { links }
                     { profileHeader }
-                    <div className="bg-gray-100 p-1 gap-2 text-gray-600 flex rounded-xl">
+                    <div className="sm:hidden bg-gray-100 p-1 gap-2 text-gray-600 flex rounded-xl">
                         <InteractiveTrigger event="onClick" field="active" id={0} self={0}>
                             <ProfileLocation icon="fa6-solid:user"/>
                         </InteractiveTrigger>

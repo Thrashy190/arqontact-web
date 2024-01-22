@@ -1,0 +1,14 @@
+---
+import AppLayout from "@layouts/AppLayout.astro";
+import CRUDGallery from "@components/my-profile/CRUDGallery.astro";
+
+export function getStaticPaths() {
+  return [
+    {params: {galleryId: 1}},
+  ];
+}
+---
+
+<AppLayout title="Editar galería">
+    <CRUDGallery edit/>
+</AppLayout>

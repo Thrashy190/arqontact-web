@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon";
+---
+<div id="profile-galleries" class="snap-center flex-shrink-0 w-screen max-w-[700px] h-full sm:h-auto flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5 gap-5">
+    <div class="flex justify-end">
+        <a href="/edit-my-profile/create-gallery" class="bg-action text-white rounded-md self-end flex items-center gap-3 px-3 py-1">
+            <Icon name="fa-solid:plus" class="w-5 h-5"/>
+            <span>Crear galería</span>
+        </a>
+    </div>
+    <div class="grid grid-cols-3 gap-1">
+        {
+            Array(4).fill(0).map((e, i) => {
+                return (
+                    <div class="relative w-full bg-white rounded-b-md flex flex-col items-center gap-3">
+                        <a href={`edit-my-profile/edit-gallery/1`} class="absolute top-0 right-0 text-white bg-[rgba(0,0,0,.5)] p-2 rounded-bl-md">
+                            <Icon name="fa-solid:pencil-alt" class="w-5 h-5"/>
+                        </a>
+                        <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>
+                    </div>
+                )
+            })
+        }
+    </div>
+    <!-- <div class="flex flex-col gap-6">
+        {
+            Array(4).fill(0).map((e, i) => {
+                return (
+                    <div class="w-full bg-white rounded-b-md flex flex-col items-center gap-3">
+                        <Gallery totalChildren={3} client:load>
+                            <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>
+                            <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240512/EB-JH8782.JPG" alt="gallery-item" />
+                            <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240509/EB-JH8782.JPG" alt="gallery-item" />
+                        </Gallery>
+                        <div class="w-full h-full flex gap-2 flex-wrap px-3 text-xs overflow-x-auto mobile-scrollbar">
+                            <span class="bg-amber-100 text-amber-400 flex items-center px-3 py-1 rounded-md">
+                                #casasmodernas
+                            </span>
+                            <span class="bg-amber-100 text-amber-400 flex items-center px-3 py-1 rounded-md">
+                                #querétaro
+                            </span>
+                            <span class="bg-amber-100 text-amber-400 flex items-center px-3 py-1 rounded-md">
+                                #juriquilla
+                            </span>
+                        </div>
+                        <div class='w-full px-3 text-sm flex gap-1 pb-3'>
+                            <p class='line-clamp-1 break-words'>Ola demonio, esta es una casa muy chingona que está aquí en Querétaro. Ola demonio, esta es una casa muy chingona que está aquí en Querétaro. Ola demonio, esta es una casa muy chingona que está aquí en Querétaro.</p>
+                            <span class='font-medium'>más</span>
+                        </div>
+                    </div>
+                )
+            })
+        }
+    </div> -->
+</div>
