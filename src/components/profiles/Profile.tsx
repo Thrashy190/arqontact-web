@@ -1,6 +1,5 @@
 import { Carrousel, InteractiveTrigger, Observer, Target } from "@components/common/Carrousel.tsx";
 import ProfileLocation from "@components/profiles/ProfileLocation.tsx";
-import { CommentBubble, EmptyBubble, InviteBubble } from "./actions";
 import { Comment, Invite } from "./modals";
 import { Fragment } from "react";
 
@@ -35,20 +34,6 @@ export default function Profile({ links, profileHeader, profileInfo, profileComm
                         </InteractiveTrigger>
                     </div>
                 </header>
-                { withActions ?
-                    <Fragment>
-                        <Observer field="active" self={0}>
-                            <InviteBubble />
-                        </Observer>
-                        <Observer field="active" self={1}>
-                            <CommentBubble />
-                        </Observer>
-                        <Observer field="active" self={2}>
-                            <EmptyBubble />
-                        </Observer>
-                    </Fragment> :
-                    null
-                }
                 <Target className='w-screen max-w-[700px] h-full sm:h-auto sm:flex-col bg-gray-100 sm:bg-white'>
                     { ...[profileInfo, profileComments, profileGalleries] }
                 </Target>

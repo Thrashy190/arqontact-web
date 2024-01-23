@@ -7,6 +7,7 @@ import ProfileComments from "@components/profiles/ProfileComments.astro";
 import ProfileGalleries from "@components/profiles/ProfileGalleries.astro";
 import Profile from "@components/profiles/Profile.tsx";
 import ProfileOptions from "@components/profiles/ProfileOptions.tsx";
+import { CommentBubble, InviteBubble } from "@components/profiles/actions";
 
 export function getStaticPaths() {
   return [
@@ -24,7 +25,10 @@ export function getStaticPaths() {
             </a>
             <ProfileOptions />
         </div>
-        <ProfileHeader interactive slot="profileHeader" />
+        <ProfileHeader interactive withActions slot="profileHeader">
+          <InviteBubble client:load />
+          <CommentBubble client:load />
+        </ProfileHeader>
         <ProfileInfo slot="profileInfo" />
         <ProfileComments slot="profileComments" />
         <ProfileGalleries slot="profileGalleries" />

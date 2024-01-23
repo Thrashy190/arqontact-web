@@ -3,9 +3,10 @@ import { Icon } from "astro-icon";
 
 interface Props {
     interactive?: boolean,
+    withActions?: boolean,
 }
 
-const { interactive = false } = Astro.props;
+const { interactive = false, withActions = false } = Astro.props;
 ---
 
 <div class="sm:self-center flex gap-6 items-center">
@@ -44,4 +45,9 @@ const { interactive = false } = Astro.props;
             </button>
         }
     </div>
+    {
+        withActions ? <div class="flex flex-col gap-2 self-center rounded-xl border border-gray-200 p-2">
+            <slot />
+        </div> : null
+    }
 </div>
