@@ -1,0 +1,149 @@
+---
+import { Icon } from "astro-icon";
+import BoardsLayout from "@layouts/BoardsLayout.astro";
+import Tabs from "@components/common/Tabs"
+import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
+import Board from "@components/boards/Board.astro";
+import CreateBoardBubble from "@components/boards/actions/CreateBoardBubble.astro";
+
+export function getStaticPaths() {
+  return [
+    {params: {boardId: 1}},
+  ];
+}
+
+const { boardId } = Astro.params;
+---
+
+<BoardsLayout title="Mi proyectos">
+    <div class="flex flex-col p-5 gap-4 w-full min-h-screen overflow-hidden overflow-y-auto">
+        <h1 class="text-2xl font-semibold mb-4">Hospital San Felipe</h1>
+        <div class="flex max-lg:flex-col-reverse justify-between gap-4 ">
+            <div class="w-auto flex flex-col gap-2">
+                <div class="w-full text-sm bg-gray-100 flex gap-2 p-2 rounded-md overflow-x-auto">
+                    <div class="flex-shrink-0 bg-white flex gap-4 items-center px-3 py-1 rounded-md">
+                        <img class='w-10 h-10 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
+                        <div class="flex flex-col gap-1">
+                            <span class="text-gray-500 uppercase text-xs">Encargado</span>
+                            <span>Juan José Cruz Aguirre</span>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 bg-white flex flex-col gap-1 px-3 py-1 rounded-md">
+                        <span class="uppercase text-gray-500 text-xs">Localización</span>
+                        <p>Querétaro, QRO</p>
+                    </div>
+                    <div class="flex-shrink-0 bg-white flex flex-col gap-1 px-3 py-1 rounded-md">
+                        <span class="uppercase text-gray-500 text-xs">Creado</span>
+                        <p>12 Jun 2023</p>
+                    </div>
+                    <div class="flex-shrink-0 bg-white flex flex-col gap-1 px-3 py-1 rounded-md">
+                        <span class="uppercase text-gray-500 text-xs">Inicio</span>
+                        <p>30 Jun 2023</p>
+                    </div>
+                    <div class="relative flex-shrink-0 bg-white flex flex-col gap-1 px-3 py-1 rounded-md">
+                        <span class="absolute cursor-pointer bg-white -top-1 -right-1 w-6 h-6 shadow-md border border-gray-300 rounded-full flex justify-center items-center">
+                            <Icon name="fa-solid:calendar" class="w-3 h-3 text-gray-500"/>
+                        </span>
+                        <span class="uppercase text-gray-500 text-xs">Final</span>
+                        <p>24 Jun 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="self-start max-lg:self-end w-auto text-sm flex justify-between items-center border border-gray-200 rounded-md px-2 py-1 gap-2">
+                <div class="flex items-center gap-3">
+                    <div class="w-4 h-4 bg-lime-500 rounded-full border-4 border-lime-300">
+                    </div>
+                    <span>Activo</span>
+                </div>
+                <Icon name="fa-solid:chevron-down" class="w-4 h-4 text-gray-400"/>
+            </div>
+        </div>
+        <div class="flex-shrink-0 h-auto flex gap-4 overflow-hidden">
+            <div class="w-full flex flex-col text-sm gap-4 overflow-y-auto">
+                <div class="flex flex-col">
+                    <h2 class="font-semibold text-lg">Etapas de Proyecto</h2>
+                    <p class="text-sm text-gray-400">Todas las etapas</p>
+                </div>
+                <div class="w-full overflow-x-auto overflow-y-hidden pb-2">
+                    <div class="min-w-[740px] w-full flex-shrink-0 flex flex-col gap-2">
+                        <div class="flex bg-gray-100 text-gray-500 rounded-md py-2 px-4 gap-4">
+                            <div class="flex-1">Etapa</div>
+                            <div class="w-32">Estado</div>
+                            <div class="w-32">Fecha de Inicio</div>
+                            <div class="w-32">Fecha de Termino</div>
+                            <div class="w-20">Vacantes</div>
+                            <div class="w-20">Acciones</div>
+                        </div>
+                        <div class="flex flex-col border border-gray-200 rounded-md [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-gray-200">
+                            {
+                                Array(10).fill(null).map((e, i) => {
+                                    return (
+                                        <div class="flex items-center gap-4 px-4 py-2 text-gray-600">
+                                            <div class="flex-1 underline">Cimentación</div>
+                                            <div class="w-32 flex items-start">
+                                                <div class="w-full flex justify-between items-center border border-gray-200 rounded-md px-2 py-1 gap-2">
+                                                    <div class="flex items-center gap-3">
+                                                        <div class="w-4 h-4 bg-lime-500 rounded-full border-4 border-lime-300">
+                                                        </div>
+                                                        <span>Activo</span>
+                                                    </div>
+                                                    <Icon name="fa-solid:chevron-down" class="w-4 h-4 text-gray-400"/>
+                                                </div>
+                                            </div>
+                                            <div class="w-32">12 Dic 2023</div>
+                                            <div class="w-32">4 Feb 2024</div>
+                                            <div class="w-20 flex items-center gap-3">
+                                                <Icon name="fa-solid:users" class="w-5 h-5 text-gray-400"/>
+                                                <span>5</span>
+                                            </div>
+                                            <div class="w-20 flex items-center gap-3">
+                                                <Icon name="fa-solid:edit" class="w-5 h-5 text-gray-400 hover:text-blue-600 transition-all"/>
+                                                <Icon name="fa-solid:trash" class="w-5 h-5 text-gray-400 hover:text-blue-600 transition-all"/>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-h-[600px] flex-shrink-1 flex flex-col gap-4">
+                <div class="flex flex-col">
+                    <h2 class="font-semibold text-lg">Contactos</h2>
+                    <p class="text-sm text-gray-400">Vistos recientemente</p>
+                </div>
+                <div class="h-full overflow-y-auto bg-gray-100 flex flex-col p-2 gap-2 rounded-md">
+                    {
+                        Array(10).fill(null).map((e, index) => {
+                            return (
+                                <div class="bg-white sm:rounded-lg sm:shadow-lg p-4 gap-4 flex flex-col divide-y divide-gray-200">
+                                    <div class="w-full flex flex-shrink-0 items-center gap-4">
+                                        <div class="flex-shrink-0 flex flex-col gap-3">
+                                            <img class='w-16 h-16 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
+                                            <div class='w-auto text-gray-400 flex justify-center items-center rounded-md px-2 py-1 gap-1'>
+                                                <span>4.5</span>
+                                                <Icon name="fa-solid:star" class="w-3 h-3 text-amber-400"/>
+                                            </div>
+                                        </div>
+                                        <div class="w-full flex flex-col gap-2">
+                                            <div class="flex justify-between items-center">
+                                                <a href="/dashboard/profile/1" class='font-medium underline'>Juan José Cruz Aguirre</a>
+                                            </div>
+                                            <div class="flex items-center gap-2 text-amber-400">
+                                                <Icon name="fa-solid:hammer" class="w-5 h-5"/>
+                                                <div class='w-auto self-start text-sm font-medium flex items-center bg-amber-100 rounded-md px-2 py-1 gap-3'>
+                                                    <span>Bloquero</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</BoardsLayout>
