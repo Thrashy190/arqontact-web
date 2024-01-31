@@ -13,9 +13,17 @@ import { Icon } from "astro-icon";
             Array(4).fill(0).map((e, i) => {
                 return (
                     <div class="relative w-full bg-white rounded-b-md flex flex-col items-center gap-3">
-                        <a href={`/edit-gallery/1`} class="absolute top-0 right-0 text-white bg-[rgba(0,0,0,.5)] p-2 rounded-bl-md">
-                            <Icon name="fa-solid:pencil-alt" class="w-5 h-5"/>
-                        </a>
+                        <div class="absolute top-2 right-2 bg-white text-gray-400 shadow-lg p-2 flex justify-center items-center gap-3 rounded-md">
+                            <label class="cursor-pointer" for="share-gallery-modal">
+                                <Icon name="fa-solid:share" class="w-5 h-5"/>
+                            </label>
+                            <a href={`/edit-gallery/1`}>
+                                <Icon name="fa-solid:edit" class="w-5 h-5"/>
+                            </a>
+                            <label class="cursor-pointer" for="delete-gallery-confirmation-modal">
+                                <Icon name="fa-solid:trash-alt" class="w-5 h-5"/>
+                            </label>
+                        </div>
                         <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>
                     </div>
                 )

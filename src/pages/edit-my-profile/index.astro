@@ -6,44 +6,52 @@ import Tabs from '@components/common/Tabs';
 import { Input, Textarea } from "@components/common/inputs";
 import EditMyProfile from '@components/my-profile/EditMyProfile';
 import EditMyGalleries from "@components/my-profile/EditMyGalleries.astro";
+import DeleteGallery from "@components/my-profile/modals/DeleteGallery.astro";
+import ShareGallery from "@components/my-profile/modals/ShareGallery.astro";
+import ShareProfile from "@components/profiles/modals/ShareProfile.astro";
 ---
 
 <AppLayout title="Editar mi perfil">
-  <FullScreenScaffold header={false}>
-    <EditMyProfile client:load>
-        <div slot="profileHeader" class="flex justify-end">
-            <Icon name="fa-solid:share-alt" class="w-4 h-4 text-action"/>
-        </div>
-        <div slot="profileInfo "class="snap-center flex-shrink-0 w-screen max-w-[700px] h-full sm:h-auto flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5 gap-5">
-            <div class="flex flex-col items-center gap-5">
-                <img class='w-20 h-20 sm:w-28 sm:h-28 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
+    <ShareProfile />
+    <DeleteGallery />
+    <ShareGallery />
+    <FullScreenScaffold header={false}>
+        <EditMyProfile client:load>
+            <div slot="profileHeader" class="flex justify-end">
+                <label class="cursor-pointer" for="share-profile-modal">
+                    <Icon name="fa-solid:share-alt" class="w-4 h-4 text-action"/>
+                </label>
+            </div>
+            <div slot="profileInfo "class="snap-center flex-shrink-0 w-screen max-w-[700px] h-full sm:h-auto flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5 gap-5">
+                <div class="flex flex-col items-center gap-5">
+                    <img class='w-20 h-20 sm:w-28 sm:h-28 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
+                    <button class="bg-action text-white rounded-md self-end flex items-center gap-3 px-3 py-1">
+                        <Icon name="fa-solid:camera" class="w-5 h-5"/>
+                        <span>Cambiar foto</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-5">
+                    <div class="w-full flex gap-5">
+                        <Input id="first-name" label="Nombre (s)" placeholder="Juan José" type="text"/>
+                        <Input id="last-name" label="Apellido (s)" placeholder="Cruz Aguirre" type="text"/>
+                    </div>
+                    <div class="w-full flex gap-5">
+                        <Input id="category" label="Categoría" placeholder="Carpintería" type="text"/>
+                        <Input id="work-zone" label="Zona de Trabajo" placeholder="Querétaro, QRO." type="text"/>
+                    </div>
+                    <div class="w-full flex gap-5">
+                        <Input id="phone-number" label="Número de teléfono" placeholder="446 111 7033" type="text"/>
+                        <Input id="experience-years" label="Años de experiencia" placeholder="15 años" type="text"/>
+                    </div>
+                    <Input id="web-site" label="Sitio web" placeholder="https://carpinterias-ramirez.com" type="text"/>
+                    <Textarea id="about-you" label="Acerca de ti" placeholder="Cuéntanos acerca de ti."/>
+                </div>
                 <button class="bg-action text-white rounded-md self-end flex items-center gap-3 px-3 py-1">
-                    <Icon name="fa-solid:camera" class="w-5 h-5"/>
-                    <span>Cambiar foto</span>
+                    <Icon name="fa-solid:save" class="w-5 h-5"/>
+                    <span>Guardar</span>
                 </button>
             </div>
-            <div class="flex flex-col gap-5">
-                <div class="w-full flex gap-5">
-                    <Input id="first-name" label="Nombre (s)" placeholder="Juan José" type="text"/>
-                    <Input id="last-name" label="Apellido (s)" placeholder="Cruz Aguirre" type="text"/>
-                </div>
-                <div class="w-full flex gap-5">
-                    <Input id="category" label="Categoría" placeholder="Carpintería" type="text"/>
-                    <Input id="work-zone" label="Zona de Trabajo" placeholder="Querétaro, QRO." type="text"/>
-                </div>
-                <div class="w-full flex gap-5">
-                    <Input id="phone-number" label="Número de teléfono" placeholder="446 111 7033" type="text"/>
-                    <Input id="experience-years" label="Años de experiencia" placeholder="15 años" type="text"/>
-                </div>
-                <Input id="web-site" label="Sitio web" placeholder="https://carpinterias-ramirez.com" type="text"/>
-                <Textarea id="about-you" label="Acerca de ti" placeholder="Cuéntanos acerca de ti."/>
-            </div>
-            <button class="bg-action text-white rounded-md self-end flex items-center gap-3 px-3 py-1">
-                <Icon name="fa-solid:save" class="w-5 h-5"/>
-                <span>Guardar</span>
-            </button>
-        </div>
-        <EditMyGalleries slot="profileGalleries" />
-    </EditMyProfile>
-  </FullScreenScaffold>
+            <EditMyGalleries slot="profileGalleries" />
+        </EditMyProfile>
+    </FullScreenScaffold>
 </AppLayout>@components/my-profile/EditMyProfile

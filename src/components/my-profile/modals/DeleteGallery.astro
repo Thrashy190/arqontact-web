@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon";
+import { Search } from "@components/common/inputs";
+import FullScreenModal from "@components/common/FullScreenModal.astro";
+---
+
+<FullScreenModal closeType="times" target="delete-gallery-confirmation-modal" title="Eliminar galería">
+    <div class="flex flex-col gap-5">
+        <div class="flex items-center gap-6 rounded-md bg-amber-50 text-amber-400 p-6">
+            <span class="text-2xl">
+                <Icon class="flex-shrink-0 w-6 h-6" name="fa-solid:info-circle" />
+            </span>
+            <div class="font-medium flex flex-col gap-2">
+                <p>¿Estás seguro de que quieres eliminar esta galería?</p>
+                <p class="font-semibold">Esta acción es irreversible.</p>
+            </div>
+        </div>
+    </div>
+</FullScreenModal>

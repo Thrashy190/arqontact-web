@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon";
+import FullScreenModal from "@components/common/FullScreenModal.astro";
+---
+
+<FullScreenModal closeType="times" buttons={false} target="share-gallery-modal" title="Compartir galería">
+    <div class="flex flex-col gap-5">
+        <div class="flex gap-3">
+            <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="hover:bg-[#1877F2] bg-gray-300 text-white flex justify-center items-center p-4 self-center rounded-md transition-all cursor-pointer">
+                    <Icon name="fa-brands:facebook" class="w-5 h-5"/>
+                </div>
+                <p class="font-medium">Facebook</p>
+            </div>
+            <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="hover:bg-[#E1306C] bg-gray-300 text-white flex justify-center items-center p-4 self-center rounded-md transition-all cursor-pointer">
+                    <Icon name="fa-brands:instagram" class="w-5 h-5"/>
+                </div>
+                <p class="font-medium">Instagram</p>
+            </div>
+            <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="hover:bg-[#369aff] bg-gray-300 text-white flex justify-center items-center p-4 self-center rounded-md transition-all cursor-pointer">
+                    <Icon name="fa-brands:twitter" class="w-5 h-5"/>
+                </div>
+                <p class="font-medium">Twitter</p>
+            </div>
+            <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="hover:bg-[#0077B5] bg-gray-300 text-white flex justify-center items-center p-4 self-center rounded-md transition-all cursor-pointer">
+                    <Icon name="fa-brands:linkedin" class="w-5 h-5"/>
+                </div>
+                <p class="font-medium">Linkedin</p>
+            </div>
+        </div>
+        <div class="flex gap-3">
+            <p class="flex-1 bg-gray-100 px-4 py-2 rounded-lg">
+                https://arqontact.com/galleries/1
+            </p>
+            <button class="flex-shrink-0 bg-amber-400 text-white px-4 py-1 uppercase rounded-md font-semibold">Copiar link</button>
+        </div>
+    </div>
+</FullScreenModal>

@@ -6,11 +6,12 @@ import ProfileInfo from "@components/profiles/ProfileInfo.astro";
 import ProfileComments from "@components/profiles/ProfileComments.astro";
 import ProfileGalleries from "@components/profiles/ProfileGalleries.astro";
 import Profile from "@components/profiles/Profile.tsx";
-import ProfileOptions from "@components/profiles/ProfileOptions.tsx";
+import ProfileOptions from "@components/profiles/ProfileOptions.astro";
 import InviteBubble from "@components/profiles/actions/InviteBubble.astro";
 import Invite from "@components/profiles/modals/Invite.astro"
 import CommentBubble from "@components/profiles/actions/CommentBubble.astro";
 import Comment from "@components/profiles/modals/Comment.astro"
+import ShareProfile from "@components/profiles/modals/ShareProfile.astro";
 
 export function getStaticPaths() {
   return [
@@ -20,6 +21,7 @@ export function getStaticPaths() {
 ---
 
 <AppLayout title="Perfil">
+  <ShareProfile />
   <Invite />
   <Comment />
   <div class="w-full min-h-0 flex justify-center">
