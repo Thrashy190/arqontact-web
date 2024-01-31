@@ -13,16 +13,22 @@ import { Icon } from "astro-icon";
             Array(4).fill(0).map((e, i) => {
                 return (
                     <div class="relative w-full bg-white rounded-b-md flex flex-col items-center gap-3">
-                        <div class="absolute top-2 right-2 bg-white text-gray-400 shadow-lg p-2 flex justify-center items-center gap-3 rounded-md">
-                            <label class="cursor-pointer" for="share-gallery-modal">
-                                <Icon name="fa-solid:share" class="w-5 h-5"/>
+                        <div class="bg-white text-gray-400 absolute top-2 right-2 shadow-lg p-2 flex justify-center items-center rounded-md">
+                            <label data-popup={`gallery-options-popup-${i}`} for={`gallery-options-popup-${i}`} class="cursor-pointer peer relative">
+                                <input data-popup-target={`gallery-options-popup-${i}`} class="hidden" type="checkbox" id={`gallery-options-popup-${i}`}/>
+                                <Icon name="fa-solid:ellipsis-v" class="w-5 h-5"/>
                             </label>
-                            <a href={`/edit-gallery/1`}>
-                                <Icon name="fa-solid:edit" class="w-5 h-5"/>
-                            </a>
-                            <label class="cursor-pointer" for="delete-gallery-confirmation-modal">
-                                <Icon name="fa-solid:trash-alt" class="w-5 h-5"/>
-                            </label>
+                            <div data-popup={`gallery-options-popup-${i}`} class="peer-has-[:checked]:scale-100 scale-0 absolute flex flex-col gap-3 bg-white p-2 top-[calc(100%+.75rem)] left-0 rounded-md shadow-strong transition-all">
+                                <label class="cursor-pointer" for="share-gallery-modal">
+                                    <Icon name="fa-solid:share" class="w-5 h-5"/>
+                                </label>
+                                <a href={`/edit-gallery/1`}>
+                                    <Icon name="fa-solid:pen" class="w-5 h-5"/>
+                                </a>
+                                <label class="cursor-pointer" for="delete-gallery-confirmation-modal">
+                                    <Icon name="fa-solid:trash-alt" class="w-5 h-5"/>
+                                </label>
+                            </div>
                         </div>
                         <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>
                     </div>
