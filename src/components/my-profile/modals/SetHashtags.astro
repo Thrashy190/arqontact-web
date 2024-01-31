@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon";
+import { Search } from "@components/common/inputs";
+import FullScreenModal from "@components/common/FullScreenModal.astro";
+---
+
+<FullScreenModal target="set-hashtags-modal" title="Agregar hashtags">
+    <div class="flex flex-col gap-5">
+        <Search id="search" placeholder="Buscar hashtags..." />
+        <div class="flex flex-col gap-2">
+            <ul class="flex flex-wrap no-scrollbar gap-1 rounded-lg">
+                {
+                    Array(5).fill(0).map((_, i) => {
+                        return <div class="flex items-center py-1 px-2 rounded-md gap-3 bg-amber-100 text-amber-400 font-medium">
+                            <span>#block</span>
+                            <Icon icon="fa-solid:times" class="w-3 h-3"/>
+                        </div>
+                    })
+                }
+            </ul>
+            <div class="flex flex-col divide-y divide-gray-200">
+                {
+                    Array(10).fill(0).map((_, i) => {
+                        return <label for={`ht-${i.toString()}`} class="flex py-2 justify-between items-center">
+                            <div class="flex gap-3 items-center">
+                                <span class="bg-gray-400 w-8 h-8 flex justify-center text-white text-xl items-center object-cover rounded-full">
+                                    #
+                                </span>
+                                <div class="flex flex-col">
+                                    <span>#gatitos</span>
+                                </div>
+                            </div>
+                            <input id={`ht-${i.toString()}`} type="checkbox" class="w-5 h-5"/>
+                        </label>
+                    })
+                }
+            </div>
+        </div>
+    </div>
+</FullScreenModal>

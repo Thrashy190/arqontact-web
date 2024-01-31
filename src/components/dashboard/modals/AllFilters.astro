@@ -2,13 +2,15 @@
 import Grade from "./Grade.astro";
 import OrderBy from "./OrderBy.astro";
 import Abilities from "./Abilities.astro";
+import Activity from "./Activity.astro";
 import FullScreenModal from "@components/common/FullScreenModal.astro";
 ---
 
-<FullScreenModal id="all-filters" title="Filtros">
+<FullScreenModal target="all-filters-modal" title="Filtros">
     <div class="flex flex-col gap-5">
         <OrderBy/>
         <Grade/>
         <Abilities name="fs"/>
+        <Activity name="fs"/>
     </div>
 </FullScreenModal>

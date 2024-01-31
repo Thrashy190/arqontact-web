@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { useModal } from "@stores/modal.store";
+// import { useModal } from "@stores/modal.store";
 // import Overlay from "@components/common/Overlay";
 
 export default function Postulate() {

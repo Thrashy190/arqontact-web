@@ -20,7 +20,7 @@ import Activity from "./modals/Activity.astro";
     />
 </div>
 <div class="w-full flex items-center gap-3 text-gray-500">
-    <label for="all-filters-trigger" class='w-10 h-10 flex-shrink-0 sm:hidden flex justify-center items-center bg-gray-100 text-gray-400 rounded-full'>
+    <label for="all-filters-modal" class='w-10 h-10 flex-shrink-0 sm:hidden flex justify-center items-center bg-gray-100 text-gray-400 rounded-full'>
         <Icon name="fa-solid:sliders-h" class="w-5 h-5"/>
     </label>
     <div class="w-full flex flex-row sm:flex-col text-sm overflow-x-auto sm:overflow-visible no-h-scrollbar gap-3 sm:mt-3">
@@ -32,13 +32,13 @@ import Activity from "./modals/Activity.astro";
         </div>
         <div class="flex-shrink-0 flex gap-3">
             <div class="relative">
-                <label class="cursor-pointer block sm:hidden" for="order-by-filters">
+                <label class="cursor-pointer block sm:hidden" for="order-by-filters-modal">
                     <div class='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
                         <span>Tipo de orden</span>
                         <Icon name="fa-solid:chevron-down" class="w-4 h-4"/>
                     </div>
                 </label>
-                <label data-popup="order-by-popup" class="hidden sm:block peer cursor-pointer" for="order-by-popup">
+                <label data-popup="order-by-popup" class="max-sm:hidden peer cursor-pointer" for="order-by-popup">
                     <input id="order-by-popup" data-popup-target="order-by-popup" class="hidden" type="checkbox"/>
                     <div class='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
                         <span>Tipo de orden</span>
@@ -46,18 +46,18 @@ import Activity from "./modals/Activity.astro";
                     </div>
                 </label>
                 </label>
-                <div data-popup="order-by-popup" class="peer-has-[:checked]:scale-100 scale-0 hidden sm:block z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
+                <div data-popup="order-by-popup" class="peer-has-[:checked]:scale-100 scale-0 max-sm:hidden z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
                     <OrderBy/>
                 </div>
             </div>
             <div class="relative">
-                <label class="cursor-pointer block sm:hidden" for="grade-filters">
+                <label class="cursor-pointer block sm:hidden" for="grade-filters-modal">
                     <div class='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
                         <span>Calificación</span>
                         <Icon name="fa-solid:chevron-down" class="w-4 h-4"/>
                     </div>
                 </label>
-                <label data-popup="grade-popup" class="hidden sm:block peer cursor-pointer" for="grade-popup">
+                <label data-popup="grade-popup" class="max-sm:hidden peer cursor-pointer" for="grade-popup">
                     <input id="grade-popup" data-popup-target="grade-popup" class="hidden" type="checkbox"/>
                     <div class='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
                         <span>Calificación</span>
@@ -65,12 +65,18 @@ import Activity from "./modals/Activity.astro";
                     </div>
                 </label>
                 </label>
-                <div data-popup="grade-popup" class="peer-has-[:checked]:scale-100 scale-0 hidden sm:block z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
+                <div data-popup="grade-popup" class="peer-has-[:checked]:scale-100 scale-0 max-sm:hidden z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
                     <Grade/>
                 </div>
             </div>
             <div class="relative">
-                <label data-popup="abilities-popup" class="peer cursor-pointer" for="abilities-popup">
+                <label class="cursor-pointer block sm:hidden" for="abilities-filters-modal">
+                    <div class='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
+                        <span>Habilidades</span>
+                        <Icon name="fa-solid:chevron-down" class="w-4 h-4"/>
+                    </div>
+                </label>
+                <label data-popup="abilities-popup" class="max-sm:hidden peer cursor-pointer" for="abilities-popup">
                     <input id="abilities-popup" data-popup-target="abilities-popup" class="hidden" type="checkbox"/>
                     <div class='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
                         <span>Habilidades</span>
@@ -78,14 +84,20 @@ import Activity from "./modals/Activity.astro";
                     </div>
                 </label>
                 </label>
-                <div data-popup="abilities-popup" class="peer-has-[:checked]:scale-100 scale-0 hidden sm:block z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
+                <div data-popup="abilities-popup" class="peer-has-[:checked]:scale-100 scale-0 max-sm:hidden z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
                     <div class="w-64">
                         <Abilities name="header"/>
                     </div>
                 </div>
             </div>
             <div class="relative">
-                <label data-popup="activity-popup" class="peer cursor-pointer" for="activity-popup">
+                <label class="cursor-pointer block sm:hidden" for="activity-filters-modal">
+                    <div class='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
+                        <span>Actividad</span>
+                        <Icon name="fa-solid:chevron-down" class="w-4 h-4"/>
+                    </div>
+                </label>
+                <label data-popup="activity-popup" class="max-sm:hidden peer cursor-pointer" for="activity-popup">
                     <input id="activity-popup" data-popup-target="activity-popup" class="hidden" type="checkbox"/>
                     <div class='flex-shrink-0 flex items-center bg-gray-100 text-gray-400 rounded-full px-4 py-1 gap-3'>
                         <span>Actividad</span>
@@ -93,7 +105,7 @@ import Activity from "./modals/Activity.astro";
                     </div>
                 </label>
                 </label>
-                <div data-popup="activity-popup" class="peer-has-[:checked]:scale-100 scale-0 hidden sm:block z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
+                <div data-popup="activity-popup" class="peer-has-[:checked]:scale-100 scale-0 max-sm:hidden z-30 top-[calc(100%+.75rem)] left-0 bg-white rounded-lg shadow-strong absolute p-3 transition-all">
                     <div class="w-48">
                         <Activity name="header"/>
                     </div>

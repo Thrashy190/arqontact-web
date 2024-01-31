@@ -1,7 +1,5 @@
 import { Carrousel, InteractiveTrigger, Observer, Target } from "@components/common/Carrousel.tsx";
 import ProfileLocation from "@components/profiles/ProfileLocation.tsx";
-import { Comment, Invite } from "./modals";
-import { Fragment } from "react";
 
 interface ProfileProps {
     children: any[],
@@ -16,8 +14,6 @@ interface ProfileProps {
 export default function Profile({ links, profileHeader, profileInfo, profileComments, profileGalleries, withActions = false }: ProfileProps) {
     return (
         <div className="min-w-0 max-w-[700px] flex flex-col">
-            <Comment />
-            <Invite />
             <Carrousel totalChildren={3}>
                 <header className="flex-shrink-0 bg-white flex flex-col gap-6 sm:gap-2 border-b border-gray-200 pt-5 pb-2 sm:pb-6 px-5">
                     { links }

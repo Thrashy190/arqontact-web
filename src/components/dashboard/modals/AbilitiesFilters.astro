@@ -1,0 +1,14 @@
+---
+import Overlay from "@components/common/Overlay.astro";
+import Abilities from "./Abilities.astro";
+---
+
+<Overlay target="abilities-filters-modal">
+    <div class={`w-full bg-white p-5 flex flex-col gap-10 rounded-t-xl self-end`}>
+        <Abilities name="modal"/>
+        <div class="flex gap-5">
+            <label for="abilities-filters-modal" class='bg-gray-100 text-gray-400 py-1 rounded-lg text-lg text-center flex-grow'>Cancelar</label>
+            <label for="abilities-filters-modal" class='bg-amber-100 text-amber-400 py-1 rounded-lg text-lg text-center flex-grow'>Confirmar</label>
+        </div>
+    </div>
+</Overlay>

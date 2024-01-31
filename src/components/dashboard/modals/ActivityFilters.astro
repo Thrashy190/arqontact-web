@@ -1,0 +1,14 @@
+---
+import Overlay from "@components/common/Overlay.astro";
+import Activity from "./Activity.astro";
+---
+
+<Overlay target="activity-filters-modal">
+    <div class={`w-full bg-white p-5 flex flex-col gap-10 rounded-t-xl self-end`}>
+        <Activity name="modal"/>
+        <div class="flex gap-5">
+            <label for="activity-filters-modal" class='bg-gray-100 text-gray-400 py-1 rounded-lg text-lg text-center flex-grow'>Cancelar</label>
+            <label for="activity-filters-modal" class='bg-amber-100 text-amber-400 py-1 rounded-lg text-lg text-center flex-grow'>Confirmar</label>
+        </div>
+    </div>
+</Overlay>

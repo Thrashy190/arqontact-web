@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+    title: string,
+    action: string,
+}
+
+const { title, action } = Astro.props;
+---
+
+<div class="flex justify-between items-center">
+    <span class="font-medium">{ title }</span>
+    <label for={action} class="cursor-pointer flex items-center gap-2">
+        <span class="text-sm">Agregar</span>
+        <Icon name="fa-solid:chevron-right" class="w-4 h-4 text-gray-400"/>
+    </label>
+</div>

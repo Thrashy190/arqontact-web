@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon";
+import { Search } from "@components/common/inputs";
+import FullScreenModal from "@components/common/FullScreenModal.astro";
+---
+
+<FullScreenModal target="set-collabs-modal" title="Agregar colaboradores">
+    <div class="flex flex-col gap-5">
+        <Search id="search" placeholder="Buscar colaboradores..." client:load/>
+        {/* <p class="text-gray-500">Aún no agregas ningún colaborador.</p> */}
+        <div class="flex flex-col gap-2">
+            <ul class="bg-gray-100 overflow-x-auto no-scrollbar flex gap-2 rounded-lg p-2">
+                {
+                    Array(10).fill(0).map((_, i) => {
+                        return <li class="flex-shrink-0">
+                            <picture class="w-16 h-16 relative">
+                                <span class="absolute w-6 h-6 flex justify-center items-center rounded-full top-0 right-0 bg-gray-400">
+                                    <Icon name="fa-solid:times" class="w-4 h-4 text-white"/>
+                                </span>
+                                <img class="w-16 h-16 object-cover rounded-full" src="https://imageio.forbes.com/specials-images/imageserve/5ed00f17d4a99d0006d2e738/0x0.jpg"/>
+                            </picture>
+                        </li>
+                    })
+                }
+            </ul>
+            <div class="flex flex-col divide-y divide-gray-200">
+                {
+                    Array(10).fill(0).map((_, i) => {
+                        return <label for={`pro-${i.toString()}`} class="flex py-2 justify-between items-center">
+                            <div class="flex gap-3 items-center">
+                                <img src="https://imageio.forbes.com/specials-images/imageserve/5ed00f17d4a99d0006d2e738/0x0.jpg" class="w-8 h-8 object-cover rounded-full"/>
+                                <div class="flex flex-col">
+                                    <span>Carne de Res</span>
+                                </div>
+                            </div>
+                            <input id={`pro-${i.toString()}`} type="checkbox" class="w-5 h-5"/>
+                        </label>
+                    })
+                }
+            </div>
+        </div>
+    </div>
+</FullScreenModal>

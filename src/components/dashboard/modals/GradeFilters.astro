@@ -3,12 +3,12 @@ import Overlay from "@components/common/Overlay.astro";
 import Grade from "./Grade.astro";
 ---
 
-<Overlay id="grade-filters">
+<Overlay target="grade-filters-modal">
     <div class={`w-full bg-white p-5 flex flex-col gap-10 rounded-t-xl self-end`}>
         <Grade />
         <div class="flex gap-5">
-            <label for="grade-filters" class='bg-gray-100 text-gray-400 py-1 rounded-lg text-lg text-center flex-grow'>Cancelar</label>
-            <label for="grade-filters" class='bg-amber-100 text-amber-400 py-1 rounded-lg text-lg text-center flex-grow'>Confirmar</label>
+            <label for="grade-filters-modal" class='bg-gray-100 text-gray-400 py-1 rounded-lg text-lg text-center flex-grow'>Cancelar</label>
+            <label for="grade-filters-modal" class='bg-amber-100 text-amber-400 py-1 rounded-lg text-lg text-center flex-grow'>Confirmar</label>
         </div>
     </div>
 </Overlay>

@@ -3,7 +3,6 @@ import { Icon } from "astro-icon";
 import AppLayout from "@layouts/AppLayout.astro";
 import Postulate from "@components/dashboard/modals/Postulate.tsx";
 import BoardOptions from "@components/profiles/BoardOptions";
-import ModalTrigger from "@components/common/ModalTrigger.tsx";
 
 export function getStaticPaths() {
   return [
@@ -121,8 +120,8 @@ export function getStaticPaths() {
                 </div>
             </div>
         </div>
-        <ModalTrigger className="py-2 text-center font-semibold bg-amber-400 text-white rounded-xl uppercase" client:load id="postulate">
+        <!-- <ModalTrigger className="py-2 text-center font-semibold bg-amber-400 text-white rounded-xl uppercase" client:load id="postulate">
             Postularme
-        </ModalTrigger>
+        </ModalTrigger> -->
     </div>
 </AppLayout>@components/profiles/BoardOptions

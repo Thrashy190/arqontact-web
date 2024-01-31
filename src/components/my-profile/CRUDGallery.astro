@@ -2,8 +2,10 @@
 import { Icon } from "astro-icon";
 import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
 import { Input, Textarea } from "@components/common/inputs";
-import TitleAction from "@components/my-profile/actions/TitleAction.tsx";
-import { SetCollaborators, SetHashtags } from "@components/my-profile/modals";
+import TitleAction from "./actions/TitleAction.astro";
+import SetCollaborators from "./modals/SetCollaborators.astro";
+import SetHashtags from "./modals/SetHashtags.astro";
+// import { SetCollaborators, SetHashtags } from "@components/my-profile/modals";
 
 interface Props {
     edit?: boolean,
@@ -11,15 +13,13 @@ interface Props {
 
 const { edit = false } = Astro.props;
 ---
-<SetCollaborators client:load/>
-<SetHashtags client:load/>
+
+<SetHashtags/>
+<SetCollaborators/>
 <FullScreenScaffold header={false}>
     <div class="max-w-[700px] self-center flex flex-col gap-5 pb-5">
         <div class="z-10 before:content-[''] before:w-full before:h-5 before:bg-white before:absolute before:-top-5 sticky top-0 py-3 bg-white flex items-center gap-10 text-gray-400">
-            <a href="/" class="max-sm:hidden text-xl">
-                <Icon name="fa-solid:chevron-left" class="w-5 h-5"/>
-            </a>
-            <a href="/my-profile" class="sm:hidden text-xl">
+            <a href="/dashboard" class="text-xl">
                 <Icon name="fa-solid:chevron-left" class="w-5 h-5"/>
             </a>
             <span class="font-bold text-xl text-gray-800">{ edit ? 'Editar' : 'Crear' } galería</span>
@@ -27,7 +27,7 @@ const { edit = false } = Astro.props;
         <Input id="title" label="Título de Galería" type="text" placeholder="Nombre de tu Galería"/>
         <Textarea id="description" label="Descripción" placeholder="¿Qué publicarás?"/>
         <div class="flex flex-col gap-1">
-            <TitleAction title="Hashtags" action="set-hashtags" client:load/>
+            <TitleAction title="Hashtags" action="set-hashtags-modal"/>
             <div class="flex flex-wrap gap-2">
                 {
                     Array(5).fill(0).map((_, i) => {
@@ -40,7 +40,7 @@ const { edit = false } = Astro.props;
             </div>
         </div>
         <div class="flex flex-col gap-1">
-            <TitleAction title="Colaboradores" action="set-collabs" client:load/>
+            <TitleAction title="Colaboradores" action="set-collabs-modal"/>
             <ul class="bg-gray-100 overflow-x-auto no-scrollbar flex gap-2 rounded-lg p-2">
                 {
                     Array(10).fill(0).map((_, i) => {
