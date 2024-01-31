@@ -20,7 +20,7 @@ export function getStaticPaths() {
   <div class="w-full min-h-0 flex justify-center">
     <Profile client:load withActions>
         <div slot="links" class="flex justify-between">
-            <a href="/dashboard" class='text-gray-600'>
+            <a href={'/dashboard'} class='text-gray-600'>
                 <Icon name="fa-solid:chevron-left" class="w-4 h-4"/>
             </a>
             <ProfileOptions />

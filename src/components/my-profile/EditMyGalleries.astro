@@ -3,7 +3,7 @@ import { Icon } from "astro-icon";
 ---
 <div id="profile-galleries" class="snap-center flex-shrink-0 w-screen max-w-[700px] h-full sm:h-auto flex flex-col justify-start mobile-scrollbar overflow-y-auto p-5 gap-5">
     <div class="flex justify-end">
-        <a href="/edit-my-profile/create-gallery" class="bg-action text-white rounded-md self-end flex items-center gap-3 px-3 py-1">
+        <a href="/create-gallery" class="bg-action text-white rounded-md self-end flex items-center gap-3 px-3 py-1">
             <Icon name="fa-solid:plus" class="w-5 h-5"/>
             <span>Crear galería</span>
         </a>
@@ -13,7 +13,7 @@ import { Icon } from "astro-icon";
             Array(4).fill(0).map((e, i) => {
                 return (
                     <div class="relative w-full bg-white rounded-b-md flex flex-col items-center gap-3">
-                        <a href={`edit-my-profile/edit-gallery/1`} class="absolute top-0 right-0 text-white bg-[rgba(0,0,0,.5)] p-2 rounded-bl-md">
+                        <a href={`/edit-gallery/1`} class="absolute top-0 right-0 text-white bg-[rgba(0,0,0,.5)] p-2 rounded-bl-md">
                             <Icon name="fa-solid:pencil-alt" class="w-5 h-5"/>
                         </a>
                         <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>

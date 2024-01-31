@@ -19,7 +19,7 @@ export default function Navbar() {
                 {/* <a href="/boards" onClick={() => setLocation('boards')} className={`text-xl ${ location == 'boards' ? 'text-amber-400' : 'text-gray-500'}`}>
                     <Icon icon="fa6-solid:table-columns" className="w-4 h-4 sm:w-5 sm:h-5"/>
                 </a> */}
-                <a href="/my-profile/create-gallery" onClick={() => setLocation('create-gallery')} className={`sm:hidden text-xl ${ location == 'create-gallery' ? 'text-amber-400' : 'text-gray-500'}`}>
+                <a href="/create-gallery" onClick={() => setLocation('create-gallery')} className={`sm:hidden text-xl ${ location == 'create-gallery' ? 'text-amber-400' : 'text-gray-500'}`}>
                     <Icon icon="fa6-solid:plus" className="w-4 h-4 sm:w-5 sm:h-5"/>
                 </a>
                 <a href="/dashboard" onClick={() => setLocation('dashboard')} className={`text-xl ${ location == 'dashboard' ? 'text-amber-400' : 'text-gray-500'}`}>

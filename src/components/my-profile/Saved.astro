@@ -6,7 +6,7 @@ import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
     <div class="flex flex-col divide-y divide-gray-200">
         {
             Array(10).fill(null).map((e, index) => {
-                return <a href='/dashboard/profile'>
+                return <a href='/profile/1?origin=/saved'>
                     <div class="w-full bg-white flex flex-shrink-0 items-center gap-4 py-6 px-3">
                         <img class='w-20 h-20 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
                         <div class="w-full flex flex-col text-xs gap-2">
