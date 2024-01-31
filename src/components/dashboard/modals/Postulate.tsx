@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 // import Overlay from "@components/common/Overlay";
 
 export default function Postulate() {
-    const { removeModal } = useModal(state => state);
+    // const { removeModal } = useModal(state => state);
     // return (
         // <Overlay id="postulate">
         //     <div onClick={(e) => e.stopPropagation()} className={`w-full bg-white p-5 flex flex-col gap-10 rounded-t-xl self-end`}>
