@@ -12,6 +12,7 @@ import Invite from "@components/profiles/modals/Invite.astro"
 import CommentBubble from "@components/profiles/actions/CommentBubble.astro";
 import Comment from "@components/profiles/modals/Comment.astro"
 import ShareProfile from "@components/profiles/modals/ShareProfile.astro";
+import BackLink from "@components/common/BackLink";
 
 export function getStaticPaths() {
   return [
@@ -27,9 +28,7 @@ export function getStaticPaths() {
   <div class="w-full min-h-0 flex justify-center">
     <Profile client:load withActions>
         <div slot="links" class="flex justify-between">
-            <a href={'/dashboard'} class='text-gray-600'>
-                <Icon name="fa-solid:chevron-left" class="w-4 h-4"/>
-            </a>
+            <BackLink client:only/>
             <ProfileOptions />
         </div>
         <ProfileHeader interactive withActions slot="profileHeader">

@@ -5,7 +5,7 @@ import { Input, Textarea } from "@components/common/inputs";
 import TitleAction from "./actions/TitleAction.astro";
 import SetCollaborators from "./modals/SetCollaborators.astro";
 import SetHashtags from "./modals/SetHashtags.astro";
-// import { SetCollaborators, SetHashtags } from "@components/my-profile/modals";
+import BackLink from "@components/common/BackLink";
 
 interface Props {
     edit?: boolean,
@@ -19,9 +19,7 @@ const { edit = false } = Astro.props;
 <FullScreenScaffold header={false}>
     <div class="max-w-[700px] self-center flex flex-col gap-5 pb-5">
         <div class="z-10 before:content-[''] before:w-full before:h-5 before:bg-white before:absolute before:-top-5 sticky top-0 py-3 bg-white flex items-center gap-10 text-gray-400">
-            <a href="/dashboard" class="text-xl">
-                <Icon name="fa-solid:chevron-left" class="w-5 h-5"/>
-            </a>
+            <BackLink client:only/>
             <span class="font-bold text-xl text-gray-800">{ edit ? 'Editar' : 'Crear' } galería</span>
         </div>
         <Input id="title" label="Título de Galería" type="text" placeholder="Nombre de tu Galería"/>

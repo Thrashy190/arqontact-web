@@ -41,7 +41,7 @@ export default function Navbar() {
                         <Icon icon="fa6-solid:user"/>
                         <span>Editar perfil</span>
                     </a>
-                    <a href="/my-profile/options/saved" className="flex gap-3 items-center text-gray-600">
+                    <a href="/saved" className="flex gap-3 items-center text-gray-600">
                         <Icon icon="fa6-solid:bookmark"/>
                         <span>Guardados</span>
                     </a>
