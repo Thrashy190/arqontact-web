@@ -1,12 +1,13 @@
 ---
 interface Props {
     target: string,
+    "class"?: string,
 }
 
-const { target } = Astro.props;
+const { target, class: styleClass = '' } = Astro.props;
 ---
 <div
-    class={`transform has-[[data-modal-trigger]:checked]:translate-y-0 translate-y-full transition-all z-50 w-screen h-screen absolute flex justify-center items-center`}
+    class={`${styleClass} transform has-[[data-modal-trigger]:checked]:translate-y-0 translate-y-full transition-all z-50 w-screen h-screen absolute flex justify-center items-center`}
 >
     <input data-modal-trigger={target} id={target} type="checkbox" class="hidden"/>
     <label for={target} class="absolute -z-10 w-full h-full bg-[rgba(0,0,0,.3)]"></label>

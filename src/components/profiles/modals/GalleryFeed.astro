@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon";
+import Overlay from "@components/common/Overlay.astro";
+import Gallery from "@components/profiles/Gallery.tsx";
+---
+
+<div
+    class={`bg-white transform has-[[data-modal-trigger]:checked]:translate-y-0 translate-y-full transition-all z-50 w-screen h-screen absolute flex flex-col`}
+>
+    <input data-modal-trigger="gallery-feed" id="gallery-feed" type="checkbox" class="hidden"/>
+    <header class="relative py-4 border-b border-gray-200 flex items-center justify-center">
+        <label for="gallery-feed" class="absolute left-4">
+            <Icon name="fa-solid:chevron-left" class="w-4 h-4 text-gray-500"/>
+        </label>
+        <p class="max-w-[75%] truncate uppercase font-semibold text-gray-500">Galerías de Carpinterías Ramírez</p>
+    </header>
+    <div class="flex flex-col gap-6 overflow-y-auto">
+        {
+            Array(10).fill(null).map((_, i) => {
+                return <div class="flex flex-col">
+                    <div class="w-full bg-white rounded-b-md flex flex-col items-center gap-3">
+                        <img class='w-full aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>
+                        <div class="w-full flex p-2">
+                            <Icon name="fa-regular:bookmark" class="text-action w-4 aspect-square ml-auto"/>
+                        </div>
+                        <div class="w-full h-full flex gap-2 flex-wrap px-3 text-xs overflow-x-auto mobile-scrollbar">
+                            <span class="bg-amber-100 text-amber-400 flex items-center px-3 py-1 rounded-md">
+                                #casasmodernas
+                            </span>
+                            <span class="bg-amber-100 text-amber-400 flex items-center px-3 py-1 rounded-md">
+                                #querétaro
+                            </span>
+                            <span class="bg-amber-100 text-amber-400 flex items-center px-3 py-1 rounded-md">
+                                #juriquilla
+                            </span>
+                        </div>
+                        <div class='w-full px-3 text-sm flex gap-1 pb-3'>
+                            <p class='line-clamp-1 break-words'>Ola demonio, esta es una casa muy chingona que está aquí en Querétaro. Ola demonio, esta es una casa muy chingona que está aquí en Querétaro. Ola demonio, esta es una casa muy chingona que está aquí en Querétaro.</p>
+                            <span class='font-medium'>más</span>
+                        </div>
+                    </div>
+                </div>
+            })
+        }
+    </div>
+</div>

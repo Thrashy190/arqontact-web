@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon";
 import AppLayout from "@layouts/AppLayout.astro";
 import ProfileHeader from "@components/profiles/ProfileHeader.astro";
 import ProfileInfo from "@components/profiles/ProfileInfo.astro";
@@ -11,6 +10,8 @@ import InviteBubble from "@components/profiles/actions/InviteBubble.astro";
 import Invite from "@components/profiles/modals/Invite.astro"
 import CommentBubble from "@components/profiles/actions/CommentBubble.astro";
 import Comment from "@components/profiles/modals/Comment.astro"
+import GalleryCarrousel from "@components/profiles/modals/GalleryCarrousel.astro"
+import GalleryFeed from "@components/profiles/modals/GalleryFeed.astro"
 import ShareProfile from "@components/profiles/modals/ShareProfile.astro";
 import BackLink from "@components/common/BackLink";
 
@@ -22,6 +23,8 @@ export function getStaticPaths() {
 ---
 
 <AppLayout title="Perfil">
+  <GalleryCarrousel />
+  <GalleryFeed />
   <ShareProfile />
   <Invite />
   <Comment />

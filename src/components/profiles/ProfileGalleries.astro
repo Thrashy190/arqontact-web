@@ -7,7 +7,9 @@ import Gallery from "@components/profiles/Gallery.tsx";
         {
             Array(4).fill(0).map((e, i) => {
                 return (
-                    <div class="w-full bg-white rounded-b-md flex flex-col items-center gap-3">
+                    <div class="relative w-full bg-white rounded-b-md flex flex-col items-center gap-3">
+                        <label for="gallery-carrousel" class="max-sm:hidden absolute top-0 left-0 w-full h-full"></label>
+                        <label for="gallery-feed" class="sm:hidden absolute top-0 left-0 w-full h-full"></label>
                         <img class='aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>
                     </div>
                 )
