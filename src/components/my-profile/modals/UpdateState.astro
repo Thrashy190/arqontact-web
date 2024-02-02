@@ -1,0 +1,21 @@
+---
+import FullScreenModal from "@components/common/FullScreenModal.astro";
+---
+
+<FullScreenModal closeType="times" throwDown={true} buttons={false} target="update-state-modal" header={false}>
+    <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-3">
+            <h2 class="uppercase text-gray-400 text-sm font-bold">Actualizar estado</h2>
+            <div class="bg-gray-100 text-gray-400 p-4 flex justify-center gap-4 rounded-md">
+                <div class="flex flex-col items-center gap-2 bg-white rounded-md p-4 shadow-md">
+                    <div class="w-6 h-6 bg-lime-500 rounded-full border-[6px] border-lime-200"></div>
+                    <p class="w-16 text-center text-gray-800 font-medium">Activo</p>
+                </div>
+                <div class="flex flex-col items-center gap-2 bg-white rounded-md p-4 shadow-md">
+                    <div class="w-6 h-6 bg-red-500 rounded-full border-[6px] border-red-200"></div>
+                    <p class="w-16 text-center text-gray-800 font-medium">Inactivo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</FullScreenModal>
