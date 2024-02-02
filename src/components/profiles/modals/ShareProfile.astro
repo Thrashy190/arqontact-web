@@ -3,9 +3,8 @@ import { Icon } from "astro-icon";
 import FullScreenModal from "@components/common/FullScreenModal.astro";
 ---
 
-<FullScreenModal closeType="times" throwDown={true} buttons={false} target="share-profile-modal" header={false}>
+<FullScreenModal closeType="times" throwDown={true} buttons={false} target="share-profile-modal" title="Compartir perfil">
     <div class="flex flex-col gap-5">
-        <h2 class="max-sm:hidden text-xl font-semibold">Compartir perfil</h2>
         <div class="flex gap-3">
             <div class="flex-1 flex flex-col items-center gap-2">
                 <div class="hover:bg-[#1877F2] bg-gray-300 text-white flex justify-center items-center p-4 self-center rounded-md transition-all cursor-pointer">

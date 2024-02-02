@@ -21,7 +21,7 @@ const closeIcon = {
 <div
     class={`transform has-[[data-modal-trigger]:checked]:translate-y-0 translate-y-full transition-all z-50 w-screen h-screen absolute flex justify-center items-center`}
 >
-    <div class={`sm:max-w-[500px] sm:max-h-[500px] absolute z-[1] w-full ${ throwDown ? 'h-auto rounded-t-md pb-16' : 'max-sm:h-full' } sm:h-auto bg-white p-5 flex flex-col justify-between gap-10 max-sm:self-end sm:rounded-md`}>
+    <div class={`sm:max-w-[500px] sm:max-h-[500px] absolute z-[1] w-full ${ throwDown ? 'h-auto rounded-t-md max-sm:pb-16' : 'max-sm:h-full' } sm:h-auto bg-white p-5 flex flex-col justify-between gap-10 max-sm:self-end sm:rounded-md`}>
         <div class="flex flex-col gap-5 overflow-y-auto mobile-scrollbar">
             {
                 header && <div class={`z-[1] sticky top-0 pb-3 bg-white flex items-center gap-10 text-gray-400 ${ closeType != 'back' ? 'flex-row-reverse justify-between' : 'justify-start'}`}>
