@@ -1,0 +1,13 @@
+---
+import ConfigurationLayout from "@layouts/ConfigurationLayout.astro";
+import Overview from "@components/configuration/Overview.astro";
+---
+
+<ConfigurationLayout>
+    <Overview
+        title="Ubicación"
+        description="Actualmente tu cuenta está vinculada a este ubicación:"
+        subject="Querétaro, QRO"
+        updateLink="/configuration/location/update"
+    />
+</ConfigurationLayout>

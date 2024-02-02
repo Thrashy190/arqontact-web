@@ -1,6 +1,4 @@
 ---
-import { Icon } from "astro-icon";
-import AppLayout from "@layouts/AppLayout.astro";
 import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
 
 interface Props {
@@ -13,7 +11,7 @@ interface Props {
 const { title, description, subject, updateLink } = Astro.props;
 ---
 
-<FullScreenScaffold title={ title } shrink>
+<FullScreenScaffold backLink="/configuration" title={ title } shrink>
     <div class="flex flex-col gap-5">
         <p class="text-gray-500">{ description }</p>
         <div class="flex justify-between">

@@ -10,7 +10,7 @@ const { title, backLink } = Astro.props;
 ---
 
 <FullScreenScaffold title={ title } backLink={backLink} shrink>
-    <div class="flex flex-col gap-5">
+    <div class="flex flex-col max-sm:h-full max-sm:justify-between gap-5">
         <slot />
     </div>
 </FullScreenScaffold>

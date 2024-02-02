@@ -1,0 +1,32 @@
+---
+import ConfigurationLayout from "@layouts/ConfigurationLayout.astro";
+import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
+---
+
+<ConfigurationLayout>
+    <FullScreenScaffold backLink="/configuration" title="Mi datos" shrink>
+        <div class="flex flex-col gap-5">
+            <p class="text-gray-500">Actualmente tenemos estos datos acerca de ti:</p>
+            <h3 class="uppercase font-semibold text-gray-400 text-sm">Nombre(s)</h3>
+            <div class="flex justify-between">
+                <p>Juan José</p>
+                <a class="text-action font-medium" href="/configuration/my-data/first-name/update">Cambiar</a>
+            </div>
+            <h3 class="uppercase font-semibold text-gray-400 text-sm">Apellido(s)</h3>
+            <div class="flex justify-between">
+                <p>Cruz Aguirre</p>
+                <a class="text-action font-medium" href="/configuration/my-data/last-name/update">Cambiar</a>
+            </div>
+            <h3 class="uppercase font-semibold text-gray-400 text-sm">Rol</h3>
+            <div class="flex justify-between">
+                <p>Profesional</p>
+                <!-- <a class="text-action font-medium" href="/configuration/my-data/last-name/update">Cambiar</a> -->
+            </div>
+            <h3 class="uppercase font-semibold text-gray-400 text-sm">Área</h3>
+            <div class="flex justify-between">
+                <p>Carpintero</p>
+                <!-- <a class="text-action font-medium" href="/configuration/my-data/last-name/update">Cambiar</a> -->
+            </div>
+        </div>
+    </FullScreenScaffold>
+</ConfigurationLayout>

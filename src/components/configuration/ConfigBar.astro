@@ -1,11 +1,29 @@
 ---
 import ConfigBarSection from "./ConfigBarSection.astro"
 import ConfigBarItem from "./ConfigBarItem.astro"
+import BackLink from "@components/common/BackLink";
+
+const path = Astro.url.pathname;
+console.log(path);
 ---
-<nav class="z-20 flex-shrink-0 w-screen sm:w-64 min-h-0 sm:h-screen flex flex-row sm:flex-col gap-8 items-start bg-gray-100 border-r border-gray-200 pt-5 px-5">
-    <h1 class="uppercase text-gray-500 font-semibold">Configuración</h1>
-    <ul class="w-full flex flex-col gap-3">
+<nav class={`${ path == '/configuration' ? '' : 'max-sm:hidden'} z-20 flex-shrink-0 w-screen sm:w-64 min-h-0 sm:h-screen flex flex-col gap-6 items-start bg-gray-100 sm:bg-gray-100 sm:border-r sm:border-gray-200 pt-5 px-5 overflow-y-auto overflow-x-hidden`}>
+    <div class="flex items-center gap-10 text-gray-400 py-3"> 
+        <div class="w-auto h-auto sm:hidden">
+            <BackLink client:only/>
+        </div>
+        <h1 class="max-sm:text-xl max-sm:font-bold sm:uppercase text-gray-800 sm:text-gray-500 font-semibold">Configuración</h1>
+    </div>
+    <div class="sm:hidden w-full h-auto flex flex-col justify-center items-center gap-2">
+        <img class='w-20 h-20 sm:w-28 sm:h-28 flex-shrink-0 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
+        <label class="w-auto text-action font-medium">Editar</label>
+    </div>
+    <ul class="w-full flex flex-col gap-6 pb-5 pr-2 overflow-y-auto mobile-v-scrollbar">
+        <ConfigBarSection title="">
+            <ConfigBarItem link="/configuration/my-data" icon="fa-solid:user" text="Mis datos"/>
+            <ConfigBarItem link="/saved" icon="fa-solid:bookmark" text="Guardados"/>
+        </ConfigBarSection>
         <ConfigBarSection title="Perfil">
+            <ConfigBarItem link="/configuration/location" icon="fa-solid:map-pin" text="Ubicación"/>
             <ConfigBarItem link="/configuration/phone" icon="fa-solid:phone-alt" text="Teléfono"/>
             <ConfigBarItem link="/configuration/mail" icon="fa-solid:at" text="Correo electrónico"/>
             <ConfigBarItem link="/configuration/password" icon="fa-solid:key" text="Contraseña"/>
