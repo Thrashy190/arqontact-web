@@ -4,7 +4,7 @@ import { Icon } from "astro-icon";
 
 import Navbar from "@components/landing/Navbar.tsx";
 import RoadmapItem from "@components/landing/RoadmapItem.astro";
-import FAQArea from "@components/landing/FAQArea.tsx";
+import FAQArea from "@components/landing/FAQArea.astro";
 import InfoArea from "@components/landing/InfoArea.tsx";
 ---
 
@@ -519,9 +519,7 @@ import InfoArea from "@components/landing/InfoArea.tsx";
 				</div>
 				<span class="text-3xl lg:text-5xl">Preguntas frecuentes</span>
 			</h1>
-			<div class="w-full sm:w-auto flex flex-col md:flex-row gap-6">
-				<FAQArea client:load />
-			</div>
+			<FAQArea />
 		</section>
 		<section
 			id="contact"

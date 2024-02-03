@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+  question: string
+  answer: string,
+  id: string,
+}
+
+const { id, question, answer } =  Astro.props;
+---
+<div class={`cursor-pointer flex flex-col py-6`}>
+    <label for={id} class='peer cursor-pointer flex justify-between items-center gap-3'>
+        <input class="peer/trigger hidden" type="checkbox" id={id}/>
+        <h3 class="font-semibold text-xl">{question}</h3>
+        <div class={`duration-300 transition-all peer-checked/trigger:-rotate-180 rotate-0`}>
+            <Icon name="fa-solid:chevron-down" class="w-4 h-4 flex-shrink-0 text-gray-400"/>
+        </div>
+    </label>
+    <p class={`duration-300 transition-all peer-has-[:checked]:h-full peer-has-[:checked]:pt-4 h-0 overflow-hidden`}>{answer}</p>
+</div>
