@@ -38,6 +38,32 @@ function InteractiveTrigger({ children, event, field, id, self, loc = 'loc' }: I
     return controlledChildren;
 }
 
+interface PrevTrigger {
+    className?: string
+    children: JSX.Element | JSX.Element[]
+}
+
+function PrevTrigger({ children, className }: PrevTrigger) {
+    const ctx = useContext(CarrouselContext);
+
+    return ctx.currentItem != 0 ? <div onClick={() => { ctx.changeCurrentItem(ctx.currentItem-1) } } className={className}>
+        { children }
+    </div> : null;
+}
+
+interface NextTrigger {
+    className?: string
+    children: JSX.Element | JSX.Element[]
+}
+
+function NextTrigger({ children, className }: NextTrigger) {
+    const ctx = useContext(CarrouselContext);
+
+    return ctx.currentItem != (ctx.childCount - 1) ? <div onClick={() => { ctx.changeCurrentItem(ctx.currentItem+1) } } className={className}>
+        { children }
+    </div> : null;
+}
+
 interface ObserverProps {
     children: JSX.Element | JSX.Element[]
     field: string
@@ -90,5 +116,5 @@ function Target({ type = 'x', children, className }: CarrouselProps) {
 }
 
 export {
-    Carrousel, Observer, InteractiveTrigger, Target
+    Carrousel, Observer, InteractiveTrigger, Target, PrevTrigger, NextTrigger
 }

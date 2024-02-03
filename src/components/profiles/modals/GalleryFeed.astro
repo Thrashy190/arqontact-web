@@ -19,7 +19,13 @@ import Gallery from "@components/profiles/Gallery.tsx";
             Array(10).fill(null).map((_, i) => {
                 return <div class="flex flex-col">
                     <div class="w-full bg-white rounded-b-md flex flex-col items-center gap-3">
-                        <img class='w-full aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>
+                        <div class="h-full aspect-square">
+                            <Gallery totalChildren={3} client:load>
+                                <img class='h-full aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240426/EB-JH8782.jpeg" alt="gallery-item"/>
+                                <img class='h-full aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240512/EB-JH8782.JPG" alt="gallery-item" />
+                                <img class='h-full aspect-square snap-center object-cover object-center' src="https://assets.easybroker.com/property_images/2688782/42240509/EB-JH8782.JPG" alt="gallery-item" />
+                            </Gallery>
+                        </div>
                         <div class="w-full flex p-2">
                             <Icon name="fa-regular:bookmark" class="text-action w-4 aspect-square ml-auto"/>
                         </div>

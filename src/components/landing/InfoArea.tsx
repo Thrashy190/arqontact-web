@@ -12,9 +12,9 @@ export default function InfoArea() {
                 Con Arqontact
             </h1>
             <div
-                className="flex flex-wrap md:space-y-16 justify-center md:justify-between xl:items-center items-start"
+                className="flex flex-wrap gap-16 justify-center md:justify-between items-start"
             >
-                <div className="flex flex-col md:space-y-16">
+                <div className="flex flex-col gap-16">
                     <InteractiveTrigger
                         event="onClick"
                         id="table"
@@ -86,7 +86,7 @@ export default function InfoArea() {
                         </AnimatedIf>
                     </Target>
                 </div>
-                <div className="flex flex-col md:space-y-16">
+                <div className="flex flex-col gap-16">
                     <InteractiveTrigger
                         event="onClick"
                         id="img"

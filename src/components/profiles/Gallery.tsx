@@ -1,23 +1,25 @@
-import { Carrousel, Observer, Target } from "@components/common/Carrousel.tsx";
+import { Fragment } from "react";
+import { Icon } from "@iconify/react";
+import { Carrousel, Observer, Target, PrevTrigger, NextTrigger } from "@components/common/Carrousel.tsx";
 import GalleryLocation from "@components/profiles/GalleryLocation.tsx";
 
-export default function Gallery({ totalChildren, children }: { totalChildren: number, children: JSX.Element | JSX.Element[] }) {
+export default function Gallery({ totalChildren, children, controls }: { totalChildren: number, children: JSX.Element | JSX.Element[], controls?: boolean }) {
     return (
         <Carrousel totalChildren={totalChildren}>
-            <div className='relative w-full h-full'>
+            <div className='relative w-full h-full flex items-center'>
+                {
+                    controls ? <Fragment>
+                        <PrevTrigger className="bg-[rgba(255,255,255,.5)] rounded-full absolute p-2 left-2">
+                            <Icon icon="fa-solid:chevron-left" className="w-5 h-5 text-gray-800"/>
+                        </PrevTrigger>
+                        <NextTrigger className="bg-[rgba(255,255,255,.5)] rounded-full absolute p-2 right-2">
+                            <Icon icon="fa-solid:chevron-right" className="w-5 h-5 text-gray-800"/>
+                        </NextTrigger>
+                    </Fragment> : null
+                }
                 <Target>
                     { children }
                 </Target>
-                {/* {
-                    currentItem != 0 ? <div onClick={previous} className='w-10 h-10 bg-[rgba(255,255,255,.5)] rounded-full flex justify-center items-center absolute top-1/2 left-2'>
-                        <Icon icon="fas faChevronLeft"/>
-                    </div> : null
-                }
-                {
-                    currentItem != 2 ? <div onClick={next} className='w-10 h-10 bg-[rgba(255,255,255,.5)] rounded-full flex justify-center items-center absolute top-1/2 right-2'>
-                        <Icon icon="fas faChevronRight"/>
-                    </div> : null
-                } */}
                 <div className="bg-[rgba(0,0,0,.3)] w-full flex justify-center py-1 gap-1 bottom-0 left-0 absolute">
                     {
                         Array(totalChildren).fill(0).map((f, j) => {
