@@ -9,7 +9,7 @@ interface Props {
 const { title, backLink } = Astro.props;
 ---
 
-<FullScreenScaffold title={ title } backLink={backLink} shrink>
+<FullScreenScaffold title={ title } backLink={backLink} shrink color="bg-white">
     <div class="flex flex-col max-sm:h-full max-sm:justify-between gap-5">
         <slot />
     </div>

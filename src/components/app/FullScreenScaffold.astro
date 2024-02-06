@@ -6,25 +6,36 @@ interface Props {
     header?: boolean,
     title?: string,
     backLink?: string | boolean,
-    shrink?: boolean
+    shrink?: boolean,
+    color?: string,
 }
 
-const { header = true, title, backLink, shrink = false } = Astro.props;
+const { header = true, title, backLink, shrink = false, color: containerColor = 'bg-white sm:bg-gray-100' } = Astro.props;
 ---
-<div class={`w-full h-full bg-white pt-5 px-5 flex flex-col ${ shrink ? 'items-center' : '' } justify-center overflow-y-auto self-end`}>
-    <div class={`w-full ${ shrink ? `sm:max-w-[450px]` : ''} h-full flex flex-col gap-3`}>
+<div class={`w-full h-full  ${ containerColor } pt-5 px-5 flex flex-col ${ shrink ? 'items-center' : '' } justify-center overflow-y-auto self-end`}>
+    <div class={`w-full h-full flex flex-col items-center gap-4`}>
         {
-            header && <div class="z-[5] before:content-[''] before:w-[calc(100%+2.5rem)] before:h-[calc(100%+1.25rem)] before:bg-white before:absolute before:-top-5 before:-left-5 sticky top-0 py-3 bg-white flex items-center gap-10 text-gray-400">
+
+            header ? <div class={`z-[5] before:content-[''] before:w-[calc(100%+2.5rem)] before:h-[calc(100%+1.25rem)] before:bg-white before:absolute before:-top-5 before:-left-5 before:shadow-strong before:border-b before:border-gray-200 w-full sticky top-0 pt-3 py-8 bg-white flex flex-col justify-center items-center gap-4 text-gray-400`}>
+                <div class={`${ shrink ? `sm:max-w-[450px]` : ''} w-full flex items-center gap-10`}>
+                    {
+                        backLink === true ? <BackLink client:only/> : (backLink && backLink.length > 0 ? <a href={backLink} class='cursor-pointer z-[6] text-xl'>
+                            <Icon name="fa-solid:chevron-left" className="w-5 h-5"/>
+                        </a> : null)
+                    }
+                    <span class={`z-[6] ${ shrink ? `sm:max-w-[450px]` : ''} font-semibold text-xl text-gray-800`}>
+                        { title }
+                    </span>
+                </div>
                 {
-                    backLink === true ? <BackLink client:only/> : (backLink && backLink.length > 0 ? <a href={backLink} class='cursor-pointer z-[6] text-xl'>
-                        <Icon name="fa-solid:chevron-left" className="w-5 h-5"/>
-                    </a> : null)
+                    Astro.slots.has('header-extras') ? <div class={`${ shrink ? `sm:max-w-[450px]` : ''} z-[6] w-full `}>
+                        <slot name="header-extras" />
+                    </div> : null
                 }
-                <span class='z-[6] font-bold text-xl text-gray-800'>
-                    { title }
-                </span>
-            </div>
+            </div> : null
         }
-        <slot />
+        <div class={`w-full h-full ${ shrink ? `sm:max-w-[450px]` : ''} flex flex-col gap-3`}>
+            <slot />
+        </div>
     </div>
 </div>

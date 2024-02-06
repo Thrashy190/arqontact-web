@@ -11,7 +11,7 @@ export default function Navbar() {
     }, [])
     
     return (
-        <nav className="z-20 sm:shadow-xl flex-shrink-0 w-screen sm:w-16 min-h-0 sm:h-screen flex flex-row sm:flex-col justify-between items-center bg-white border-t border-gray-200 sm:pb-5">
+        <nav className="z-20 sm:shadow-xl border-r border-gray-200 flex-shrink-0 w-screen sm:w-16 min-h-0 sm:h-screen flex flex-row sm:flex-col justify-between items-center bg-white border-t border-gray-200 sm:pb-5">
             <div className="w-full sm:w-auto flex flex-row sm:flex-col justify-between sm:justify-start sm:items-center sm:gap-8 p-5">
                 <a href="/notifications" onClick={() => setLocation('notifications')} className={`text-xl ${ location == 'notifications' ? 'text-amber-400' : 'text-gray-500'}`}>
                     <Icon icon="fa6-solid:bell" className="w-4 h-4 sm:w-5 sm:h-5"/>
@@ -25,6 +25,9 @@ export default function Navbar() {
                 <a href="/dashboard" onClick={() => setLocation('dashboard')} className={`text-xl ${ location == 'dashboard' ? 'text-amber-400' : 'text-gray-500'}`}>
                     <Icon icon="fa6-solid:list" className="w-4 h-4 sm:w-5 sm:h-5"/>
                 </a>
+                {/* <a href="/jobs" onClick={() => setLocation('jobs')} className={`text-xl ${ location == 'jobs' ? 'text-amber-400' : 'text-gray-500'}`}>
+                    <Icon icon="fa6-solid:hammer" className="w-4 h-4 sm:w-5 sm:h-5"/>
+                </a> */}
                 <a href="/my-profile" onClick={() => setLocation('my-profile')} className={`sm:hidden text-xl ${ location == 'my-profile' ? 'text-amber-400' : 'text-gray-500'}`}>
                     <Icon icon="fa6-solid:user" className="w-4 h-4 sm:w-5 sm:h-5"/>
                 </a>

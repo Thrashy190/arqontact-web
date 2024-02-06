@@ -14,7 +14,7 @@ export default function Header({ children }: HeaderProps) {
     }, [])
 
     return (
-        <header ref={filters} className='z-20 sm:shadow-md flex-shrink-0 w-screen sm:w-full bg-white border-b border-gray-200 flex sm:flex-col p-5 gap-3'>
+        <header ref={filters} className='relative z-20 sm:shadow-strong flex-shrink-0 w-screen sm:w-full bg-white border-b border-gray-200 flex flex-col gap-2 sm:gap-3'>
             { children }
         </header>
     )

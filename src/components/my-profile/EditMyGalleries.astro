@@ -13,8 +13,8 @@ import { Icon } from "astro-icon";
             Array(4).fill(0).map((e, i) => {
                 return (
                     <div class="relative w-full bg-white rounded-b-md flex flex-col items-center gap-3">
-                        <div class="bg-white text-gray-400 absolute top-2 right-2 shadow-lg p-2 flex justify-center items-center rounded-md">
-                            <label data-popup={`gallery-options-popup-${i}`} for={`gallery-options-popup-${i}`} class="cursor-pointer peer relative">
+                        <div class="cursor-pointer bg-white text-gray-400 absolute top-2 right-2 shadow-lg p-2 flex justify-center items-center rounded-md">
+                            <label data-popup={`gallery-options-popup-${i}`} for={`gallery-options-popup-${i}`} class="peer relative">
                                 <input data-popup-target={`gallery-options-popup-${i}`} class="hidden" type="checkbox" id={`gallery-options-popup-${i}`}/>
                                 <Icon name="fa-solid:ellipsis-v" class="w-5 h-5"/>
                             </label>

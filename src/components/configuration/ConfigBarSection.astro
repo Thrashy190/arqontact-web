@@ -6,7 +6,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 <li class="flex flex-col gap-1">
-    <h2 class="sm:text-sm uppercase text-gray-400 font-semibold mb-1">{ title }</h2>
+    <h2 class="sm:text-xs uppercase text-gray-400 font-semibold mb-1">{ title }</h2>
     <div class="max-sm:border border-gray-200 rounded-md max-sm:divide-y divide-gray-200 max-sm:overflow-hidden">
         <slot />
     </div>

@@ -6,24 +6,44 @@ import FullScreenScaffold from "@components/app/FullScreenScaffold.astro";
 
 <AppLayout title="Buzón">
     <FullScreenScaffold title="Buzón" shrink>
-        <div class="h-full flex flex-col divide-y divide-gray-200">
+        <div slot="header-extras" class="absolute bottom-0 self-start z-[6] flex gap-4 text-gray-800 overflow-visible">
+            <button class="border-b-2 border-amber-400 text-sm h-full px-2 py-1 flex items-center gap-2">
+                <span class="text-amber-400 font-semibold">Todas</span>
+                <span class="bg-amber-400 text-xs text-white px-2 py-1 rounded-sm">10</span>
+            </button>
+            <button class="text-sm text-gray-400 text-sm h-full px-2 py-1 flex items-center gap-2">
+                <span class="font-semibold">Tableros</span>
+                <span class="bg-gray-100 text-gray-400 text-xs px-2 py-1 rounded-sm">10</span>
+            </button>
+            <button class="text-sm text-gray-400 text-sm h-full px-2 py-1 flex items-center gap-2">
+                <span class="font-semibold">Ofertas</span>
+                <span class="bg-gray-100 text-gray-400 text-xs px-2 py-1 rounded-sm">10</span>
+            </button>
+            <button class="text-sm text-gray-400 text-sm h-full px-2 py-1 flex items-center gap-2">
+                <span class="font-semibold">Social</span>
+                <span class="bg-gray-100 text-gray-400 text-xs px-2 py-1 rounded-sm">10</span>
+            </button>
+        </div>
+        <div class="h-full flex flex-col sm:gap-4 max-sm:divide-y max-sm:divide-gray-200 sm:[&>*:last-child]:pb-4">
             {
                 Array(10).fill(null).map((e, index) => {
-                    return <a href='/profile/1'>
-                        <div class="w-full bg-white flex flex-shrink-0 items-center gap-4 py-6 px-3">
+                    return <div>
+                        <div class="relative w-full bg-white flex flex-shrink-0 items-center gap-4 py-6 px-3 sm:border sm:border-gray-200 sm:rounded-md">
+                            <div class="w-4 h-4 rounded-full bg-blue-500 absolute top-6 right-3"></div>
                             <picture class="relative w-20 h-20 flex-shrink-0">
                                 <img class='w-20 h-20 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8dkWYTLlEbqVU1TUU9O5VjeiV1Q5sx_qMwnOjq8HJcjP75uR3vf89Wl4YcQaVy0V63E&usqp=CAU" alt="profile" />
-                                <div class="absolute bottom-0 right-0 bg-lime-500 rounded-full p-2">
+                                <div class="absolute -bottom-2 -right-2 bg-lime-500 rounded-full p-2 border-4 border-white">
                                     <Icon name="fa-solid:envelope" class="w-4 h-4 text-white"/>
                                 </div>
                             </picture>
                             <div class="w-full flex flex-col gap-2">
-                                <h2 class='font-medium'>Título de notificación</h2>
-                                <p class="text-sm">El encargado del tablero te ha enviado una invitación para que te unas al tablero.</p>
+                                <h2 class='font-semibold'>Título de notificación</h2>
+                                <p class="text-sm">El <span class="font-semibold underline">encargado</span> del tablero te ha enviado una invitación para que te unas al <span class="font-semibold underline">tablero</span>.</p>
+                                <p class="ml-auto text-gray-500 text-sm mt-3">Hace 3 horas</p>
                             </div>
-                            <Icon name="fa-solid:chevron-right" class="w-3 h-3 text-gray-400"/>
+                            <Icon name="fa-solid:chevron-right" class="sm:hidden w-3 h-3 text-gray-400"/>
                         </div>
-                    </a>
+                    </div>
                 })
             }
         </div>
