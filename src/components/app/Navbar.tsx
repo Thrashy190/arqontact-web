@@ -25,9 +25,9 @@ export default function Navbar() {
                 <a href="/dashboard" onClick={() => setLocation('dashboard')} className={`text-xl ${ location == 'dashboard' ? 'text-amber-400' : 'text-gray-500'}`}>
                     <Icon icon="fa6-solid:list" className="w-4 h-4 sm:w-5 sm:h-5"/>
                 </a>
-                {/* <a href="/jobs" onClick={() => setLocation('jobs')} className={`text-xl ${ location == 'jobs' ? 'text-amber-400' : 'text-gray-500'}`}>
-                    <Icon icon="fa6-solid:hammer" className="w-4 h-4 sm:w-5 sm:h-5"/>
-                </a> */}
+                <a href="/jobs" onClick={() => setLocation('jobs')} className={`text-xl ${ location == 'jobs' ? 'text-amber-400' : 'text-gray-500'}`}>
+                    <Icon icon="fa6-solid:briefcase" className="w-4 h-4 sm:w-5 sm:h-5"/>
+                </a>
                 <a href="/my-profile" onClick={() => setLocation('my-profile')} className={`sm:hidden text-xl ${ location == 'my-profile' ? 'text-amber-400' : 'text-gray-500'}`}>
                     <Icon icon="fa6-solid:user" className="w-4 h-4 sm:w-5 sm:h-5"/>
                 </a>

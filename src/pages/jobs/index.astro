@@ -8,7 +8,7 @@ import ActivityFilters from "@components/dashboard/modals/ActivityFilters.astro"
 import AppLayout from "@layouts/AppLayout.astro";
 import Header from "@components/dashboard/Header.astro";
 import { Search } from "@components/common/inputs";
-import HeaderContent from "@components/dashboard/HeaderContent.astro";
+import HeaderContent from "@components/jobs/HeaderContent.astro";
 import OrderBy from "@components/dashboard/modals/OrderBy.astro";
 import Grade from "@components/dashboard/modals/Grade.astro";
 import Abilities from "@components/dashboard/modals/Abilities.astro";
@@ -102,6 +102,12 @@ import Activity from "@components/dashboard/modals/Activity.astro";
                         <Activity name="side-search"/>
                     </div>
                     <div class="w-full flex flex-col divide-y sm:divide-y-0 sm:gap-4 divide-gray-200">
+                        <div class="w-full h-full">
+                            <div class="w-full h-auto p-3 bg-white sm:border border-gray-200 text-gray-500 flex justify-center items-center gap-4 text-sm rounded-md">
+                                <Icon name="fa-solid:bell" class="w-4 h-4"/>
+                                <span class="text-center">¡Recibe notificaciones cuando tengamos ofertas para ti! Activa las notificaciones <a href="/configuration/notifications" class="underline text-amber-500">aquí</a>.</span>
+                            </div>
+                        </div>
                         {
                             Array(10).fill(null).map((e, index) => {
                                 return (
